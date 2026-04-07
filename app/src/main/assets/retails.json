@@ -1,0 +1,2145 @@
+{
+    "version": "1.1",
+    "data": [
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л № 21 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "170841010509"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №3 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "111141005946"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №6 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "130241011737"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №7 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "131041022768"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №8 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "141241024387"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №10 ТОО 'MAGNUM CASH& CARRY'",
+            "bin": "151041012289"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №12 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "160441025541"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №14 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "161041011543"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №19 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "170641007403"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №20 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "170841011092"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №22 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "171141017118"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №24 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "180641010683"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л №25 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "180941002693"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №1 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY'",
+            "bin": "100941004192"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №2 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM СASH&СARRY'",
+            "bin": "100941018040"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №11 ТОО 'MAGNUM CASH&CARRY",
+            "bin": "160441017898"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №15 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "170541004534"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №16 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "170541005087"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №17 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY'",
+            "bin": "170541032679"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №18 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "170541031422"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №23 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "171141037945"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №26 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "180941026294"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №28 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY'",
+            "bin": "190241009479"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №29 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "190241009598"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №30 ТОВАРИЩЕСТВ С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY'",
+            "bin": "190241009786"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №31 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "190241017955"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №32 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "190241009528"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №34 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY'",
+            "bin": "190241009835"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АЛМАТИНСКИЙ ФИЛИАЛ №35 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "190241010244"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "АФ  №33 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "190241012290"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "КАРАГАНДИНСКИЙ Ф-Л №2 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "170441024535"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY'",
+            "bin": "081040004326"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ТОО 'MAGNUM E-COMMERCE KAZAKHSTAN'",
+            "bin": "210640039783"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-АЛ № 29 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210541028839"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-АЛ №23 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210441002227"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л № 3 ТОО 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В Г,КАРАГАНДА",
+            "bin": "200641000256"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л № 26 ТОО 'MAGNUM CASN&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "220941034225"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л № 29 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "220941020186"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л № 58 ТОО 'MAGNUM CASH&CARRY' В АЛМАТИНСКОЙ ОБЛАСТИ",
+            "bin": "210541037253"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л № 70 ТОО 'MAGNUM CASH&CARRY' ПО АЛМАТИНСКОЙ ОБЛАСТИ",
+            "bin": "220641039255"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №1 ТОВАРИЩЕСТВА C ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ ТУРКЕСТАН",
+            "bin": "210141028245"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №1 ТОО  'MAGNUM CASH&CARRY' В ГОРОДЕ ТАРАЗ",
+            "bin": "190141029618"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №2 ТОО 'MAGNUM CASH&CARRY' В Г.ТАЛДЫКОРГАН",
+            "bin": "161241010083"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №2 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "160641003439"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №2 ТОО «MAGNUM CASH&CARRY» В ГОРОДЕ ТУРКЕСТАН",
+            "bin": "210741013759"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №3 ТОО 'MAGNUM CASH&CARRY' В Г. АСТАНА",
+            "bin": "160941030972"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №3 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "180441028440"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №3 ТОО 'MAGNUM CASH&CARRY' ПО ТУРКЕСТАНСКОЙ ОБЛАСТИ",
+            "bin": "211141007110"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №4 ТОО 'MAGNUM CASH & CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "181141006134"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №4 ТОО 'MAGNUM CASH&CARRY' В Г. КАРАГАНДА",
+            "bin": "200741003096"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №4 ТОО 'MAGNUM CASH&CARRY' В Г. ТУРКЕСТАН",
+            "bin": "221141021564"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №5 ТОО 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В Г.КАРАГАНДА",
+            "bin": "201041034489"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №5 ТОО 'MAGNUM CASH&CARRY' В Г. ШЫМКЕНТ",
+            "bin": "190341028885"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №6 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "190941011347"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №7 ТОО 'MAGNUM CASH&CARRY' В Г ШЫМКЕНТ",
+            "bin": "191041025674"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №7 ТОО 'MAGNUM CASH&CARRY' В Г. КАРАГАНДА",
+            "bin": "211041007991"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №9 ТОО 'MAGNUM CASH&CARRY' В Г ШЫМКЕНТ",
+            "bin": "201041029126"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №9 ТОО 'MAGNUM CASH&CARRY' ПО СКО",
+            "bin": "220241025280"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №10 ТОО 'MAGNUM CASH&CARRY' В Г. ШЫМКЕНТ",
+            "bin": "201141020166"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №11 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "210941007444"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №12 ТОО 'MAGNUM CASH&CARRY' В Г.НУР-СУЛТАН",
+            "bin": "190441021168"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №12 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "210941027627"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №13 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "220341013598"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №17 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "211141031420"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №18 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "211141029518"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №19 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "211241000870"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №20 ТОО'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "211241000880"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №20 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "220341013459"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №21 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "211241011638"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №21 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "220841047223"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №22 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "220841029780"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №23 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "220841019783"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №24 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "220841028178"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №25 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "220941020334"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №27 ТОО «MAGNUM CASH&CARRY» В Г.ШЫМКЕНТ",
+            "bin": "221041006238"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №28 ТОО 'MAGNUM CASH&CARRY' В Г ШЫМКЕНТ",
+            "bin": "221041051641"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №30 ТОО 'MAGNUM CASH&CARRY' В Г. ШЫМКЕНТ",
+            "bin": "220941019482"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №32 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "221041035550"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №34 ТОО 'MAGNUM CASH&CARRY' В Г.ШЫМКЕНТ",
+            "bin": "221041014151"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №39 ТОО 'MAGNUM CASH&CARRY' В Г. АЛМАТЫ",
+            "bin": "190641009730"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №40 ТОО 'MAGNUM CASH&CARRY' В Г.АЛМАТЫ",
+            "bin": "190941017564"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №40 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741002991"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №42 ТОО 'MAGNUM CASH&CARRY' В Г.АЛМАТЫ",
+            "bin": "200241032100"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №48 ТОО 'MAGNUM CASH&CARRY' В Г. АЛМАТЫ",
+            "bin": "201141027440"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №50 ТОО 'MAGNUM CASH&CARRY' В Г. АЛМАТЫ",
+            "bin": "201041030863"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №60 ТОО 'MAGNUM CASH&CARRY'  'РЕАЛИСТ' В Г. АЛМАТЫ",
+            "bin": "210641004528"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л №86 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "230541033761"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л ТОО 'MAGNUM CASH&CARRY' В Г АСТАНА",
+            "bin": "190141038875"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л ТОО 'MAGNUM CASH&CARRY' В Г ШЫМКЕНТ",
+            "bin": "140541005031"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л ТОО 'MAGNUM CASH&CARRY' В Г. КАРАГАНДА",
+            "bin": "090541018874"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л ТОО 'MAGNUM CASH&CARRY' В Г.ТАЛДЫКОРГАН",
+            "bin": "160841021127"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "Ф-Л ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "200841015896"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИ-Л №43 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В Г.АЛМАТЫ",
+            "bin": "200641032729"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИИЛАЛ №55 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220341025452"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛАЛ № 30 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210541011636"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 1 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В Г. ПЕТРОПАВЛОВСК",
+            "bin": "170941002969"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 2 ТОО 'MAGNUM CASH&CARRY' В Г. АСТАНА",
+            "bin": "130541007155"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 2 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ КЫЗЫЛОРДА",
+            "bin": "210541038529"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 2 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005256"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 11 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241002638"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 15 ТОО 'MAGNUM CASH&CARRY' В Г.НУР-СУЛТАН",
+            "bin": "191041022233"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 16 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' ПО СЕВЕРО-КАЗАХСТАНСКОЙ ОБЛАСТИ",
+            "bin": "220241015203"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 17 ТОО 'MAGNUM CASH&CARRY' ПО АКМОЛИНСКОЙ ОБЛАСТИ",
+            "bin": "200841017515"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 19 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР - СУЛТАН",
+            "bin": "201041032821"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 20 ТОО 'MAGNUM CASH&CARRY' В АКМОЛИНСКОЙ ОБЛАСТИ",
+            "bin": "201141000657"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 24 ТОО 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210441011860"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 26 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210441036053"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 28 ТОО 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210541006719"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 52 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "210341034023"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 60 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220241032868"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 63 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "211041015841"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 68 ТОО 'MAGNUM СASH&СARRY' В АЛМАТИНСКОЙ ОБЛАСТИ",
+            "bin": "211141032825"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 71 ТОО 'MAGNUM CASH&CARRY' ПО АЛМАТИНСКОЙ ОБЛАСТИ",
+            "bin": "211141013620"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ № 80 ТОО 'MAGNUM CASH & CARRY' В Г. АЛМАТЫ",
+            "bin": "221141018712"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №1 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ КЫЗЫЛОРДА",
+            "bin": "180941014171"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №1 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «MAGNUM CASH&CARRY» В ГОРОДЕ УСТЬ-КАМЕНОГОРСК",
+            "bin": "210641034916"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №1 ТОО 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В ГОРОДЕ ЕСИК",
+            "bin": "201141035184"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №1 ТОО 'MAGNUM CASH&CARRY' В Г.КАСКЕЛЕН",
+            "bin": "170441032506"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №1 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АКТОБЕ",
+            "bin": "170441012680"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №1 ТОО «MAGNUM CASH&CARRY» В ГОРОДЕ КАПШАГАЙ",
+            "bin": "211141036283"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №2 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТИ 'MAGNUM CASH&CARRY' В ГОРОДЕ УСТЬ-КАМЕНОГОРСК",
+            "bin": "210841002221"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №2 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ КАСКЕЛЕН",
+            "bin": "210641039273"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №2 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ТАРАЗ",
+            "bin": "200841003397"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №3 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «MAGNUM CASH&CARRY» В ГОРОДЕ УСТЬ-КАМЕНОГОРСК",
+            "bin": "220241022068"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №3 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005484"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №3 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ТАРАЗ",
+            "bin": "211241011698"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №4 ТОО 'MAGNUM CASH&CARRY' В Г. АСТАНА",
+            "bin": "180641023000"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №4 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005325"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №5 ТОО 'MAGNUM CASH&CARRY' В Г. АСТАНА",
+            "bin": "180841010869"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №5 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005395"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №6 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСВЕННОСТЬЮ 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В ГОРОДЕ КАРАГАНДА",
+            "bin": "201141036132"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №6 ТОО 'MAGNUM CASH&CARRY' В Г. АСТАНА",
+            "bin": "181141006312"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №6 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ КАРАГАНДА",
+            "bin": "210541034080"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №6 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005454"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №7 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241007341"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №8 ТОО 'MAGNUM CASH&CARRY' В Г.АСТАНА",
+            "bin": "190341008127"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №8 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005414"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №9 ТОО 'MAGNUM CASH&CARRY' В Г.НУР-СУЛТАН",
+            "bin": "190441015516"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №10 ТОО 'MAGNUM CASH&CARRY' В Г.НУР-СУЛТАН",
+            "bin": "190441015565"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №10 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005335"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №11 ТОО 'MAGNUM CASH&CARRY' В Г.НУР-СУЛТАН",
+            "bin": "190441015541"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №12 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005286"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №13 ТОО 'MAGNUM CASH & CARRY' В Г.АЛМАТЫ",
+            "bin": "190641010388"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №13 ТОО 'MAGNUM CASH&CARRY' В Г. НУР-СУЛТАН",
+            "bin": "190441027751"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №13 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005305"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №14 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241015293"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №14 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "191141025291"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №15 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241006776"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №15 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "220241026744"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №16 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В Г.НУР-СУЛТАН",
+            "bin": "200641034337"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №17 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241005276"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №18 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210241038499"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №18 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220241006859"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №19 ТОО 'MAGNUM CASH&СARRY' В Г.ШЫМКЕНТ",
+            "bin": "211241000751"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №21 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "201041032403"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №22 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "201241016964"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №22 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "220141011207"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №25 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210441002366"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №27 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210541004376"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №31 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210641033432"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №32 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210641038582"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №33 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210641031822"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №33 ТОО 'MAGNUM CACH&CARRY' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "221041007097"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №34 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210641033521"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №35 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741004294"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №36 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210641031842"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №36 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В Г АЛМАТЫ",
+            "bin": "191041013988"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №37 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741002852"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №37 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В Г.АЛМАТЫ",
+            "bin": "191041014133"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №38 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В Г.АЛМАТЫ",
+            "bin": "190441000165"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №38 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210641034024"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №39 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210641032385"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №41 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210641031991"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №41 ТОО 'MAGNUM CASH&CARRY' В Г.АЛМАТЫ",
+            "bin": "200241031241"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №42 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741035373"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №43 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210941026629"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №44 ТОО 'MAGNUM CASH&CARRY' В Г.АЛМАТЫ",
+            "bin": "200741012858"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №44 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741035630"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №45 ТОО ''MAGNUM CASH&CARRY'' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741035343"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №45 ТОО 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В Г.АЛМАТЫ",
+            "bin": "201141035253"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №46 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "201041025768"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №46 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210941026669"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №47 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "210641037881"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №47 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741035422"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №48 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ''MAGNUM CASH&CARRY'' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741035640"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №49 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ'",
+            "bin": "201141018352"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №49 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741035026"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №50ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741035165"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №51 ТОО 'MAGNUM CASH&CARRY' В Г. АЛМАТЫ",
+            "bin": "201141033346"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №51 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741023171"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №52 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210841021604"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №53 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В ГОРОДЕ АЛМАТЫ",
+            "bin": "210441002425"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №53 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210741035333"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №54 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210841029739"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №56 ТОО 'MAGNUM CASH&CARRY' 'РЕАЛИСТ' В АЛМАТИНСКОЙ ОБЛАСТИ",
+            "bin": "210541021910"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №56 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "210941011115"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №57 ТОО 'MAGNUM CASH&CARRY' В Г. АЛМАТЫ",
+            "bin": "210941022587"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №57 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "211141004872"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №58 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "211241001741"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №59 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220241038064"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №61 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "210941007236"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №61 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220341004509"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №62 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "210941002522"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №62 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «MAGNUM CASH&CARRY» В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220241038163"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №63 ТОО 'MAGNUM CASH&CARRY' В АЛМАТИНСКОЙ ОБЛАСТИ",
+            "bin": "210941022359"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №64 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "211141030779"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №64 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220341030568"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №65 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220441052897"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №65 ТОО 'MAGNUM CASH@CARRY' В Г. АЛМАТЫ",
+            "bin": "211141014153"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №66 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "211041014982"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №66 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220441052861"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №67 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "211041012669"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №67 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220441052740"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №68 ТОО «MAGNUM CASH&CARRY» ПО ГОРОДУ НУР-СУЛТАН",
+            "bin": "220741026217"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №69 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220741048456"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №69 ТОО 'MAGNUM CASH& CARRY' В АЛМАТИНСКОЙ ОБЛАСТИ",
+            "bin": "211041015534"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №70 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В АКМОЛИНСКОЙ ОБЛАСТИ",
+            "bin": "220741043326"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №71 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «MAGNUM CASH&CARRY» ПО ГОРОДУ НУР-СУЛТАН",
+            "bin": "220741025447"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №72 ТОВАРИЩЕСТВА С ОРГАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "211141018562"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №72 ТОО «MAGNUM CASH&CARRY» ПО ГОРОДУ НУР-СУЛТАН",
+            "bin": "220741025368"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №73 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН.",
+            "bin": "220841022614"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №73 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "211141020049"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №74 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ НУР-СУЛТАН",
+            "bin": "220841044714"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №74 ТОО 'MAGNUM CASH & CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "230841036389"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №75 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АСТАНА",
+            "bin": "221141025279"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №75 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "220241037096"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №76 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "221141015252"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №76 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АСТАНА",
+            "bin": "221141000869"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №77 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "220941000924"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №77 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «MAGNUM CASH&CARRY» В ГОРОДЕ АСТАНА",
+            "bin": "221041032209"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №78 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "230241024660"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №80 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АСТАНА",
+            "bin": "221141038221"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №81 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "230741040581"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №81 ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АСТАНА",
+            "bin": "230441014244"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №82 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «MAGNUM CASH&CARRY» В ГОРОДЕ АСТАНА",
+            "bin": "230341009938"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №82 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "221041031409"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №83 ТОО 'MAGNUM CASH&CARRY' В Г. АЛМАТЫ",
+            "bin": "221141013662"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ №84 ТОО 'MAGNUM CASH&CARRY' В Г. АЛМАТЫ",
+            "bin": "221141025379"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ ДАРКСТОР №1 ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "210541038281"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' № 4",
+            "bin": "120741003950"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'MAGNUM CASH&CARRY' №5",
+            "bin": "121241000702"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФИЛИАЛ ТОО 'MAGNUM CASH&CARRY' В Г. АСТАНА",
+            "bin": "120641002344"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФЛ №54 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "210441015942"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФЛ №59 ТОО 'MAGNUM CASH&CARRY' В ГОРОДЕ АЛМАТЫ",
+            "bin": "210741035501"
+        },
+        {
+            "networkName": "Magnum",
+            "legalName": "ФЛМАТИНСКИЙ Ф-Л № 9 ТОО 'MAGNUM CASH&CARRY'",
+            "bin": "151141003342"
+        },
+        {
+            "networkName": "Анвар",
+            "legalName": "КАРАГАНДИНСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АНВАР\"",
+            "bin": "100841006427"
+        },
+        {
+            "networkName": "Анвар",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АНВАР\"",
+            "bin": "930340000648"
+        },
+        {
+            "networkName": "Анвар",
+            "legalName": "Уральский филиал Товарищества с ограниченной ответственностью \"Анвар\"",
+            "bin": "041141009180"
+        },
+        {
+            "networkName": "Анвар",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АНВАР\" В ГОРОДЕ АКТАУ",
+            "bin": "041141009864"
+        },
+        {
+            "networkName": "Анвар",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АНВАР\" В ГОРОДЕ АСТАНА",
+            "bin": "051241008950"
+        },
+        {
+            "networkName": "Анвар",
+            "legalName": "КЫЗЫЛОРДИНСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АНВАР\"",
+            "bin": "100441008500"
+        },
+        {
+            "networkName": "Анвар",
+            "legalName": "Филиал товарищества с ограниченной ответственностью \"АНВАР\" в городе Атырау\n",
+            "bin": "041141011747"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "ПАВЛОДАРСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СКИФ ТРЕЙД\"",
+            "bin": "131141020408"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "ЖАМБЫЛСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СКИФ ТРЕЙД\"",
+            "bin": "040441016072"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "КЫЗЫЛОРДИНСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СКИФ ТРЕЙД\"",
+            "bin": "070641025391"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "\"КОКШЕТАУСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \\\"СКИФ ТРЕЙД\\\"\"",
+            "bin": "150541008672"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "ТАЛДЫКОРГАНСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕСТВЕННОСТЬЮ \"СКИФ ТРЕЙД\"",
+            "bin": "041141012597"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "КАРАГАНДИНСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СКИФ ТРЕЙД\"",
+            "bin": "040941010646"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "СЕМЕЙСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СКИФ ТРЕЙД\"",
+            "bin": "170241001509"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "\"СКИФ ТРЕЙД\" ЖАУАПКЕРШІЛІГІ ШЕКТЕУЛІ СЕРІКТЕСТІГІНІҢ ҚОСТАНАЙ ОБЛЫСТЫҚ ФИЛИАЛЫ",
+            "bin": "190841005547"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "АСТАНИНСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СКИФ ТРЕЙД\"",
+            "bin": "120441002169"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СКИФ ТРЕЙД\"",
+            "bin": "020340002288"
+        },
+        {
+            "networkName": "Skif, Small",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СКИФ САУДА\"",
+            "bin": "991140005177"
+        },
+        {
+            "networkName": "Spar",
+            "legalName": "ТОО \"SPAR TRADE\"",
+            "bin": "240540034050"
+        },
+        {
+            "networkName": "Метро",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"МЕТРО КЭШ ЭНД КЕРРИ\"",
+            "bin": "080740000861"
+        },
+        {
+            "networkName": "Арзан",
+            "legalName": "ТОО \"Оптовый клуб\"",
+            "bin": "041240005374"
+        },
+        {
+            "networkName": "Арзан",
+            "legalName": "\"ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ОПТОВЫЙ КЛУБ\" В ГОРОДЕ УСТЬ-КАМЕНОГОРСКЕ\"",
+            "bin": "100941014963"
+        },
+        {
+            "networkName": "А-Store",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АЛМАСТОР\"",
+            "bin": "100540002064"
+        },
+        {
+            "networkName": "Interfood",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ СОВМЕСТНОЕ КАЗАХСТАНСКО-ГЕРМАНСКОЕ ПРЕДПРИЯТИЕ \"INTERFOOD\" (\"ИНТЕРФУД\")",
+            "bin": "990940003388"
+        },
+        {
+            "networkName": "Interfood",
+            "legalName": "\"INTERFOOD\" \"(ИНТЕРФУД)\" ЖАУАПКЕРШІЛІГІ ШЕКТЕУЛІ СЕРІКТЕСТІГІНІҢ ҚАЗАҚСТАН-ГЕРМАН БІРЛЕСКЕН КӘСІПОРНЫНЫҢ АСТАНА ҚАЛАСЫНДАҒЫ №1 ФИЛИАЛЫ",
+            "bin": "161141016425"
+        },
+        {
+            "networkName": "Аян",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ЛЮДМИЛА-KZ\" В Г.АЛМАТЫ",
+            "bin": "181141032916"
+        },
+        {
+            "networkName": "Аян",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ЛЮДМИЛА-KZ\" В ГОРОДЕ АСТАНА",
+            "bin": "180941001477"
+        },
+        {
+            "networkName": "Аян",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АЯН\"",
+            "bin": "970740001955"
+        },
+        {
+            "networkName": "Аян",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АЯН\"",
+            "bin": "991240000320"
+        },
+        {
+            "networkName": "Аян",
+            "legalName": "ЖАМБЫЛСКИЙ ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АЯН\"",
+            "bin": "030241000532"
+        },
+        {
+            "networkName": "Аян",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ФИРМА \"АЯН\"",
+            "bin": "940640000165"
+        },
+        {
+            "networkName": "Аян",
+            "legalName": "ТОО «Людмила KZ»",
+            "bin": "070640009532"
+        },
+        {
+            "networkName": "Greenwich, Рубиком",
+            "legalName": "ТОО ПКФ Атриум",
+            "bin": "060340005616"
+        },
+        {
+            "networkName": "Астыкжан",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ЦЕНТР ТОРГОВЛИ \"АСТЫКЖАН\"",
+            "bin": "930740000117"
+        },
+        {
+            "networkName": "Астыкжан",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АСТЫКЖАН-КОСТАНАЙ\"",
+            "bin": "071140003022"
+        },
+        {
+            "networkName": "Esentay gourmet",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ESTAU COMPANY\" (ЕСТАУ КОМПАНИ)",
+            "bin": "040740007544"
+        },
+        {
+            "networkName": "Кенмарт",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"КЕНМАРТ\"",
+            "bin": "150440033159"
+        },
+        {
+            "networkName": "Асторг",
+            "legalName": "\"ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \\\"АСТОРГ\\\"\"",
+            "bin": "060740008803"
+        },
+        {
+            "networkName": "Orange",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ORANGE TRADE\"",
+            "bin": "190640002272"
+        },
+        {
+            "networkName": "Froot",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"FROOT БИЗНЕС\"",
+            "bin": "190240005212"
+        },
+        {
+            "networkName": "Белорусские продукты №1",
+            "legalName": "Товарищество с ограниченной ответственностью \"Черный Принц & Черный Граф\"",
+            "bin": "190840008645"
+        },
+        {
+            "networkName": "Корзина",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТЕГЕНЕ\"",
+            "bin": "121140022030"
+        },
+        {
+            "networkName": "ВКУСНАЯ КОРЗИНКА",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ВКУСНАЯ КОРЗИНКА\"\n",
+            "bin": "140340009973"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"БЭСТ ПРАЙС КАЗАХСТАН\"",
+            "bin": "190640012438"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 10\"",
+            "bin": "180440014059"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 11\"",
+            "bin": "180840023314"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 13\"",
+            "bin": "180940008697"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 14\"",
+            "bin": "181140033512"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 15\"",
+            "bin": "181140033522"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 16\"",
+            "bin": "181140033552"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 17\"",
+            "bin": "201240012946"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 18\"",
+            "bin": "201240018221"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 20\"",
+            "bin": "210140009268"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 21\"",
+            "bin": "210440003031"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 23\"",
+            "bin": "210440027158"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 24\"",
+            "bin": "210440028295"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 4\"",
+            "bin": "160740010462"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 5\"",
+            "bin": "160740010519"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 6\"",
+            "bin": "171140007849"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 7\"",
+            "bin": "171140008768"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 9\"",
+            "bin": "180440013942"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 12\"",
+            "bin": "180940004139"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 8\"",
+            "bin": "180440013863"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 1\"",
+            "bin": "160640013460"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 3\"",
+            "bin": "160740010437"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 25\"",
+            "bin": "210440027366"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 22\"",
+            "bin": "210440003170"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПАВЛОДАР МАГ 19\"",
+            "bin": "210140006878"
+        },
+        {
+            "networkName": "Fix Price",
+            "legalName": "ТОО \"ФИКС ПРАЙС КАЗАХСТАН\"",
+            "bin": "190540029796"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТОРГСЕРВИС КЗ-4\"",
+            "bin": "170440031824"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "\"СВЕТОФОР\" ЖАУАПКЕРШІЛІГІ ШЕКТЕУЛІ СЕРІКТЕСТІГІ",
+            "bin": "960240005115"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"АЗИЯРИТЕЙЛЛОГИСТИК\"",
+            "bin": "200640030887"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТОРГСЕРВИС КЗ-1\"",
+            "bin": "151040023020"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТОРГСЕРВИС КЗ-2\"",
+            "bin": "151040024099"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТОРГСЕРВИС КЗ-3\"",
+            "bin": "151040025473"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ИП КЕНЖЕШ НАТАЛЬЯ ВИКТОРОВНА",
+            "bin": "770405400106"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ИП ЛИЗЬКО НИКОЛАЙ ВАЛЕРЬЕВИЧ",
+            "bin": "780211301600"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ИП ЖАКПАРОВА ЕЛЕНА СЕРГЕЕВНА",
+            "bin": "940709451308"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ИП КОСТЮЧЕНКО ДЕНИС ВЛАДИМИРОВИЧ",
+            "bin": "930319350996"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ИП САИДОВ МАХМАДСАЛИМ РАХИМДЖОНОВИЧ",
+            "bin": "930915000376"
+        },
+        {
+            "networkName": "Светофор",
+            "legalName": "ИП БОЧЕНИНА МАРГАРИТА ВЛАДИМИРОВНА",
+            "bin": "930406450975"
+        },
+        {
+            "networkName": "Доброцен",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"НИЗКОЦЕН\"",
+            "bin": "150940009124"
+        },
+        {
+            "networkName": "Доброцен",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПВ-АЗИЯ\"\n",
+            "bin": "201040024605"
+        },
+        {
+            "networkName": "Гастроном",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПИЩЕТОРГ\"",
+            "bin": "100940010486"
+        },
+        {
+            "networkName": "Столичный, юбилейный",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ДАСТАРХАН-ТОЙ\"",
+            "bin": "050940002304"
+        },
+        {
+            "networkName": "Столичный, юбилейный",
+            "legalName": "ФИЛИАЛ \"САУДА\" ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ДАСТАРХАН-ТОЙ\" В Г.АЛМАТЫ",
+            "bin": "191041018334"
+        },
+        {
+            "networkName": "Столичный, юбилейный",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ДАСТАРХАН\"",
+            "bin": "971140001561"
+        },
+        {
+            "networkName": "Столичный, юбилейный",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ФИРМА \"ДАСТАРХАН\"",
+            "bin": "950740001169"
+        },
+        {
+            "networkName": "Тоймарт",
+            "legalName": "Товарищество с ограниченной ответственностью \"TOIMART\"",
+            "bin": "990840000082"
+        },
+        {
+            "networkName": "Duty Free",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"BERKUT DF\"",
+            "bin": "181240011941"
+        },
+        {
+            "networkName": "Galmart",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"SURAYA\"",
+            "bin": "170140015540"
+        },
+        {
+            "networkName": "Galmart",
+            "legalName": "\"ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \\\"ЖЕТІ АСПАН\\\"\"",
+            "bin": "100840010829"
+        },
+        {
+            "networkName": "Galmart",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ЖЕТІ АСПАН - СЕРВИС\"\n",
+            "bin": "121040010003"
+        },
+        {
+            "networkName": "Galmart",
+            "legalName": "Товарищество с ограниченной ответственностью \"Orda-mart\"\n",
+            "bin": "160240007749"
+        },
+        {
+            "networkName": "Идеал Лидер",
+            "legalName": "ТОО \"ИДЕАЛ МАРКЕТ\"",
+            "bin": "050840002162"
+        },
+        {
+            "networkName": "Идеал Лидер",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ИДЕАЛ МАРКЕТ\"",
+            "bin": "190541001850"
+        },
+        {
+            "networkName": "Идеал Лидер",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ИДЕАЛ ТРЕЙД МАРКЕТ\"\n",
+            "bin": "220840036565"
+        },
+        {
+            "networkName": "Nan mart",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"NAN MART\"\n",
+            "bin": "211240011464"
+        },
+        {
+            "networkName": "Улы Дала",
+            "legalName": "\"ULY DALA (УЛЫ ДАЛА)\" ЖАУАПКЕРШІЛІГІ ШЕКТЕУЛІ СЕРІКТЕСТІГІ\n",
+            "bin": "180940012764"
+        },
+        {
+            "networkName": "My Mart",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"KEY ONE\"\n",
+            "bin": "161140014868"
+        },
+        {
+            "networkName": "My Mart",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"KEY TWO\"\n",
+            "bin": "180240000775"
+        },
+        {
+            "networkName": "Омар маркет",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ОМАР МАРКЕТ\"\n",
+            "bin": "200640022033"
+        },
+        {
+            "networkName": "АЛТЫНДАР",
+            "legalName": "Товарищество с ограниченной ответственностью \"Sauda Market Ltd\"\n",
+            "bin": "230240034860"
+        },
+        {
+            "networkName": "АЛТЫНДАР",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"\"АЛТЫНДАР\"\"\n",
+            "bin": "180140000375"
+        },
+        {
+            "networkName": "ALL MART",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"\"ALL MART VOSTOK\"\"\n",
+            "bin": "200140006668"
+        },
+        {
+            "networkName": "Семейный",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТАТКРАФТ-ИНВЕСТ\"\n",
+            "bin": "040140006495"
+        },
+        {
+            "networkName": "Семейный",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТАТКРАФТ-ФУД\"\n",
+            "bin": "160440006827"
+        },
+        {
+            "networkName": "A2 Супермаркеты",
+            "legalName": "\"ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \\\"TRENDING RETAIL GROUP\\\"\"\n",
+            "bin": "120940001748"
+        },
+        {
+            "networkName": "Супермаркет Кристалл",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"КОКШЕ-ТРЕЙД\"\n",
+            "bin": "011140006185"
+        },
+        {
+            "networkName": "Good Market Алтын Food",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ADM GROUP COMPANY\"\n",
+            "bin": "180840010249"
+        },
+        {
+            "networkName": "Фиркан",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"\"K A A N\"\"\n",
+            "bin": "200840029820"
+        },
+        {
+            "networkName": "Фиркан",
+            "legalName": "Карипова Ольга Владимировна\n",
+            "bin": "810222400627"
+        },
+        {
+            "networkName": "Фиркан",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ФИРКАН\"",
+            "bin": "980140002795"
+        },
+        {
+            "networkName": "Ваш",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТЕХНОСНАБ ПВ\"\n",
+            "bin": "151140012772"
+        },
+        {
+            "networkName": "RAUZET САУДА",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"RAUZET САУДА\"\n",
+            "bin": "141040013993"
+        },
+        {
+            "networkName": "СОЛНЕЧНЫЙ",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СУПЕРМАРКЕТ \"СОЛНЕЧНЫЙ\"\n",
+            "bin": "120440002897"
+        },
+        {
+            "networkName": "Family market",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"FAMILY MARKET COMPANY\"\n",
+            "bin": "190540018979"
+        },
+        {
+            "networkName": "Дина",
+            "legalName": "ТОО \"Лучшее решение\"",
+            "bin": "171141006182"
+        },
+        {
+            "networkName": "Дина",
+            "legalName": "ТОО «Dina market»",
+            "bin": "100840011827"
+        },
+        {
+            "networkName": "OSTEN “Norma”",
+            "legalName": "\"ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"OSTEN\"\n",
+            "bin": "041140010565"
+        },
+        {
+            "networkName": "Aimer супермаркет",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"FOOD MARKET 1\"\n",
+            "bin": "170740028206"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП БОЛАТ МҰХАМЕДЖАН ЖҰМАҒАЛИҰЛЫ",
+            "bin": "000709550132"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП ЕСМАҒАМБЕТОВ ШЫНБОЛАТ ШЫНЖЫРБЕКҰЛЫ",
+            "bin": "951018350252"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП НӘБІЛОВ МЕЙРАМБЕК АСЫЛБЕКҰЛЫ",
+            "bin": "010609550923"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП ЕРЕЖЕПОВ ИСЛАМБЕК ИСЕНБАЙУЛЫ",
+            "bin": "950715351108"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП АКТОРЕЕВА КЕНЖЕГУЛЬ БЕГИМБАЕВНА",
+            "bin": "870811402903"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП КУТТИМУРАДОВА ДЖУМАБИБИ ИЗИМОВНА",
+            "bin": "590513402904"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП ЖУМАБАЕВ АЛТЫНБЕК МАРАТУЛЫ",
+            "bin": "971129350389"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП ТЕҢЕЛБАЙ САМАТ СӘБИТҰЛЫ",
+            "bin": "900921301638"
+        },
+        {
+            "networkName": "Дана Маркет",
+            "legalName": "ИП КЫЯКБАЕВ ИСЛАМ ЖОЛДАСОВИЧ",
+            "bin": "020221551012"
+        },
+        {
+            "networkName": "Zip Zip",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"FAST MEALS AND GOODS\"",
+            "bin": "180240023169"
+        },
+        {
+            "networkName": "Апрель",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"APRIL GROUP\"",
+            "bin": "180640024291"
+        },
+        {
+            "networkName": "EcoShop",
+            "legalName": "ТОО \"ECO SHOP\"",
+            "bin": "190840025289"
+        },
+        {
+            "networkName": "АТАБА",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'АТАБА УРАЛЬСК'",
+            "bin": "140440028686"
+        },
+        {
+            "networkName": "АТАБА",
+            "legalName": "Ф-Л 'ФИЛИАЛ ТОО 'АТАБА' В МАКАТСКОМ РАЙОНЕ, АТЫРАУСКОЙ ОБЛАСТИ'",
+            "bin": "051041010182"
+        },
+        {
+            "networkName": "БЕККЕР и К",
+            "legalName": "ТОО \"БЕККЕР и К\"",
+            "bin": "910240000155"
+        },
+        {
+            "networkName": "Colibri",
+            "legalName": "ТОО COLIBRI GROUP",
+            "bin": "160540026677"
+        },
+        {
+            "networkName": "Colibri",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"FOOD BEVERAGE TRADING\"",
+            "bin": "130340015153"
+        },
+        {
+            "networkName": "АРБУЗ ",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \" АРБУЗ ФУД СЕРВИС\"",
+            "bin": "160840004171"
+        },
+        {
+            "networkName": "ВКУСВИЛЛ",
+            "legalName": "ТОО \"ВКУСВИЛЛ КАЗАХСТАН\"",
+            "bin": "231040027308"
+        },
+        {
+            "networkName": "Sulpak",
+            "legalName": "ЗАО \"Сулпак Электроникс\"",
+            "bin": "021040013087"
+        },
+        {
+            "networkName": "Sulpak",
+            "legalName": "ТОО \"Sulpak Electronics Companу\"",
+            "bin": "050340018903"
+        },
+        {
+            "networkName": "Alser",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ALSER SYSTEM'",
+            "bin": "020340003098"
+        },
+        {
+            "networkName": "TECHNODOM",
+            "legalName": "АО 'TECHNODOM OPERATOR'(ТЕХНОДОМ ОПЕРАТОР)",
+            "bin": "121140008045"
+        },
+        {
+            "networkName": "TECHNODOM",
+            "legalName": "ТОО 'КОМПАНИЯ ТЕХНОДОМ ГРУПП'",
+            "bin": "040240005064"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ТОО 'ПЛАНЕТА ЭЛЕКТРОНИКИ'",
+            "bin": "000840001452"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ПЛАНЕТА ЭЛЕКТРОНИКИ' В Г. АКТОБЕ",
+            "bin": "030941007466"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ПЛАНЕТА ЭЛЕКТРОНИКИ' В ГОРОДЕ АСТАНЕ",
+            "bin": "050841005599"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ПЛАНЕТА ЭЛЕКТРОНИКИ' В ГОРОДЕ АТЫРАУ",
+            "bin": "030641006734"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ПЛАНЕТА ЭЛЕКТРОНИКИ' В ГОРОДЕ КОСТАНАЙ",
+            "bin": "030741004961"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ПЛАНЕТА ЭЛЕКТРОНИКИ' В ГОРОДЕ ОРАЛ",
+            "bin": "030641008691"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ПЛАНЕТА ЭЛЕКТРОНИКИ' В ГОРОДЕ ПАВЛОДАРЕ",
+            "bin": "030841007412"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ПЛАНЕТА ЭЛЕКТРОНИКИ' В ГОРОДЕ УСТЬ-КАМЕНОГОРСК",
+            "bin": "120841017002"
+        },
+        {
+            "networkName": "Планета электроники",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'ПЛАНЕТА ЭЛЕКТРОНИКИ' В ГОРОДЕ ШЫМКЕНТ'",
+            "bin": "030741005978"
+        },
+        {
+            "networkName": "Эврика",
+            "legalName": "ТОО 'EVRIKA HOME COMFORT'",
+            "bin": "140540003061"
+        },
+        {
+            "networkName": "Эврика",
+            "legalName": "АЛМАТИНСКИЙ Ф-Л ТОО 'КОМПАНИЯ ЭВРИКА'",
+            "bin": "120641011234"
+        },
+        {
+            "networkName": "Эврика",
+            "legalName": "АСТАНИНСКИЙ ФИЛИАЛ ТОО 'КОМПАНИЯ ЭВРИКА'",
+            "bin": "170241029152"
+        },
+        {
+            "networkName": "Эврика",
+            "legalName": "ТАРАЗСКИЙ Ф-Л ТОО 'КОМПАНИЯ ЭВРИКА'",
+            "bin": "131241009381"
+        },
+        {
+            "networkName": "Эврика",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'КОМПАНИЯ ЭВРИКА'",
+            "bin": "120140015907"
+        },
+        {
+            "networkName": "ДНС",
+            "legalName": "ТОО 'ДНС КАЗАХСТАН'",
+            "bin": "210140004940"
+        },
+        {
+            "networkName": "Белый ветер",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'БЕЛЫЙ ВЕТЕР ИМ'",
+            "bin": "180440029245"
+        },
+        {
+            "networkName": "Белый ветер",
+            "legalName": "ТОО 'БЕЛЫЙ ВЕТЕР KZ'",
+            "bin": "110340018293"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'МЕЧТА МАРКЕТ'",
+            "bin": "121040002914"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "Ф-Л ТОО 'МЕЧТА МАРКЕТ' В Г УРАЛЬСК",
+            "bin": "121141007746"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "Ф-Л ТОО 'МЕЧТА МАРКЕТ' В Г. АКТАУ",
+            "bin": "131141005395"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "Ф-Л ТОО 'МЕЧТА МАРКЕТ' В Г. КАРАГАНДА",
+            "bin": "121141016636"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "Ф-Л ТОО 'МЕЧТА МАРКЕТ' В Г. КОКШЕТАУ",
+            "bin": "121141002765"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "Ф-Л ТОО 'МЕЧТА МАРКЕТ' В ГОРОДЕ АСТАНА",
+            "bin": "180541032792"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "Ф-Л ТОО 'МЕЧТА МАРКЕТ' В ГОРОДЕ ШЫМКЕНТ",
+            "bin": "121141008289"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОВАРИЩЕСТВА С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'МЕЧТА МАРКЕТ' В ГОРОДЕ АЛМАТЫ",
+            "bin": "121141014608"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОО 'МЕЧТА МАРКЕТ' В Г. СЕМЕЙ",
+            "bin": "121141002785"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОО 'МЕЧТА МАРКЕТ' В Г.КОСТАНАЙ",
+            "bin": "121141003179"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОО 'МЕЧТА МАРКЕТ' В Г.ПАВЛОДАР",
+            "bin": "121141001915"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОО 'МЕЧТА МАРКЕТ' В Г.ТАРАЗ",
+            "bin": "190241020053"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОО 'МЕЧТА МАРКЕТ' В ГОРОДЕ АКТОБЕ",
+            "bin": "161041002808"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОО 'МЕЧТА МАРКЕТ' В ГОРОДЕ КЫЗЫЛОРДА",
+            "bin": "160741018094"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОО 'МЕЧТА МАРКЕТ' В ГОРОДЕ ПЕТРОПАВЛОВСК",
+            "bin": "121141002478"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФИЛИАЛ ТОО 'МЕЧТА МАРКЕТ' В ГОРОДЕ УСТЬ-КАМЕНОГОРСК",
+            "bin": "130241006959"
+        },
+        {
+            "networkName": "Мечта",
+            "legalName": "ФЛ ТОО 'МЕЧТА МАРКЕТ' В ГОРОДЕ АТЫРАУ",
+            "bin": "161141008870"
+        },
+        {
+            "networkName": "Алси",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'АЛСИ'",
+            "bin": "040440005547"
+        },
+        {
+            "networkName": "Алси",
+            "legalName": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'АЛСИ-АЗИЯ-СИСТЕМ'",
+            "bin": "171140025292"
+        },
+        {
+            "networkName": "1.KZ",
+            "legalName": "ТОО '001KZ (001КЗ)'",
+            "bin": "180240011354"
+        },
+        {
+            "networkName": "ТЕХНОGRAD",
+            "legalName": "ТОО \"ТЕХНОGRAD\"",
+            "bin": "110440012298"
+        }
+    ]
+}

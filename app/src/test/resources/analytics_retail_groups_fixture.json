@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "groups": [
+    {
+      "id": "retail_food",
+      "coicopRollupPrefixes": ["01.1"],
+      "names": { "ru": "Еда", "kk": "Тағам", "en": "Food" }
+    },
+    {
+      "id": "retail_drinks",
+      "coicopRollupPrefixes": ["01.2"],
+      "names": { "ru": "Безалкогольные напитки", "kk": "Алкогольсіз сусындар", "en": "Soft drinks" }
+    },
+    {
+      "id": "retail_alcohol_tobacco",
+      "coicopRollupPrefixes": ["02.1", "02.2", "02.3"],
+      "names": { "ru": "Алкоголь и табак", "kk": "Алкоголь және темекі", "en": "Alcohol & tobacco" }
+    },
+    {
+      "id": "retail_clothing",
+      "coicopRollupPrefixes": ["03.1", "03.2"],
+      "names": { "ru": "Одежда и обувь", "kk": "Киім және аяқ киім", "en": "Clothing & shoes" }
+    },
+    {
+      "id": "retail_housing_utilities",
+      "coicopRollupPrefixes": ["04.1", "04.2", "04.3", "04.4", "04.5"],
+      "names": { "ru": "Жильё и коммунальные", "kk": "Тұрғын үй және коммуналдық", "en": "Housing & utilities" }
+    },
+    {
+      "id": "retail_household",
+      "coicopRollupPrefixes": ["05.1", "05.2", "05.3", "05.4", "05.6"],
+      "names": { "ru": "Быт и химия", "kk": "Тұрмыс және химия", "en": "Household & cleaning" }
+    },
+    {
+      "id": "retail_diy_garden",
+      "coicopRollupPrefixes": ["05.5"],
+      "names": { "ru": "Стройка, сад, инструмент", "kk": "Құрылыс, бақ, құрал", "en": "DIY, garden & tools" }
+    },
+    {
+      "id": "retail_health",
+      "coicopRollupPrefixes": ["06.1", "06.2", "06.3"],
+      "names": { "ru": "Здоровье", "kk": "Денсаулық", "en": "Health" }
+    },
+    {
+      "id": "retail_transport_goods",
+      "coicopRollupPrefixes": ["07.1", "07.3"],
+      "names": { "ru": "Транспорт (товары)", "kk": "Көлік (тауарлар)", "en": "Transport (goods)" }
+    },
+    {
+      "id": "retail_fuel",
+      "coicopRollupPrefixes": ["07.2"],
+      "names": { "ru": "ГСМ и эксплуатация авто", "kk": "Жанармай және көлік", "en": "Fuel & motor" }
+    },
+    {
+      "id": "retail_communication",
+      "coicopRollupPrefixes": ["08.1", "08.2", "08.3"],
+      "names": { "ru": "Связь", "kk": "Байланыс", "en": "Communication" }
+    },
+    {
+      "id": "retail_recreation",
+      "coicopRollupPrefixes": ["09.1", "09.2", "09.3", "09.4"],
+      "names": { "ru": "Досуг и культура", "kk": "Демалыс пен мәдениет", "en": "Recreation" }
+    },
+    {
+      "id": "retail_education",
+      "coicopRollupPrefixes": ["10.1"],
+      "names": { "ru": "Образование", "kk": "Білім", "en": "Education" }
+    },
+    {
+      "id": "retail_hotels_restaurants",
+      "coicopRollupPrefixes": ["11.1", "11.2"],
+      "names": { "ru": "Кафе, рестораны, отели", "kk": "Кафе, мейрамханалар", "en": "Cafes & hotels" }
+    },
+    {
+      "id": "retail_misc_services",
+      "coicopRollupPrefixes": ["12.1", "12.2", "12.3", "12.4", "12.5", "12.6", "12.7"],
+      "names": { "ru": "Прочие товары и услуги", "kk": "Басқа тауарлар мен қызметтер", "en": "Miscellaneous" }
+    },
+    {
+      "id": "retail_services",
+      "coicopRollupPrefixes": [],
+      "names": { "ru": "Услуги", "kk": "Қызметтер", "en": "Services" }
+    },
+    {
+      "id": "retail_adjustments",
+      "coicopRollupPrefixes": [],
+      "names": { "ru": "Коррекции и возвраты", "kk": "Түзетулер мен қайтарулар", "en": "Adjustments & returns" }
+    },
+    {
+      "id": "retail_uncategorized",
+      "coicopRollupPrefixes": ["00"],
+      "names": { "ru": "Без категории", "kk": "Санатсыз", "en": "Uncategorized" }
+    }
+  ]
+}

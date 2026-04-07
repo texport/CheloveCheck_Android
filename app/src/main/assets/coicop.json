@@ -1,0 +1,2906 @@
+{
+  "version": "coicop-1999",
+  "categories": [
+    {
+      "id": "00",
+      "level": 0,
+      "parentId": null,
+      "name": {
+        "en": "Uncategorized",
+        "ru": "Без категории",
+        "kk": "Санатсыз"
+      },
+      "aliases": {
+        "en": [
+          "ketchup",
+          "sauce",
+          "sauces",
+          "condiment",
+          "mayonnaise",
+          "mustard",
+          "plastic bag",
+          "t-shirt bag",
+          "carrier bag"
+        ],
+        "ru": [
+          "кетчуп",
+          "кетчап",
+          "соус",
+          "соусы",
+          "майонез",
+          "горчица",
+          "пакет майка",
+          "пакет с ручками",
+          "одноразовая упаковка"
+        ],
+        "kk": [
+          "кетчуп",
+          "соус",
+          "тұздық",
+          "майонез",
+          "қыша",
+          "пакет",
+          "полиэтилен пакет"
+        ]
+      }
+    },
+    {
+      "id": "01",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Food and non-alcoholic beverages",
+        "ru": "Продукты питания и безалкогольные напитки",
+        "kk": "Азық-түлік және алкогольсіз сусындар"
+      },
+      "aliases": {
+        "en": [
+          "shawarma",
+          "shaurma",
+          "doner",
+          "doner kebab",
+          "kebab",
+          "burger",
+          "fast food",
+          "wrap"
+        ],
+        "ru": [
+          "шаурма",
+          "шаверма",
+          "донер",
+          "донер-кебаб",
+          "кебаб",
+          "бургер",
+          "фастфуд",
+          "лаваш",
+          "ролл"
+        ],
+        "kk": [
+          "шаурма",
+          "шаверма",
+          "донер",
+          "донер-кебаб",
+          "кебаб",
+          "бургер",
+          "фастфуд",
+          "лаваш",
+          "орам"
+        ]
+      }
+    },
+    {
+      "id": "02",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Alcohol and tobacco",
+        "ru": "Алкоголь и табак",
+        "kk": "Алкоголь және темекі"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Clothing and footwear",
+        "ru": "Одежда и обувь",
+        "kk": "Киім және аяқ киім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Housing, water, electricity, gas and other fuels",
+        "ru": "Жильё, вода, электроэнергия, газ и другие виды топлива",
+        "kk": "Тұрғын үй, су, электр, газ және басқа отын түрлері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Furnishings, household equipment and routine household maintenance",
+        "ru": "Мебель, домашнее оборудование и обслуживание дома",
+        "kk": "Жиһаз, үй жабдықтары және үй шаруашылығын күтіп-ұстау"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Health",
+        "ru": "Здоровье",
+        "kk": "Денсаулық"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Transport",
+        "ru": "Транспорт",
+        "kk": "Көлік"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "08",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Communication",
+        "ru": "Связь",
+        "kk": "Байланыс"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Recreation and culture",
+        "ru": "Отдых и культура",
+        "kk": "Демалыс және мәдениет"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "10",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Education",
+        "ru": "Образование",
+        "kk": "Білім беру"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "11",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Restaurants and hotels",
+        "ru": "Рестораны и гостиницы",
+        "kk": "Мейрамханалар және қонақ үйлер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12",
+      "level": 1,
+      "parentId": null,
+      "name": {
+        "en": "Miscellaneous goods and services",
+        "ru": "Разные товары и услуги",
+        "kk": "Әртүрлі тауарлар мен қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "01.1",
+      "level": 2,
+      "parentId": "01",
+      "name": {
+        "en": "Food",
+        "ru": "Продукты питания",
+        "kk": "Азық-түлік"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "01.2",
+      "level": 2,
+      "parentId": "01",
+      "name": {
+        "en": "Non-alcoholic beverages",
+        "ru": "Безалкогольные напитки",
+        "kk": "Алкогольсіз сусындар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "02.1",
+      "level": 2,
+      "parentId": "02",
+      "name": {
+        "en": "Alcoholic beverages",
+        "ru": "Алкогольные напитки",
+        "kk": "Алкогольді сусындар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "02.2",
+      "level": 2,
+      "parentId": "02",
+      "name": {
+        "en": "Tobacco",
+        "ru": "Табак",
+        "kk": "Темекі"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "02.3",
+      "level": 2,
+      "parentId": "02",
+      "name": {
+        "en": "Other (alcohol & tobacco group)",
+        "ru": "Прочее (алкоголь и табак)",
+        "kk": "Басқа (алкоголь және темекі)"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03.1",
+      "level": 2,
+      "parentId": "03",
+      "name": {
+        "en": "Clothing",
+        "ru": "Одежда",
+        "kk": "Киім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03.2",
+      "level": 2,
+      "parentId": "03",
+      "name": {
+        "en": "Footwear",
+        "ru": "Обувь",
+        "kk": "Аяқ киім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.1",
+      "level": 2,
+      "parentId": "04",
+      "name": {
+        "en": "Actual rentals for housing",
+        "ru": "Фактическая аренда жилья",
+        "kk": "Тұрғын үйді жалдау"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.2",
+      "level": 2,
+      "parentId": "04",
+      "name": {
+        "en": "Imputed rentals for housing",
+        "ru": "Условная аренда жилья",
+        "kk": "Есептік тұрғын үй ақысы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.3",
+      "level": 2,
+      "parentId": "04",
+      "name": {
+        "en": "Maintenance and repair of the dwelling",
+        "ru": "Содержание и ремонт жилья",
+        "kk": "Тұрғын үйді күтіп ұстау және жөндеу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.4",
+      "level": 2,
+      "parentId": "04",
+      "name": {
+        "en": "Water supply and miscellaneous services relating to the dwelling",
+        "ru": "Водоснабжение и прочие услуги по жилью",
+        "kk": "Сумен жабдықтау және тұрғын үй қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.5",
+      "level": 2,
+      "parentId": "04",
+      "name": {
+        "en": "Electricity, gas and other fuels",
+        "ru": "Электроэнергия, газ и другие виды топлива",
+        "kk": "Электр, газ және басқа отын"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.1",
+      "level": 2,
+      "parentId": "05",
+      "name": {
+        "en": "Furniture, furnishings, carpets and other floor coverings",
+        "ru": "Мебель, ковры и покрытия для пола",
+        "kk": "Жиһаз, кілемдер және еден жабдықтары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.2",
+      "level": 2,
+      "parentId": "05",
+      "name": {
+        "en": "Household textiles",
+        "ru": "Текстиль для дома",
+        "kk": "Үйге арналған тоқыма"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.3",
+      "level": 2,
+      "parentId": "05",
+      "name": {
+        "en": "Household appliances",
+        "ru": "Бытовая техника",
+        "kk": "Тұрмыстық техника"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.4",
+      "level": 2,
+      "parentId": "05",
+      "name": {
+        "en": "Glassware, tableware and household utensils",
+        "ru": "Посуда и кухонные принадлежности",
+        "kk": "Ыдыс-аяқ және ас үй керек-жарағы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.5",
+      "level": 2,
+      "parentId": "05",
+      "name": {
+        "en": "Tools and equipment for house and garden",
+        "ru": "Инструменты и оборудование для дома и сада",
+        "kk": "Үй және бақ құралдары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.6",
+      "level": 2,
+      "parentId": "05",
+      "name": {
+        "en": "Goods and services for routine household maintenance",
+        "ru": "Товары и услуги по уходу за домом",
+        "kk": "Үй күтіміне арналған тауарлар мен қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.1",
+      "level": 2,
+      "parentId": "06",
+      "name": {
+        "en": "Medical products, appliances and equipment",
+        "ru": "Медицинские товары и оборудование",
+        "kk": "Медициналық тауарлар мен жабдық"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.2",
+      "level": 2,
+      "parentId": "06",
+      "name": {
+        "en": "Out-patient services",
+        "ru": "Амбулаторные услуги",
+        "kk": "Амбулаториялық қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.3",
+      "level": 2,
+      "parentId": "06",
+      "name": {
+        "en": "Hospital services",
+        "ru": "Больничные услуги",
+        "kk": "Аурухана қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.1",
+      "level": 2,
+      "parentId": "07",
+      "name": {
+        "en": "Purchase of vehicles",
+        "ru": "Покупка транспортных средств",
+        "kk": "Көлік сатып алу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.2",
+      "level": 2,
+      "parentId": "07",
+      "name": {
+        "en": "Operation of personal transport equipment",
+        "ru": "Эксплуатация личного транспорта",
+        "kk": "Жеке көлікті пайдалану"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.3",
+      "level": 2,
+      "parentId": "07",
+      "name": {
+        "en": "Transport services",
+        "ru": "Транспортные услуги",
+        "kk": "Көлік қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "08.1",
+      "level": 2,
+      "parentId": "08",
+      "name": {
+        "en": "Postal services",
+        "ru": "Почтовые услуги",
+        "kk": "Пошта қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "08.2",
+      "level": 2,
+      "parentId": "08",
+      "name": {
+        "en": "Telephone and telefax equipment",
+        "ru": "Телефонное оборудование",
+        "kk": "Телефон жабдығы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "08.3",
+      "level": 2,
+      "parentId": "08",
+      "name": {
+        "en": "Telephone and telefax services",
+        "ru": "Телефонные услуги",
+        "kk": "Телефон қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.1",
+      "level": 2,
+      "parentId": "09",
+      "name": {
+        "en": "Audio-visual, photographic and information processing equipment",
+        "ru": "Аудио-видео, фото и ИТ оборудование",
+        "kk": "Аудио-видео, фото және ІТ жабдық"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.2",
+      "level": 2,
+      "parentId": "09",
+      "name": {
+        "en": "Other major durables for recreation and culture",
+        "ru": "Прочие товары длительного пользования для отдыха",
+        "kk": "Демалысқа арналған ұзақ мерзімді тауарлар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.3",
+      "level": 2,
+      "parentId": "09",
+      "name": {
+        "en": "Other recreational items and equipment, gardens and pets",
+        "ru": "Товары для отдыха, сады и питомцы",
+        "kk": "Демалыс тауарлары, бақ және үй жануарлары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.4",
+      "level": 2,
+      "parentId": "09",
+      "name": {
+        "en": "Recreational and cultural services",
+        "ru": "Услуги в сфере отдыха и культуры",
+        "kk": "Демалыс және мәдениет қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.5",
+      "level": 2,
+      "parentId": "09",
+      "name": {
+        "en": "Newspapers, books and stationery",
+        "ru": "Газеты, книги и канцелярия",
+        "kk": "Газет, кітап және кеңсе тауарлары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.6",
+      "level": 2,
+      "parentId": "09",
+      "name": {
+        "en": "Package holidays",
+        "ru": "Пакетные туры",
+        "kk": "Турпакеттер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "10.1",
+      "level": 2,
+      "parentId": "10",
+      "name": {
+        "en": "Education",
+        "ru": "Образование",
+        "kk": "Білім беру"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "11.1",
+      "level": 2,
+      "parentId": "11",
+      "name": {
+        "en": "Catering services",
+        "ru": "Услуги питания",
+        "kk": "Тамақтану қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "11.2",
+      "level": 2,
+      "parentId": "11",
+      "name": {
+        "en": "Accommodation services",
+        "ru": "Услуги проживания",
+        "kk": "Тұру қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.1",
+      "level": 2,
+      "parentId": "12",
+      "name": {
+        "en": "Personal care",
+        "ru": "Личный уход",
+        "kk": "Жеке күтім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.2",
+      "level": 2,
+      "parentId": "12",
+      "name": {
+        "en": "Prostitution",
+        "ru": "Проституция",
+        "kk": "Жезөкшелік"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.3",
+      "level": 2,
+      "parentId": "12",
+      "name": {
+        "en": "Personal effects n.e.c.",
+        "ru": "Личные товары прочие",
+        "kk": "Жеке тауарлар (өзге)"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.4",
+      "level": 2,
+      "parentId": "12",
+      "name": {
+        "en": "Social protection",
+        "ru": "Социальная защита",
+        "kk": "Әлеуметтік қорғау"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.5",
+      "level": 2,
+      "parentId": "12",
+      "name": {
+        "en": "Insurance",
+        "ru": "Страхование",
+        "kk": "Сақтандыру"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.6",
+      "level": 2,
+      "parentId": "12",
+      "name": {
+        "en": "Financial services n.e.c.",
+        "ru": "Финансовые услуги прочие",
+        "kk": "Қаржылық қызметтер (өзге)"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.7",
+      "level": 2,
+      "parentId": "12",
+      "name": {
+        "en": "Other services n.e.c.",
+        "ru": "Прочие услуги",
+        "kk": "Басқа қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "01.1.1",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Bread and cereals",
+        "ru": "Хлеб и крупы",
+        "kk": "Нан және жармалар"
+      },
+      "aliases": {
+        "en": [
+          "bread",
+          "baguette",
+          "croissant",
+          "buckwheat",
+          "oat flakes",
+          "rice",
+          "pasta",
+          "spaghetti"
+        ],
+        "ru": [
+          "батон",
+          "багет",
+          "круассан",
+          "гречка",
+          "овсянка",
+          "рис",
+          "макароны",
+          "спагетти",
+          "лапша"
+        ],
+        "kk": [
+          "батон",
+          "багет",
+          "гречка",
+          "жарма",
+          "күріш",
+          "макарон",
+          "спагетти"
+        ]
+      }
+    },
+    {
+      "id": "01.1.2",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Meat",
+        "ru": "Мясо",
+        "kk": "Ет"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "01.1.3",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Fish and seafood",
+        "ru": "Рыба и морепродукты",
+        "kk": "Балық және теңіз өнімдері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "01.1.4",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Milk, cheese and eggs",
+        "ru": "Молоко, сыр и яйца",
+        "kk": "Сүт, ірімшік және жұмыртқа"
+      },
+      "aliases": {
+        "en": [
+          "milk",
+          "cheese",
+          "egg",
+          "eggs",
+          "yogurt",
+          "yoghurt",
+          "cream",
+          "sour cream",
+          "butter",
+          "smetana",
+          "kefir",
+          "cottage cheese"
+        ],
+        "ru": [
+          "сметана",
+          "молоко",
+          "сыр",
+          "яйцо",
+          "яйца",
+          "йогурт",
+          "кефир",
+          "творог",
+          "сливки",
+          "ряженка",
+          "простокваша"
+        ],
+        "kk": [
+          "сүт",
+          "ірімшік",
+          "жұмыртқа",
+          "сметана",
+          "қаймақ",
+          "қатық"
+        ]
+      }
+    },
+    {
+      "id": "01.1.5",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Oils and fats",
+        "ru": "Масла и жиры",
+        "kk": "Майлар мен тоңмайлар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "01.1.6",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Fruit",
+        "ru": "Фрукты",
+        "kk": "Жемістер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "01.1.7",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Vegetables",
+        "ru": "Овощи",
+        "kk": "Көкөністер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "01.1.8",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Sugar, jam, honey, chocolate and confectionery",
+        "ru": "Сахар, джем, мёд, шоколад и кондитерские изделия",
+        "kk": "Қант, джем, бал, шоколад және кондитерлік өнімдер"
+      },
+      "aliases": {
+        "en": [
+          "chocolate",
+          "candy",
+          "candies",
+          "sweets",
+          "confectionery",
+          "cookies",
+          "biscuit",
+          "wafer",
+          "chips",
+          "crisps",
+          "cracker",
+          "jam",
+          "honey",
+          "sugar",
+          "bar",
+          "truffle"
+        ],
+        "ru": [
+          "шоколад",
+          "конфет",
+          "конфеты",
+          "леденец",
+          "леденцы",
+          "печенье",
+          "вафли",
+          "чипсы",
+          "снэк",
+          "сухарики",
+          "сахар",
+          "мёд",
+          "мед",
+          "джем",
+          "вата",
+          "кондитер"
+        ],
+        "kk": [
+          "шоколад",
+          "конфет",
+          "конфеттер",
+          "печенье",
+          "вафли",
+          "чипсы",
+          "қант",
+          "бал",
+          "джем",
+          "вата"
+        ]
+      }
+    },
+    {
+      "id": "01.1.9",
+      "level": 3,
+      "parentId": "01.1",
+      "name": {
+        "en": "Food products n.e.c.",
+        "ru": "Прочие продукты питания",
+        "kk": "Басқа азық-түлік өнімдері"
+      },
+      "aliases": {
+        "en": [
+          "seasoning",
+          "spices",
+          "black pepper",
+          "paprika",
+          "salt",
+          "broth cube"
+        ],
+        "ru": [
+          "приправа",
+          "специи",
+          "перец",
+          "паприка",
+          "соль",
+          "бульонный кубик",
+          "бульонныи кубик"
+        ],
+        "kk": [
+          "дәмдеуіш",
+          "бұрыш",
+          "тұз"
+        ]
+      }
+    },
+    {
+      "id": "01.2.1",
+      "level": 3,
+      "parentId": "01.2",
+      "name": {
+        "en": "Coffee, tea and cocoa",
+        "ru": "Кофе, чай и какао",
+        "kk": "Кофе, шай және какао"
+      },
+      "aliases": {
+        "en": [
+          "coffee",
+          "cappuccino",
+          "latte",
+          "raf coffee",
+          "3 in 1 coffee",
+          "instant coffee",
+          "tea",
+          "tess tea",
+          "piala tea",
+          "masala tea",
+          "cocoa"
+        ],
+        "ru": [
+          "кофе",
+          "капучино",
+          "латте",
+          "раф",
+          "кофе 3в1",
+          "растворимый кофе",
+          "чай",
+          "чай tess",
+          "чай пиала",
+          "чай масала",
+          "какао"
+        ],
+        "kk": [
+          "кофе",
+          "шай",
+          "какао"
+        ]
+      }
+    },
+    {
+      "id": "01.2.2",
+      "level": 3,
+      "parentId": "01.2",
+      "name": {
+        "en": "Mineral waters, soft drinks, fruit and vegetable juices",
+        "ru": "Минеральная вода, безалкогольные напитки, фруктовые и овощные соки",
+        "kk": "Минералды су, алкогольсіз сусындар, жеміс пен көкөніс шырындары"
+      },
+      "aliases": {
+        "en": [
+          "coca cola",
+          "coca-cola",
+          "cola",
+          "fanta",
+          "rich juice",
+          "nectar",
+          "orange soda",
+          "sparkling water",
+          "juice"
+        ],
+        "ru": [
+          "кока кола",
+          "кока-кола",
+          "кола",
+          "фанта",
+          "мин вода",
+          "минеральная вода",
+          "сок",
+          "нектар"
+        ],
+        "kk": [
+          "кока кола",
+          "кола",
+          "фанта",
+          "минералды су",
+          "шырын"
+        ]
+      }
+    },
+    {
+      "id": "02.1.1",
+      "level": 3,
+      "parentId": "02.1",
+      "name": {
+        "en": "Spirits",
+        "ru": "Крепкие алкогольные напитки",
+        "kk": "Күшті алкогольдік сусындар"
+      },
+      "aliases": {
+        "en": [
+          "dishwashing liquid",
+          "laundry detergent",
+          "toilet paper",
+          "paper towel",
+          "cleaner",
+          "bleach",
+          "soap",
+          "wet wipes",
+          "antiseptic spray",
+          "shampoo",
+          "palmolive",
+          "akmasept"
+        ],
+        "ru": [
+          "средство для мытья посуды",
+          "порошок",
+          "гель для стирки",
+          "туалетная бумага",
+          "бумажные полотенца",
+          "чистящее средство",
+          "отбеливатель",
+          "мыло",
+          "влажные салфетки",
+          "антисептик",
+          "спрей для рук",
+          "шампунь",
+          "пальмолив",
+          "акмасепт"
+        ],
+        "kk": [
+          "ыдыс жуу құралы",
+          "кір жуғыш ұнтақ",
+          "дәретхана қағазы",
+          "қағаз сүлгі",
+          "сабын",
+          "ылғалды майлық",
+          "антисептик"
+        ]
+      }
+    },
+    {
+      "id": "02.1.2",
+      "level": 3,
+      "parentId": "02.1",
+      "name": {
+        "en": "Wine",
+        "ru": "Вино",
+        "kk": "Шарап"
+      },
+      "aliases": {
+        "en": [
+          "cat food",
+          "dog food",
+          "pet food",
+          "cat litter",
+          "felix",
+          "probalance",
+          "lapka"
+        ],
+        "ru": [
+          "корм для кошек",
+          "корм для собак",
+          "корм для животных",
+          "наполнитель для кошачьего туалета",
+          "феликс",
+          "пробаланс",
+          "лапка"
+        ],
+        "kk": [
+          "мысық жемі",
+          "ит жемі",
+          "үй жануарына арналған жем",
+          "феликс",
+          "лапка"
+        ]
+      }
+    },
+    {
+      "id": "02.1.3",
+      "level": 3,
+      "parentId": "02.1",
+      "name": {
+        "en": "Beer",
+        "ru": "Пиво",
+        "kk": "Сыра"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "02.2.1",
+      "level": 3,
+      "parentId": "02.2",
+      "name": {
+        "en": "Tobacco",
+        "ru": "Табак",
+        "kk": "Темекі"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "02.3.1",
+      "level": 3,
+      "parentId": "02.3",
+      "name": {
+        "en": "Other goods (group 02)",
+        "ru": "Прочие товары (группа 02)",
+        "kk": "Басқа тауарлар (02 топтамасы)"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03.1.1",
+      "level": 3,
+      "parentId": "03.1",
+      "name": {
+        "en": "Clothing materials",
+        "ru": "Материалы для одежды",
+        "kk": "Киім материалдары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03.1.2",
+      "level": 3,
+      "parentId": "03.1",
+      "name": {
+        "en": "Garments",
+        "ru": "Одежда",
+        "kk": "Киім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03.1.3",
+      "level": 3,
+      "parentId": "03.1",
+      "name": {
+        "en": "Other articles of clothing and clothing accessories",
+        "ru": "Прочие изделия одежды и аксессуары",
+        "kk": "Киімге қатысты басқа бұйымдар және аксессуарлар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03.1.4",
+      "level": 3,
+      "parentId": "03.1",
+      "name": {
+        "en": "Cleaning, repair and hire of clothing",
+        "ru": "Чистка, ремонт и прокат одежды",
+        "kk": "Киімді тазалау, жөндеу және жалға алу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03.2.1",
+      "level": 3,
+      "parentId": "03.2",
+      "name": {
+        "en": "Shoes and other footwear",
+        "ru": "Обувь и другие виды обуви",
+        "kk": "Аяқ киім және басқа аяқ киім түрлері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "03.2.2",
+      "level": 3,
+      "parentId": "03.2",
+      "name": {
+        "en": "Repair and hire of footwear",
+        "ru": "Ремонт и прокат обуви",
+        "kk": "Аяқ киімді жөндеу және жалға алу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.1.1",
+      "level": 3,
+      "parentId": "04.1",
+      "name": {
+        "en": "Actual rentals paid by tenants",
+        "ru": "Фактическая арендная плата, уплаченная арендаторами",
+        "kk": "Жалға алушылар төлейтін нақты жал ақысы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.1.2",
+      "level": 3,
+      "parentId": "04.1",
+      "name": {
+        "en": "Other actual rentals",
+        "ru": "Прочая фактическая аренда",
+        "kk": "Өзге нақты жал ақысы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.2.1",
+      "level": 3,
+      "parentId": "04.2",
+      "name": {
+        "en": "Imputed rentals for housing",
+        "ru": "Вменённая арендная плата за жильё",
+        "kk": "Тұрғын үй үшін есептелген жал ақысы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.3.1",
+      "level": 3,
+      "parentId": "04.3",
+      "name": {
+        "en": "Materials for maintenance and repair of the dwelling",
+        "ru": "Материалы для содержания и ремонта жилья",
+        "kk": "Тұрғын үйді күтіп-ұстау және жөндеуге арналған материалдар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.3.2",
+      "level": 3,
+      "parentId": "04.3",
+      "name": {
+        "en": "Services for maintenance and repair of the dwelling",
+        "ru": "Услуги по содержанию и ремонту жилья",
+        "kk": "Тұрғын үйді күтіп-ұстау және жөндеу қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.4.1",
+      "level": 3,
+      "parentId": "04.4",
+      "name": {
+        "en": "Water supply",
+        "ru": "Водоснабжение",
+        "kk": "Су жеткізу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.4.2",
+      "level": 3,
+      "parentId": "04.4",
+      "name": {
+        "en": "Refuse collection",
+        "ru": "Сбор мусора",
+        "kk": "Қоқыс жинау"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.4.3",
+      "level": 3,
+      "parentId": "04.4",
+      "name": {
+        "en": "Sewerage collection",
+        "ru": "Канализация",
+        "kk": "Кәріз жүйесі"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.4.4",
+      "level": 3,
+      "parentId": "04.4",
+      "name": {
+        "en": "Other services relating to the dwelling",
+        "ru": "Прочие услуги, связанные с жильём",
+        "kk": "Тұрғын үйге қатысты өзге қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.5.1",
+      "level": 3,
+      "parentId": "04.5",
+      "name": {
+        "en": "Electricity",
+        "ru": "Электроэнергия",
+        "kk": "Электр энергиясы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.5.2",
+      "level": 3,
+      "parentId": "04.5",
+      "name": {
+        "en": "Gas",
+        "ru": "Газ",
+        "kk": "Газ"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.5.3",
+      "level": 3,
+      "parentId": "04.5",
+      "name": {
+        "en": "Liquid fuels",
+        "ru": "Жидкое топливо",
+        "kk": "Сұйық отын"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.5.4",
+      "level": 3,
+      "parentId": "04.5",
+      "name": {
+        "en": "Solid fuels",
+        "ru": "Твёрдое топливо",
+        "kk": "Қатты отын"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "04.5.5",
+      "level": 3,
+      "parentId": "04.5",
+      "name": {
+        "en": "Heat energy",
+        "ru": "Тепловая энергия",
+        "kk": "Жылу энергиясы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.1.1",
+      "level": 3,
+      "parentId": "05.1",
+      "name": {
+        "en": "Furniture and furnishings",
+        "ru": "Мебель и обстановка",
+        "kk": "Жиһаз және үй жабдықтары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.1.2",
+      "level": 3,
+      "parentId": "05.1",
+      "name": {
+        "en": "Carpets and other floor coverings",
+        "ru": "Ковры и другие напольные покрытия",
+        "kk": "Кілемдер және басқа еден жабындары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.1.3",
+      "level": 3,
+      "parentId": "05.1",
+      "name": {
+        "en": "Repair of furniture, furnishings and floor coverings",
+        "ru": "Ремонт мебели, обстановки и напольных покрытий",
+        "kk": "Жиһазды, үй жабдықтарын және еден жабындарын жөндеу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.2.1",
+      "level": 3,
+      "parentId": "05.2",
+      "name": {
+        "en": "Household textiles",
+        "ru": "Домашний текстиль",
+        "kk": "Үйге арналған тоқыма"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.3.1",
+      "level": 3,
+      "parentId": "05.3",
+      "name": {
+        "en": "Major household appliances",
+        "ru": "Крупная бытовая техника",
+        "kk": "Ірі тұрмыстық техника"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.3.2",
+      "level": 3,
+      "parentId": "05.3",
+      "name": {
+        "en": "Small electric household appliances",
+        "ru": "Мелкая бытовая электротехника",
+        "kk": "Ұсақ тұрмыстық электр техникасы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.3.3",
+      "level": 3,
+      "parentId": "05.3",
+      "name": {
+        "en": "Repair of household appliances",
+        "ru": "Ремонт бытовой техники",
+        "kk": "Тұрмыстық техниканы жөндеу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.4.1",
+      "level": 3,
+      "parentId": "05.4",
+      "name": {
+        "en": "Glassware, tableware and household utensils",
+        "ru": "Стеклянная посуда, столовая посуда и бытовые принадлежности",
+        "kk": "Шыны ыдыстар, ас үй ыдыстары және тұрмыстық керек-жарақтар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.5.1",
+      "level": 3,
+      "parentId": "05.5",
+      "name": {
+        "en": "Major tools and equipment",
+        "ru": "Крупные инструменты и оборудование",
+        "kk": "Ірі құралдар мен жабдықтар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.5.2",
+      "level": 3,
+      "parentId": "05.5",
+      "name": {
+        "en": "Small tools and miscellaneous accessories",
+        "ru": "Мелкие инструменты и разная фурнитура",
+        "kk": "Ұсақ құралдар мен әртүрлі керек-жарақтар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "05.6.1",
+      "level": 3,
+      "parentId": "05.6",
+      "name": {
+        "en": "Non-durable household goods",
+        "ru": "Недолговечные товары для дома",
+        "kk": "Үйге арналған қысқа мерзімді тауарлар"
+      },
+      "aliases": {
+        "en": [
+          "dishwashing liquid",
+          "laundry detergent",
+          "toilet paper",
+          "paper towel",
+          "cleaner",
+          "bleach",
+          "soap"
+        ],
+        "ru": [
+          "средство для мытья посуды",
+          "порошок",
+          "гель для стирки",
+          "туалетная бумага",
+          "бумажные полотенца",
+          "чистящее средство",
+          "отбеливатель",
+          "мыло"
+        ],
+        "kk": [
+          "ыдыс жуу құралы",
+          "кір жуғыш ұнтақ",
+          "дәретхана қағазы",
+          "қағаз сүлгі",
+          "сабын"
+        ]
+      }
+    },
+    {
+      "id": "05.6.2",
+      "level": 3,
+      "parentId": "05.6",
+      "name": {
+        "en": "Domestic services and household services",
+        "ru": "Бытовые услуги и услуги по дому",
+        "kk": "Тұрмыстық қызметтер және үй шаруашылығы қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.1.1",
+      "level": 3,
+      "parentId": "06.1",
+      "name": {
+        "en": "Pharmaceutical products",
+        "ru": "Фармацевтические товары",
+        "kk": "Фармацевтикалық өнімдер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.1.2",
+      "level": 3,
+      "parentId": "06.1",
+      "name": {
+        "en": "Other medical products",
+        "ru": "Прочие медицинские товары",
+        "kk": "Басқа медициналық өнімдер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.1.3",
+      "level": 3,
+      "parentId": "06.1",
+      "name": {
+        "en": "Therapeutic appliances and equipment",
+        "ru": "Лечебные приборы и оборудование",
+        "kk": "Емдік құрылғылар мен жабдықтар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.2.1",
+      "level": 3,
+      "parentId": "06.2",
+      "name": {
+        "en": "Medical services",
+        "ru": "Медицинские услуги",
+        "kk": "Медициналық қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.2.2",
+      "level": 3,
+      "parentId": "06.2",
+      "name": {
+        "en": "Dental services",
+        "ru": "Стоматологические услуги",
+        "kk": "Стоматологиялық қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.2.3",
+      "level": 3,
+      "parentId": "06.2",
+      "name": {
+        "en": "Paramedical services",
+        "ru": "Парамедицинские услуги",
+        "kk": "Парамедициналық қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "06.3.1",
+      "level": 3,
+      "parentId": "06.3",
+      "name": {
+        "en": "Hospital services",
+        "ru": "Больничные услуги",
+        "kk": "Аурухана қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.1.1",
+      "level": 3,
+      "parentId": "07.1",
+      "name": {
+        "en": "Motor cars",
+        "ru": "Легковые автомобили",
+        "kk": "Жеңіл автокөліктер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.1.2",
+      "level": 3,
+      "parentId": "07.1",
+      "name": {
+        "en": "Motor cycles",
+        "ru": "Мотоциклы",
+        "kk": "Мотоциклдер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.1.3",
+      "level": 3,
+      "parentId": "07.1",
+      "name": {
+        "en": "Bicycles",
+        "ru": "Велосипеды",
+        "kk": "Велосипедтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.1.4",
+      "level": 3,
+      "parentId": "07.1",
+      "name": {
+        "en": "Other vehicles",
+        "ru": "Прочие транспортные средства",
+        "kk": "Өзге көлік құралдары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.2.1",
+      "level": 3,
+      "parentId": "07.2",
+      "name": {
+        "en": "Spare parts and accessories for personal transport equipment",
+        "ru": "Запчасти и аксессуары для личного транспорта",
+        "kk": "Жеке көлікке арналған қосалқы бөлшектер мен аксессуарлар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.2.2",
+      "level": 3,
+      "parentId": "07.2",
+      "name": {
+        "en": "Fuels and lubricants for personal transport equipment",
+        "ru": "Топливо и смазочные материалы для личного транспорта",
+        "kk": "Жеке көлікке арналған отын және майлау материалдары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.2.3",
+      "level": 3,
+      "parentId": "07.2",
+      "name": {
+        "en": "Maintenance and repair of personal transport equipment",
+        "ru": "Техническое обслуживание и ремонт личного транспорта",
+        "kk": "Жеке көлікті техникалық қызмет көрсету және жөндеу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.2.4",
+      "level": 3,
+      "parentId": "07.2",
+      "name": {
+        "en": "Other services in respect of personal transport equipment",
+        "ru": "Прочие услуги по личному транспорту",
+        "kk": "Жеке көлік бойынша өзге қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.3.1",
+      "level": 3,
+      "parentId": "07.3",
+      "name": {
+        "en": "Passenger transport by railway",
+        "ru": "Пассажирские железнодорожные перевозки",
+        "kk": "Жолаушылардың теміржол арқылы тасымалы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.3.2",
+      "level": 3,
+      "parentId": "07.3",
+      "name": {
+        "en": "Passenger transport by road",
+        "ru": "Пассажирские автомобильные перевозки",
+        "kk": "Жолаушылардың автомобиль көлігімен тасымалы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.3.3",
+      "level": 3,
+      "parentId": "07.3",
+      "name": {
+        "en": "Passenger transport by air",
+        "ru": "Пассажирские авиаперевозки",
+        "kk": "Жолаушылардың әуе көлігімен тасымалы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.3.4",
+      "level": 3,
+      "parentId": "07.3",
+      "name": {
+        "en": "Passenger transport by sea and inland waterway",
+        "ru": "Пассажирские перевозки морем и внутренними водными путями",
+        "kk": "Жолаушыларды теңіз және ішкі су жолдарымен тасымалдау"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.3.5",
+      "level": 3,
+      "parentId": "07.3",
+      "name": {
+        "en": "Combined passenger transport",
+        "ru": "Комбинированные пассажирские перевозки",
+        "kk": "Аралас жолаушылар тасымалы"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "07.3.6",
+      "level": 3,
+      "parentId": "07.3",
+      "name": {
+        "en": "Other purchased transport services",
+        "ru": "Прочие приобретённые транспортные услуги",
+        "kk": "Өзге сатып алынған көлік қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "08.1.1",
+      "level": 3,
+      "parentId": "08.1",
+      "name": {
+        "en": "Postal services",
+        "ru": "Почтовые услуги",
+        "kk": "Пошта қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "08.2.1",
+      "level": 3,
+      "parentId": "08.2",
+      "name": {
+        "en": "Telephone and telefax equipment",
+        "ru": "Телефонное и телефаксное оборудование",
+        "kk": "Телефон және телефакс жабдықтары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "08.3.1",
+      "level": 3,
+      "parentId": "08.3",
+      "name": {
+        "en": "Telephone and telefax services",
+        "ru": "Телефонные и телефаксные услуги",
+        "kk": "Телефон және телефакс қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.1.1",
+      "level": 3,
+      "parentId": "09.1",
+      "name": {
+        "en": "Audio-visual equipment",
+        "ru": "Аудио- и видеооборудование",
+        "kk": "Аудио және бейне жабдықтары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.1.2",
+      "level": 3,
+      "parentId": "09.1",
+      "name": {
+        "en": "Photographic and cinematographic equipment and optical instruments",
+        "ru": "Фото- и кинооборудование и оптические приборы",
+        "kk": "Фото және кино жабдықтары мен оптикалық аспаптар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.1.3",
+      "level": 3,
+      "parentId": "09.1",
+      "name": {
+        "en": "Information processing equipment",
+        "ru": "Оборудование для обработки информации",
+        "kk": "Ақпаратты өңдеу жабдықтары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.1.4",
+      "level": 3,
+      "parentId": "09.1",
+      "name": {
+        "en": "Recording media",
+        "ru": "Носители записи",
+        "kk": "Жазу тасымалдағыштары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.1.5",
+      "level": 3,
+      "parentId": "09.1",
+      "name": {
+        "en": "Repair of audio-visual, photographic and information processing equipment",
+        "ru": "Ремонт аудио-, фото-, видео- и информационного оборудования",
+        "kk": "Аудио, фото, бейне және ақпараттық жабдықтарды жөндеу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.2.1",
+      "level": 3,
+      "parentId": "09.2",
+      "name": {
+        "en": "Major durables for outdoor recreation",
+        "ru": "Крупные товары длительного пользования для отдыха на открытом воздухе",
+        "kk": "Ашық ауада демалуға арналған ұзақ мерзімді ірі тауарлар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.2.2",
+      "level": 3,
+      "parentId": "09.2",
+      "name": {
+        "en": "Musical instruments and major durables for indoor recreation",
+        "ru": "Музыкальные инструменты и крупные товары длительного пользования для отдыха в помещении",
+        "kk": "Музыкалық аспаптар және үй ішінде демалуға арналған ұзақ мерзімді ірі тауарлар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.2.3",
+      "level": 3,
+      "parentId": "09.2",
+      "name": {
+        "en": "Maintenance and repair of other major durables for recreation and culture",
+        "ru": "Обслуживание и ремонт прочих крупных товаров длительного пользования для отдыха и культуры",
+        "kk": "Демалыс және мәдениетке арналған өзге ұзақ мерзімді ірі тауарларды қызмет көрсету және жөндеу"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.3.1",
+      "level": 3,
+      "parentId": "09.3",
+      "name": {
+        "en": "Games, toys and hobbies",
+        "ru": "Игры, игрушки и хобби",
+        "kk": "Ойындар, ойыншықтар және хобби"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.3.2",
+      "level": 3,
+      "parentId": "09.3",
+      "name": {
+        "en": "Equipment for sport, camping and open-air recreation",
+        "ru": "Оборудование для спорта, кемпинга и отдыха на природе",
+        "kk": "Спортқа, кемпингке және табиғаттағы демалысқа арналған жабдықтар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.3.3",
+      "level": 3,
+      "parentId": "09.3",
+      "name": {
+        "en": "Gardens, plants and flowers",
+        "ru": "Сад, растения и цветы",
+        "kk": "Бақ, өсімдіктер және гүлдер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.3.4",
+      "level": 3,
+      "parentId": "09.3",
+      "name": {
+        "en": "Pets and related products",
+        "ru": "Домашние животные и сопутствующие товары",
+        "kk": "Үй жануарлары және олармен байланысты тауарлар"
+      },
+      "aliases": {
+        "en": [
+          "cat food",
+          "dog food",
+          "pet food",
+          "cat litter"
+        ],
+        "ru": [
+          "корм для кошек",
+          "корм для собак",
+          "корм для животных",
+          "наполнитель для кошачьего туалета"
+        ],
+        "kk": [
+          "мысық жемі",
+          "ит жемі",
+          "үй жануарына арналған жем"
+        ]
+      }
+    },
+    {
+      "id": "09.3.5",
+      "level": 3,
+      "parentId": "09.3",
+      "name": {
+        "en": "Veterinary and other services for pets",
+        "ru": "Ветеринарные и другие услуги для домашних животных",
+        "kk": "Үй жануарларына арналған ветеринарлық және өзге қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.4.1",
+      "level": 3,
+      "parentId": "09.4",
+      "name": {
+        "en": "Recreational and sporting services",
+        "ru": "Услуги в сфере отдыха и спорта",
+        "kk": "Демалыс және спорт қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.4.2",
+      "level": 3,
+      "parentId": "09.4",
+      "name": {
+        "en": "Cultural services",
+        "ru": "Культурные услуги",
+        "kk": "Мәдени қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.4.3",
+      "level": 3,
+      "parentId": "09.4",
+      "name": {
+        "en": "Games of chance",
+        "ru": "Азартные игры",
+        "kk": "Құмар ойындар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.5.1",
+      "level": 3,
+      "parentId": "09.5",
+      "name": {
+        "en": "Books",
+        "ru": "Книги",
+        "kk": "Кітаптар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.5.2",
+      "level": 3,
+      "parentId": "09.5",
+      "name": {
+        "en": "Newspapers and periodicals",
+        "ru": "Газеты и периодические издания",
+        "kk": "Газеттер және мерзімді басылымдар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.5.3",
+      "level": 3,
+      "parentId": "09.5",
+      "name": {
+        "en": "Miscellaneous printed matter",
+        "ru": "Прочая печатная продукция",
+        "kk": "Өзге баспа өнімдері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.5.4",
+      "level": 3,
+      "parentId": "09.5",
+      "name": {
+        "en": "Stationery and drawing materials",
+        "ru": "Канцтовары и материалы для рисования",
+        "kk": "Кеңсе тауарлары және сурет салу материалдары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "09.6.1",
+      "level": 3,
+      "parentId": "09.6",
+      "name": {
+        "en": "Package holidays",
+        "ru": "Пакетные туры",
+        "kk": "Туристік пакеттер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "10.1.1",
+      "level": 3,
+      "parentId": "10.1",
+      "name": {
+        "en": "Pre-primary and primary education",
+        "ru": "Дошкольное и начальное образование",
+        "kk": "Мектепке дейінгі және бастауыш білім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "10.1.2",
+      "level": 3,
+      "parentId": "10.1",
+      "name": {
+        "en": "Secondary education",
+        "ru": "Среднее образование",
+        "kk": "Орта білім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "10.1.3",
+      "level": 3,
+      "parentId": "10.1",
+      "name": {
+        "en": "Post-secondary non-tertiary education",
+        "ru": "Послесреднее нетретичное образование",
+        "kk": "Ортадан кейінгі жоғары емес білім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "10.1.4",
+      "level": 3,
+      "parentId": "10.1",
+      "name": {
+        "en": "Tertiary education",
+        "ru": "Высшее образование",
+        "kk": "Жоғары білім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "10.1.5",
+      "level": 3,
+      "parentId": "10.1",
+      "name": {
+        "en": "Education not definable by level",
+        "ru": "Образование, не определяемое по уровню",
+        "kk": "Деңгейі анықталмайтын білім"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "11.1.1",
+      "level": 3,
+      "parentId": "11.1",
+      "name": {
+        "en": "Restaurants, cafes and the like",
+        "ru": "Рестораны, кафе и т.п.",
+        "kk": "Мейрамханалар, кафелер және т.б."
+      },
+      "aliases": {
+        "en": [
+          "whopper",
+          "beef roll",
+          "combo",
+          "burger meal",
+          "wings",
+          "caesar salad"
+        ],
+        "ru": [
+          "воппер",
+          "биф ролл",
+          "комбо",
+          "бургер",
+          "крылышки",
+          "цезарь",
+          "хачапури",
+          "обед воппер",
+          "двойной воппер"
+        ],
+        "kk": [
+          "комбо",
+          "бургер",
+          "қанаттар",
+          "воппер",
+          "биф ролл"
+        ]
+      }
+    },
+    {
+      "id": "11.1.2",
+      "level": 3,
+      "parentId": "11.1",
+      "name": {
+        "en": "Canteens",
+        "ru": "Столовые",
+        "kk": "Асханалар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "11.2.1",
+      "level": 3,
+      "parentId": "11.2",
+      "name": {
+        "en": "Accommodation services",
+        "ru": "Услуги размещения",
+        "kk": "Орналастыру қызметтері"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.1.1",
+      "level": 3,
+      "parentId": "12.1",
+      "name": {
+        "en": "Hairdressing salons and personal grooming establishments",
+        "ru": "Парикмахерские и салоны личного ухода",
+        "kk": "Шаштараздар және жеке күтім салондары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.1.2",
+      "level": 3,
+      "parentId": "12.1",
+      "name": {
+        "en": "Electric appliances for personal care",
+        "ru": "Электроприборы для личного ухода",
+        "kk": "Жеке күтімге арналған электр құрылғылары"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.1.3",
+      "level": 3,
+      "parentId": "12.1",
+      "name": {
+        "en": "Other appliances, articles and products for personal care",
+        "ru": "Прочие приборы, изделия и товары для личного ухода",
+        "kk": "Жеке күтімге арналған өзге құрылғылар, бұйымдар және тауарлар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.2.1",
+      "level": 3,
+      "parentId": "12.2",
+      "name": {
+        "en": "Prostitution",
+        "ru": "Проституция",
+        "kk": "Жезөкшелік"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.3.1",
+      "level": 3,
+      "parentId": "12.3",
+      "name": {
+        "en": "Jewellery, clocks and watches",
+        "ru": "Ювелирные изделия, часы и наручные часы",
+        "kk": "Зергерлік бұйымдар, сағаттар және қолсағаттар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.3.2",
+      "level": 3,
+      "parentId": "12.3",
+      "name": {
+        "en": "Other personal effects",
+        "ru": "Прочие личные вещи",
+        "kk": "Өзге жеке заттар"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.4.1",
+      "level": 3,
+      "parentId": "12.4",
+      "name": {
+        "en": "Social protection",
+        "ru": "Социальная защита",
+        "kk": "Әлеуметтік қорғау"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.5.1",
+      "level": 3,
+      "parentId": "12.5",
+      "name": {
+        "en": "Insurance connected with the dwelling",
+        "ru": "Страхование, связанное с жильём",
+        "kk": "Тұрғын үйге қатысты сақтандыру"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.5.2",
+      "level": 3,
+      "parentId": "12.5",
+      "name": {
+        "en": "Insurance connected with health",
+        "ru": "Страхование, связанное со здоровьем",
+        "kk": "Денсаулыққа қатысты сақтандыру"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.5.3",
+      "level": 3,
+      "parentId": "12.5",
+      "name": {
+        "en": "Insurance connected with transport",
+        "ru": "Страхование, связанное с транспортом",
+        "kk": "Көлікке қатысты сақтандыру"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.5.4",
+      "level": 3,
+      "parentId": "12.5",
+      "name": {
+        "en": "Other insurance",
+        "ru": "Прочее страхование",
+        "kk": "Өзге сақтандыру"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.6.1",
+      "level": 3,
+      "parentId": "12.6",
+      "name": {
+        "en": "Financial services n.e.c.",
+        "ru": "Финансовые услуги, не включённые в другие категории",
+        "kk": "Өзге санаттарға кірмейтін қаржылық қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    },
+    {
+      "id": "12.7.1",
+      "level": 3,
+      "parentId": "12.7",
+      "name": {
+        "en": "Other services n.e.c.",
+        "ru": "Прочие услуги, не включённые в другие категории",
+        "kk": "Өзге санаттарға кірмейтін қызметтер"
+      },
+      "aliases": {
+        "en": [],
+        "ru": [],
+        "kk": []
+      }
+    }
+  ]
+}

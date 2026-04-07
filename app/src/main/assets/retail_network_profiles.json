@@ -1,0 +1,382 @@
+{
+  "version": "1.0",
+  "profiles": {
+    "1.KZ": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "A2 Супермаркеты": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "ALL MART": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Aimer супермаркет": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Alser": {
+      "segment": "electronics",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Colibri": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Duty Free": {
+      "segment": "discount_mixed",
+      "priorWeight": 0.0,
+      "isMixedAssortment": true
+    },
+    "EcoShop": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Esentay gourmet": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Family market": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Fix Price": {
+      "segment": "discount_mixed",
+      "priorWeight": 0.0,
+      "isMixedAssortment": true
+    },
+    "Froot": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Galmart": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Good Market Алтын Food": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Burger King": {
+      "segment": "food_service",
+      "primaryRollupIds": ["11.1"],
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "KFC": {
+      "segment": "food_service",
+      "primaryRollupIds": ["11.1"],
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "DODO PIZZA": {
+      "segment": "food_service",
+      "primaryRollupIds": ["11.1"],
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "McDonald's": {
+      "segment": "food_service",
+      "primaryRollupIds": ["11.1"],
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "QSR": {
+      "segment": "food_service",
+      "primaryRollupIds": ["11.1"],
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "ВИК 21": {
+      "segment": "food_service",
+      "primaryRollupIds": ["11.1"],
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Cakes Jasmin": {
+      "segment": "food_service",
+      "primaryRollupIds": ["11.1"],
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "АКВИЛОН ТРЕЙД": {
+      "segment": "household",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Greenwich, Рубиком": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Interfood": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Magnum": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "My Mart": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Nan mart": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "OSTEN “Norma”": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Orange": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "RAUZET САУДА": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Skif, Small": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Spar": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Sulpak": {
+      "segment": "electronics",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "TECHNODOM": {
+      "segment": "electronics",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Zip Zip": {
+      "segment": "electronics",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "А-Store": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "АЛТЫНДАР": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "АРБУЗ ": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "АТАБА": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Алси": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Анвар": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Апрель": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Арзан": {
+      "segment": "discount_mixed",
+      "priorWeight": 0.0,
+      "isMixedAssortment": true
+    },
+    "Асторг": {
+      "segment": "discount_mixed",
+      "priorWeight": 0.0,
+      "isMixedAssortment": true
+    },
+    "Астыкжан": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Аян": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "БЕККЕР и К": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Белорусские продукты №1": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Белый ветер": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "ВКУСВИЛЛ": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "ВКУСНАЯ КОРЗИНКА": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Ваш": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Гастроном": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "ДНС": {
+      "segment": "electronics",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Дана Маркет": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Дина": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Доброцен": {
+      "segment": "discount_mixed",
+      "priorWeight": 0.0,
+      "isMixedAssortment": true
+    },
+    "Идеал Лидер": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Кенмарт": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Корзина": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Метро": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Мечта": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Омар маркет": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Планета электроники": {
+      "segment": "electronics",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "СОЛНЕЧНЫЙ": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Светофор": {
+      "segment": "discount_mixed",
+      "priorWeight": 0.0,
+      "isMixedAssortment": true
+    },
+    "Семейный": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Столичный, юбилейный": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Супермаркет Кристалл": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "ТЕХНОGRAD": {
+      "segment": "electronics",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Тоймарт": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Улы Дала": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Фиркан": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    },
+    "Эврика": {
+      "segment": "grocery",
+      "priorWeight": 0.12,
+      "isMixedAssortment": false
+    }
+  }
+}
