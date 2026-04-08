@@ -83,10 +83,18 @@ class ChecksViewModel @Inject constructor(
     }
 
     fun onSearchQueryChange(query: String) {
+        logger.debug(
+            tag = "ChecksSearch",
+            message = "query changed: raw='${query.take(80)}' trimmed='${query.trim().take(80)}'",
+        )
         _state.update { it.copy(searchQuery = query) }
         searchJob?.cancel()
         searchJob = viewModelScope.launch {
             delay(500)
+            logger.debug(
+                tag = "ChecksSearch",
+                message = "debounced refresh trigger: query='${query.trim().take(80)}'",
+            )
             refresh(RefreshMode.Full)
         }
     }
@@ -211,6 +219,12 @@ class ChecksViewModel @Inject constructor(
     }
 
     fun refresh(mode: RefreshMode = RefreshMode.Full) {
+        val snapshot = _state.value
+        logger.debug(
+            tag = "ChecksSearch",
+            message = "refresh start: mode=$mode query='${snapshot.searchQuery.trim().take(80)}' " +
+                "filter=${snapshot.activeFilter} ownership=${snapshot.ownershipFilter} sort=${sortOrder.value}",
+        )
         listFetchJob?.cancel()
         hasMore = true
         listFetchJob = viewModelScope.launch {
@@ -250,6 +264,11 @@ class ChecksViewModel @Inject constructor(
 
     private suspend fun fetchFirstPageLocked(keepStaleOnFailure: Boolean = false) {
         val snapshot = _state.value
+        logger.debug(
+            tag = "ChecksSearch",
+            message = "fetch first page: query='${snapshot.searchQuery.trim().take(80)}' " +
+                "filter=${snapshot.activeFilter} ownership=${snapshot.ownershipFilter} sort=${sortOrder.value}",
+        )
         val result = runCatching {
             getReceiptListPageUseCase(
                 filter = snapshot.activeFilter,
@@ -262,6 +281,10 @@ class ChecksViewModel @Inject constructor(
         }
         result.onSuccess { items ->
             hasMore = items.size == limit
+            logger.debug(
+                tag = "ChecksSearch",
+                message = "fetch success: items=${items.size} hasMore=$hasMore query='${snapshot.searchQuery.trim().take(80)}'",
+            )
             _state.update { state ->
                 state.copy(
                     receipts = items,
@@ -272,6 +295,11 @@ class ChecksViewModel @Inject constructor(
                 )
             }
         }.onFailure { error ->
+            logger.error(
+                tag = "ChecksSearch",
+                message = "fetch failed: query='${snapshot.searchQuery.trim().take(80)}'",
+                throwable = error,
+            )
             _state.update { s ->
                 s.copy(
                     isLoading = false,

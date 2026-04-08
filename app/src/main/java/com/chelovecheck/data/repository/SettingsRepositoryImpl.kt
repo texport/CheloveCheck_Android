@@ -10,11 +10,14 @@ import com.chelovecheck.domain.model.AppLanguage
 import com.chelovecheck.domain.model.AccentColor
 import com.chelovecheck.domain.model.ColorSource
 import com.chelovecheck.domain.model.DisplayCurrency
+import com.chelovecheck.domain.model.ItemTranslationLanguage
 import com.chelovecheck.domain.model.LogLevel
 import com.chelovecheck.domain.model.MapProvider
 import com.chelovecheck.domain.model.ReceiptGroupMode
 import com.chelovecheck.domain.model.ReceiptListSortOrder
 import com.chelovecheck.domain.model.ThemeMode
+import com.chelovecheck.domain.model.TranslationProvider
+import com.chelovecheck.domain.model.TranslationProviderConfig
 import com.chelovecheck.domain.repository.SettingsRepository
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -30,6 +33,13 @@ class SettingsRepositoryImpl @Inject constructor(
     private val themeKey = stringPreferencesKey("theme_mode")
     private val languageKey = stringPreferencesKey("language")
     private val logLevelKey = stringPreferencesKey("log_level")
+    private val itemLanguageKey = stringPreferencesKey("item_language")
+    private val translationProviderKey = stringPreferencesKey("translation_provider")
+    private val libreTranslateEndpointKey = stringPreferencesKey("translation_libre_endpoint")
+    private val openAiApiKeyKey = stringPreferencesKey("translation_openai_api_key")
+    private val geminiApiKeyKey = stringPreferencesKey("translation_gemini_api_key")
+    private val openAiModelKey = stringPreferencesKey("translation_openai_model")
+    private val geminiModelKey = stringPreferencesKey("translation_gemini_model")
     private val afterScanKey = stringPreferencesKey("after_scan_action")
     private val colorSourceKey = stringPreferencesKey("color_source")
     private val accentColorKey = stringPreferencesKey("accent_color")
@@ -64,6 +74,25 @@ class SettingsRepositoryImpl @Inject constructor(
             prefs[logLevelKey]?.let { raw ->
                 runCatching { LogLevel.valueOf(raw) }.getOrNull()
             } ?: LogLevel.ERROR
+        }
+
+    override val itemTranslationLanguage: Flow<ItemTranslationLanguage> = context.dataStore.data
+        .map { prefs ->
+            prefs[itemLanguageKey]?.let { raw ->
+                runCatching { ItemTranslationLanguage.valueOf(raw) }.getOrNull()
+            } ?: ItemTranslationLanguage.OFD_SOURCE
+        }
+
+    override val translationProviderConfig: Flow<TranslationProviderConfig> = context.dataStore.data
+        .map { prefs ->
+            TranslationProviderConfig(
+                provider = TranslationProvider.GOOGLE_TRANSLATE,
+                libreTranslateEndpoint = prefs[libreTranslateEndpointKey] ?: "https://libretranslate.com/translate",
+                openAiApiKey = prefs[openAiApiKeyKey] ?: "",
+                geminiApiKey = prefs[geminiApiKeyKey] ?: "",
+                openAiModel = prefs[openAiModelKey] ?: "gpt-4o-mini",
+                geminiModel = prefs[geminiModelKey] ?: "gemini-2.0-flash",
+            )
         }
 
     override val afterScanAction: Flow<AfterScanAction> = context.dataStore.data
@@ -130,6 +159,48 @@ class SettingsRepositoryImpl @Inject constructor(
     override suspend fun setLanguage(language: AppLanguage) {
         context.dataStore.edit { prefs ->
             prefs[languageKey] = language.name
+        }
+    }
+
+    override suspend fun setItemTranslationLanguage(language: ItemTranslationLanguage) {
+        context.dataStore.edit { prefs ->
+            prefs[itemLanguageKey] = language.name
+        }
+    }
+
+    override suspend fun setTranslationProvider(provider: TranslationProvider) {
+        context.dataStore.edit { prefs ->
+            prefs[translationProviderKey] = TranslationProvider.GOOGLE_TRANSLATE.name
+        }
+    }
+
+    override suspend fun setLibreTranslateEndpoint(endpoint: String) {
+        context.dataStore.edit { prefs ->
+            prefs[libreTranslateEndpointKey] = endpoint.trim()
+        }
+    }
+
+    override suspend fun setOpenAiApiKey(apiKey: String) {
+        context.dataStore.edit { prefs ->
+            prefs[openAiApiKeyKey] = apiKey.trim()
+        }
+    }
+
+    override suspend fun setGeminiApiKey(apiKey: String) {
+        context.dataStore.edit { prefs ->
+            prefs[geminiApiKeyKey] = apiKey.trim()
+        }
+    }
+
+    override suspend fun setOpenAiModel(model: String) {
+        context.dataStore.edit { prefs ->
+            prefs[openAiModelKey] = model.trim()
+        }
+    }
+
+    override suspend fun setGeminiModel(model: String) {
+        context.dataStore.edit { prefs ->
+            prefs[geminiModelKey] = model.trim()
         }
     }
 

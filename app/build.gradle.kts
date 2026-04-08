@@ -90,6 +90,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.onnxruntime.android)
     implementation(libs.material3.window.size)
+    implementation(libs.material3.adaptive.navigation.suite)
+    implementation(libs.androidx.window)
 
     testImplementation(libs.junit)
 

@@ -7,13 +7,14 @@ import javax.inject.Inject
 
 class SaveReceiptUseCase @Inject constructor(
     private val repository: ReceiptRepository,
+    private val translateReceiptItemsUseCase: TranslateReceiptItemsUseCase,
 ) {
     suspend operator fun invoke(receipt: Receipt) {
         try {
             if (repository.getReceipt(receipt.fiscalSign) != null) {
                 throw AppError.ReceiptAlreadyExists(receipt.fiscalSign)
             }
-            repository.saveReceipt(receipt)
+            repository.saveReceipt(translateReceiptItemsUseCase(receipt))
         } catch (error: Exception) {
             if (error is AppError) throw error
             throw AppError.FailedToSaveReceipt(error)

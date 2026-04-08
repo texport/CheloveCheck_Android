@@ -7,13 +7,16 @@ import com.chelovecheck.domain.model.AnalyticsSummary
 import com.chelovecheck.domain.model.AppLanguage
 import com.chelovecheck.domain.model.CoicopCategory
 import com.chelovecheck.domain.model.DisplayCurrency
+import com.chelovecheck.domain.model.ItemTranslationLanguage
 import com.chelovecheck.domain.model.PendingCategoryItem
 import com.chelovecheck.domain.repository.ReceiptsChangeTracker
 import com.chelovecheck.data.analytics.AnalyticsProgressStore
 import com.chelovecheck.data.analytics.AnalyticsCacheStore
+import com.chelovecheck.domain.analytics.RetailDisplayGroupResolver
 import com.chelovecheck.domain.repository.CategoryRepository
 import com.chelovecheck.domain.repository.RetailDisplayGroupsRepository
 import com.chelovecheck.domain.usecase.ObserveLanguageUseCase
+import com.chelovecheck.domain.usecase.ObserveItemTranslationLanguageUseCase
 import com.chelovecheck.domain.usecase.ObserveAnalyticsPendingPromptUseCase
 import com.chelovecheck.domain.usecase.ObserveDisplayCurrencyUseCase
 import com.chelovecheck.domain.usecase.ConvertAmountUseCase
@@ -51,6 +54,7 @@ class AnalyticsViewModel @Inject constructor(
     private val progressStore: AnalyticsProgressStore,
     private val cacheStore: AnalyticsCacheStore,
     private val observeAnalyticsPendingPromptUseCase: ObserveAnalyticsPendingPromptUseCase,
+    observeItemTranslationLanguageUseCase: ObserveItemTranslationLanguageUseCase,
     observeDisplayCurrencyUseCase: ObserveDisplayCurrencyUseCase,
     private val convertAmountUseCase: ConvertAmountUseCase,
     private val analyticsRunStore: AnalyticsRunStore,
@@ -69,6 +73,8 @@ class AnalyticsViewModel @Inject constructor(
     private var debouncedRefreshJob: Job? = null
     val displayCurrency: StateFlow<DisplayCurrency> = observeDisplayCurrencyUseCase()
         .stateIn(viewModelScope, SharingStarted.Eagerly, DisplayCurrency.KZT)
+    val itemTranslationLanguage: StateFlow<ItemTranslationLanguage> = observeItemTranslationLanguageUseCase()
+        .stateIn(viewModelScope, SharingStarted.Eagerly, ItemTranslationLanguage.OFD_SOURCE)
 
     init {
         _state.update {
@@ -172,7 +178,7 @@ class AnalyticsViewModel @Inject constructor(
     fun confirmPendingCategory(item: PendingCategoryItem, categoryId: String) {
         viewModelScope.launch {
             val key = pendingKey(item)
-            saveCategoryOverrideUseCase(item.itemName, categoryId)
+            saveCategoryOverrideUseCase(item.sourceItemName, categoryId)
             dismissedPending.remove(key)
             _state.update { st ->
                 val s = st.summary ?: return@update st
@@ -195,19 +201,31 @@ class AnalyticsViewModel @Inject constructor(
         }
     }
 
-    fun requestCategoryChange(itemName: String) {
+    fun requestCategoryChange(sourceItemName: String, displayItemName: String) {
         _state.update {
             it.copy(
-                categoryChangeItem = PendingCategoryItem(itemName = itemName, candidates = emptyList()),
+                categoryChangeItem = PendingCategoryItem(
+                    sourceItemName = sourceItemName,
+                    displayItemName = displayItemName,
+                    candidates = emptyList(),
+                ),
             )
         }
     }
 
-    fun confirmCategoryChange(itemName: String, categoryId: String) {
+    fun confirmCategoryChange(sourceItemName: String, categoryId: String) {
         viewModelScope.launch {
-            _state.update { it.copy(resolvingItemName = itemName) }
-            saveCategoryOverrideUseCase(itemName, categoryId)
-            dismissedPending.remove(pendingKey(PendingCategoryItem(itemName = itemName, candidates = emptyList())))
+            _state.update { it.copy(resolvingItemName = sourceItemName) }
+            saveCategoryOverrideUseCase(sourceItemName, categoryId)
+            dismissedPending.remove(
+                pendingKey(
+                    PendingCategoryItem(
+                        sourceItemName = sourceItemName,
+                        displayItemName = sourceItemName,
+                        candidates = emptyList(),
+                    ),
+                ),
+            )
             _state.update { it.copy(categoryChangeItem = null, resolvingItemName = null) }
             scheduleDebouncedAnalyticsRefresh()
         }
@@ -235,23 +253,37 @@ class AnalyticsViewModel @Inject constructor(
     }
 
     fun categoryLabel(categoryId: String): String {
-        val language = _state.value.language
-        val resolvedTag = when (language) {
-            AppLanguage.RUSSIAN -> AppLanguage.RUSSIAN.tag
-            AppLanguage.KAZAKH -> AppLanguage.KAZAKH.tag
-            AppLanguage.ENGLISH -> AppLanguage.ENGLISH.tag
-            AppLanguage.SYSTEM -> {
-                val system = java.util.Locale.getDefault().language
-                if (system in listOf(AppLanguage.RUSSIAN.tag, AppLanguage.KAZAKH.tag, AppLanguage.ENGLISH.tag)) {
-                    system
-                } else {
-                    AppLanguage.ENGLISH.tag
-                }
-            }
-        }
+        val resolvedTag = resolveAnalyticsDisplayLanguageTag()
         retailDisplayGroupsRepository.labelForCategoryOrDisplayId(categoryId, resolvedTag)?.let { return it }
         val category = categories[categoryId] ?: return categoryId
         return resolveLabel(category, resolvedTag)
+    }
+
+    private fun resolveAnalyticsDisplayLanguageTag(): String {
+        val itemLang = itemTranslationLanguage.value
+        return when (itemLang) {
+            ItemTranslationLanguage.ENGLISH -> AppLanguage.ENGLISH.tag
+            ItemTranslationLanguage.RUSSIAN -> AppLanguage.RUSSIAN.tag
+            ItemTranslationLanguage.KAZAKH -> AppLanguage.KAZAKH.tag
+            ItemTranslationLanguage.SYSTEM,
+            ItemTranslationLanguage.OFD_SOURCE,
+            -> {
+                val appLanguage = _state.value.language
+                when (appLanguage) {
+                    AppLanguage.RUSSIAN -> AppLanguage.RUSSIAN.tag
+                    AppLanguage.KAZAKH -> AppLanguage.KAZAKH.tag
+                    AppLanguage.ENGLISH -> AppLanguage.ENGLISH.tag
+                    AppLanguage.SYSTEM -> {
+                        val system = java.util.Locale.getDefault().language
+                        if (system in listOf(AppLanguage.RUSSIAN.tag, AppLanguage.KAZAKH.tag, AppLanguage.ENGLISH.tag)) {
+                            system
+                        } else {
+                            AppLanguage.ENGLISH.tag
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private fun resolveRange(period: AnalyticsPeriod): Pair<Instant?, Instant?> {
@@ -269,7 +301,8 @@ class AnalyticsViewModel @Inject constructor(
 
     private fun applySummary(summary: AnalyticsSummary, showPrompt: Boolean) {
         activeRequest = null
-        val allPending = summary.pendingItems
+        val normalizedSummary = normalizeSummaryDisplayGroups(summary)
+        val allPending = normalizedSummary.pendingItems
         val visible = allPending.filterNot { dismissedPending.contains(pendingKey(it)) }
         val shouldPrompt = showPrompt && pendingPromptEnabled && !pendingPromptShown && allPending.isNotEmpty()
         if (shouldPrompt) pendingPromptShown = true
@@ -277,13 +310,72 @@ class AnalyticsViewModel @Inject constructor(
         _state.update {
             it.copy(
                 isLoading = false,
-                summary = summary,
+                summary = normalizedSummary,
                 pendingItems = visible,
                 pendingItemsAll = allPending,
                 resolvingItemName = null,
                 pendingPromptVisible = shouldPrompt,
             )
         }
+    }
+
+    private fun normalizeSummaryDisplayGroups(summary: AnalyticsSummary): AnalyticsSummary {
+        fun normalizeGroupId(raw: String): String {
+            return if (raw == "00") RetailDisplayGroupResolver.FALLBACK_GROUP_ID else raw
+        }
+
+        val totalsByGroup = LinkedHashMap<String, Double>()
+        summary.categoryTotals.forEach { total ->
+            val key = normalizeGroupId(total.categoryId)
+            totalsByGroup[key] = (totalsByGroup[key] ?: 0.0) + total.amount
+        }
+        val safeTotal = summary.totalSpent.takeIf { it > 0.0 } ?: totalsByGroup.values.sum().takeIf { it > 0.0 } ?: 1.0
+        val mergedTotals = totalsByGroup.entries
+            .sortedByDescending { it.value }
+            .map { (id, amount) ->
+                com.chelovecheck.domain.model.CategoryTotal(
+                    categoryId = id,
+                    amount = amount,
+                    share = (amount / safeTotal).toFloat(),
+                )
+            }
+
+        val mergedItems = LinkedHashMap<String, List<com.chelovecheck.domain.model.CategoryItemTotal>>()
+        summary.categoryItems.forEach { (categoryId, items) ->
+            val normalized = normalizeGroupId(categoryId)
+            val existing = mergedItems[normalized].orEmpty()
+            mergedItems[normalized] = mergeCategoryItems(existing + items)
+        }
+
+        return summary.copy(
+            categoryTotals = mergedTotals,
+            categoryItems = mergedItems,
+        )
+    }
+
+    private fun mergeCategoryItems(items: List<com.chelovecheck.domain.model.CategoryItemTotal>): List<com.chelovecheck.domain.model.CategoryItemTotal> {
+        if (items.isEmpty()) return emptyList()
+        val merged = LinkedHashMap<String, com.chelovecheck.domain.model.CategoryItemTotal>()
+        items.forEach { item ->
+            val key = ItemNameNormalizer.normalizeForMatch(item.sourceItemName)
+                .ifBlank { item.sourceItemName.trim() }
+            val current = merged[key]
+            if (current == null) {
+                merged[key] = item
+            } else {
+                val display = if (item.displayItemName.length > current.displayItemName.length) {
+                    item.displayItemName
+                } else {
+                    current.displayItemName
+                }
+                merged[key] = current.copy(
+                    displayItemName = display,
+                    amount = current.amount + item.amount,
+                    count = current.count + item.count,
+                )
+            }
+        }
+        return merged.values.sortedByDescending { it.amount }
     }
 
     private fun resolveLabel(category: CoicopCategory, languageTag: String): String {
@@ -312,7 +404,7 @@ class AnalyticsViewModel @Inject constructor(
     }
 
     private fun pendingKey(item: PendingCategoryItem): String {
-        val base = ItemNameNormalizer.normalizeForMatch(item.itemName)
+        val base = ItemNameNormalizer.normalizeForMatch(item.sourceItemName)
         val net = item.networkKey ?: "__unknown__"
         return "$base|$net"
     }

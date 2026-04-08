@@ -40,6 +40,7 @@ import kotlinx.coroutines.delay
 fun SwipeableReceiptCard(
     item: ReceiptListItem,
     totalFormatted: String,
+    searchHighlight: String? = null,
     onOpenReceipt: (String) -> Unit,
     onRequestDelete: () -> Unit,
     onOpenMap: () -> Unit,
@@ -102,6 +103,7 @@ fun SwipeableReceiptCard(
             ReceiptCard(
                 item = item,
                 totalFormatted = totalFormatted,
+                searchHighlight = searchHighlight,
                 onOpenReceipt = onOpenReceipt,
                 onLongPress = {
                     haptics(HapticFeedbackType.LongPress)

@@ -7,6 +7,7 @@ import com.chelovecheck.domain.model.AfterScanAction
 import com.chelovecheck.domain.model.AppLanguage
 import com.chelovecheck.domain.model.ColorSource
 import com.chelovecheck.domain.model.DisplayCurrency
+import com.chelovecheck.domain.model.ItemTranslationLanguage
 import com.chelovecheck.domain.model.Receipt
 import com.chelovecheck.domain.model.LogLevel
 import com.chelovecheck.domain.model.MapProvider
@@ -30,6 +31,7 @@ import com.chelovecheck.domain.usecase.ObserveThemeModeUseCase
 import com.chelovecheck.domain.usecase.SetAccentColorUseCase
 import com.chelovecheck.domain.usecase.SetDisplayCurrencyUseCase
 import com.chelovecheck.domain.usecase.SetLanguageUseCase
+import com.chelovecheck.domain.usecase.SetItemTranslationLanguageUseCase
 import com.chelovecheck.domain.usecase.SetAfterScanActionUseCase
 import com.chelovecheck.domain.usecase.SetAnalyticsPendingPromptUseCase
 import com.chelovecheck.domain.usecase.SetColorSourceUseCase
@@ -38,6 +40,7 @@ import com.chelovecheck.domain.usecase.SetLogLevelUseCase
 import com.chelovecheck.domain.usecase.SetMapProviderUseCase
 import com.chelovecheck.domain.usecase.ReplaceImportedDuplicatesUseCase
 import com.chelovecheck.domain.usecase.SetThemeModeUseCase
+import com.chelovecheck.domain.usecase.ObserveItemTranslationLanguageUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.SharingStarted
@@ -60,6 +63,7 @@ class SettingsViewModel @Inject constructor(
     observeHapticsEnabledUseCase: ObserveHapticsEnabledUseCase,
     observeAnalyticsPendingPromptUseCase: ObserveAnalyticsPendingPromptUseCase,
     observeDisplayCurrencyUseCase: ObserveDisplayCurrencyUseCase,
+    observeItemTranslationLanguageUseCase: ObserveItemTranslationLanguageUseCase,
     private val setThemeModeUseCase: SetThemeModeUseCase,
     private val setLanguageUseCase: SetLanguageUseCase,
     private val setLogLevelUseCase: SetLogLevelUseCase,
@@ -70,6 +74,7 @@ class SettingsViewModel @Inject constructor(
     private val setHapticsEnabledUseCase: SetHapticsEnabledUseCase,
     private val setAnalyticsPendingPromptUseCase: SetAnalyticsPendingPromptUseCase,
     private val setDisplayCurrencyUseCase: SetDisplayCurrencyUseCase,
+    private val setItemTranslationLanguageUseCase: SetItemTranslationLanguageUseCase,
     private val exportReceiptsUseCase: ExportReceiptsUseCase,
     private val exportReceiptsCsvUseCase: ExportReceiptsCsvUseCase,
     private val importReceiptsUseCase: ImportReceiptsUseCase,
@@ -109,6 +114,9 @@ class SettingsViewModel @Inject constructor(
 
     val displayCurrency: StateFlow<DisplayCurrency> = observeDisplayCurrencyUseCase()
         .stateIn(viewModelScope, SharingStarted.Eagerly, DisplayCurrency.KZT)
+
+    val itemTranslationLanguage: StateFlow<ItemTranslationLanguage> = observeItemTranslationLanguageUseCase()
+        .stateIn(viewModelScope, SharingStarted.Eagerly, ItemTranslationLanguage.OFD_SOURCE)
 
     fun setThemeMode(mode: ThemeMode) {
         viewModelScope.launch {
@@ -167,6 +175,12 @@ class SettingsViewModel @Inject constructor(
     fun setDisplayCurrency(currency: DisplayCurrency) {
         viewModelScope.launch {
             setDisplayCurrencyUseCase(currency)
+        }
+    }
+
+    fun setItemTranslationLanguage(language: ItemTranslationLanguage) {
+        viewModelScope.launch {
+            setItemTranslationLanguageUseCase(language)
         }
     }
 

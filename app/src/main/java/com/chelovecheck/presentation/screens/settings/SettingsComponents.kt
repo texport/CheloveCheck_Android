@@ -22,6 +22,7 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -187,4 +188,40 @@ internal fun LinkButton(label: String, url: String) {
     val context = LocalContext.current
     val intent = remember(url) { Intent(Intent.ACTION_VIEW, Uri.parse(url)) }
     TextButton(onClick = { context.startActivity(intent) }) { Text(label) }
+}
+
+@Composable
+internal fun InputDialog(
+    title: String,
+    value: String,
+    placeholder: String,
+    onConfirm: (String) -> Unit,
+    onDismiss: () -> Unit,
+) {
+    var pending by remember(value) { mutableStateOf(value) }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+        title = { Text(title) },
+        text = {
+            OutlinedTextField(
+                value = pending,
+                onValueChange = { pending = it },
+                placeholder = { Text(placeholder) },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true,
+            )
+        },
+        confirmButton = {
+            TextButton(
+                onClick = {
+                    onConfirm(pending.trim())
+                    onDismiss()
+                },
+            ) { Text(stringResource(R.string.action_save)) }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.action_cancel)) }
+        },
+    )
 }

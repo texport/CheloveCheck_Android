@@ -58,6 +58,7 @@ import com.chelovecheck.presentation.screens.analytics.SectionTitle
 import com.chelovecheck.presentation.screens.analytics.SectionTitleWithAction
 import com.chelovecheck.presentation.screens.analytics.SummaryCard
 import com.chelovecheck.presentation.components.M3MaxWidthColumn
+import com.chelovecheck.presentation.adaptive.AdaptiveLayoutPolicy
 import com.chelovecheck.presentation.viewmodel.AnalyticsViewModel
 import com.chelovecheck.presentation.utils.rememberHapticPerformer
 import androidx.compose.material3.AlertDialog
@@ -65,7 +66,10 @@ import androidx.compose.material3.TextButton
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun AnalyticsScreen(viewModel: AnalyticsViewModel = hiltViewModel()) {
+fun AnalyticsScreen(
+    adaptivePolicy: AdaptiveLayoutPolicy? = null,
+    viewModel: AnalyticsViewModel = hiltViewModel(),
+) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val pendingCount = state.pendingItemsAll.size
     var showPendingDialog by rememberSaveable { mutableStateOf(false) }
@@ -73,6 +77,7 @@ fun AnalyticsScreen(viewModel: AnalyticsViewModel = hiltViewModel()) {
     var categoriesExpanded by rememberSaveable { mutableStateOf(false) }
     var selectedCategoryId by rememberSaveable { mutableStateOf<String?>(null) }
     val context = LocalContext.current
+    val horizontalPadding = if (adaptivePolicy?.preferTwoPane == true) 24.dp else 16.dp
     val haptics = rememberHapticPerformer()
     val permissionManager = remember(context) { PermissionManager(context.applicationContext) }
     var hasNotificationPermission by remember {
@@ -119,7 +124,7 @@ fun AnalyticsScreen(viewModel: AnalyticsViewModel = hiltViewModel()) {
         M3MaxWidthColumn(
             modifier = Modifier
                 .padding(padding)
-                .padding(start = 16.dp, end = 16.dp, bottom = 12.dp),
+                .padding(start = horizontalPadding, end = horizontalPadding, bottom = 12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             PeriodChips(
@@ -184,72 +189,151 @@ fun AnalyticsScreen(viewModel: AnalyticsViewModel = hiltViewModel()) {
                     } else {
                         summary.categoryTotals.take(maxVisibleCategories)
                     }
-                    LazyColumn(
-                        modifier = Modifier.fillMaxWidth().weight(1f),
-                        contentPadding = PaddingValues(top = 4.dp, bottom = 12.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp),
-                    ) {
-                        item {
-                            SummaryCard(
-                                total = summary.totalSpent,
-                                receiptsCount = summary.receiptsCount,
-                                average = summary.averageReceipt,
-                                viewModel = viewModel,
-                            )
+                    if (adaptivePolicy?.preferTwoPane == true) {
+                        androidx.compose.foundation.layout.Row(
+                            modifier = Modifier.fillMaxWidth().weight(1f),
+                            horizontalArrangement = Arrangement.spacedBy(12.dp),
+                        ) {
+                            LazyColumn(
+                                modifier = Modifier.weight(1f),
+                                contentPadding = PaddingValues(top = 4.dp, bottom = 12.dp),
+                                verticalArrangement = Arrangement.spacedBy(12.dp),
+                            ) {
+                                item {
+                                    SummaryCard(
+                                        total = summary.totalSpent,
+                                        receiptsCount = summary.receiptsCount,
+                                        average = summary.averageReceipt,
+                                        viewModel = viewModel,
+                                    )
+                                }
+                                item {
+                                    SectionTitleWithAction(
+                                        icon = Icons.Outlined.BarChart,
+                                        title = stringResource(R.string.analytics_categories),
+                                        actionLabel = if (hasMoreCategories) {
+                                            if (categoriesExpanded) {
+                                                stringResource(R.string.action_collapse)
+                                            } else {
+                                                stringResource(
+                                                    R.string.analytics_show_all,
+                                                    summary.categoryTotals.size - maxVisibleCategories,
+                                                )
+                                            }
+                                        } else {
+                                            null
+                                        },
+                                        onActionClick = {
+                                            haptics(HapticFeedbackType.GestureThresholdActivate)
+                                            categoriesExpanded = !categoriesExpanded
+                                        },
+                                    )
+                                }
+                                items(visibleCategories) { item ->
+                                    CategoryRow(
+                                        item = item,
+                                        categoryLabel = viewModel.categoryLabel(item.categoryId),
+                                        viewModel = viewModel,
+                                        onClick = {
+                                            haptics(HapticFeedbackType.GestureThresholdActivate)
+                                            selectedCategoryId = item.categoryId
+                                        },
+                                    )
+                                }
+                            }
+                            LazyColumn(
+                                modifier = Modifier.weight(1f),
+                                contentPadding = PaddingValues(top = 4.dp, bottom = 12.dp),
+                                verticalArrangement = Arrangement.spacedBy(12.dp),
+                            ) {
+                                item {
+                                    SectionTitle(
+                                        icon = Icons.Outlined.Payments,
+                                        title = stringResource(R.string.analytics_payments),
+                                    )
+                                }
+                                items(summary.paymentTotals) { item ->
+                                    PaymentRow(item, viewModel)
+                                }
+                                item {
+                                    SectionTitle(
+                                        icon = Icons.Outlined.Insights,
+                                        title = stringResource(R.string.analytics_merchants),
+                                    )
+                                }
+                                items(summary.topMerchants) { item ->
+                                    MerchantRow(item, viewModel)
+                                }
+                            }
                         }
+                    } else {
+                        LazyColumn(
+                            modifier = Modifier.fillMaxWidth().weight(1f),
+                            contentPadding = PaddingValues(top = 4.dp, bottom = 12.dp),
+                            verticalArrangement = Arrangement.spacedBy(12.dp),
+                        ) {
+                            item {
+                                SummaryCard(
+                                    total = summary.totalSpent,
+                                    receiptsCount = summary.receiptsCount,
+                                    average = summary.averageReceipt,
+                                    viewModel = viewModel,
+                                )
+                            }
 
-                        item {
-                            SectionTitleWithAction(
-                                icon = Icons.Outlined.BarChart,
-                                title = stringResource(R.string.analytics_categories),
-                                actionLabel = if (hasMoreCategories) {
-                                    if (categoriesExpanded) {
-                                        stringResource(R.string.action_collapse)
+                            item {
+                                SectionTitleWithAction(
+                                    icon = Icons.Outlined.BarChart,
+                                    title = stringResource(R.string.analytics_categories),
+                                    actionLabel = if (hasMoreCategories) {
+                                        if (categoriesExpanded) {
+                                            stringResource(R.string.action_collapse)
+                                        } else {
+                                            stringResource(
+                                                R.string.analytics_show_all,
+                                                summary.categoryTotals.size - maxVisibleCategories,
+                                            )
+                                        }
                                     } else {
-                                        stringResource(
-                                            R.string.analytics_show_all,
-                                            summary.categoryTotals.size - maxVisibleCategories,
-                                        )
-                                    }
-                                } else {
-                                    null
-                                },
-                                onActionClick = {
-                                    haptics(HapticFeedbackType.GestureThresholdActivate)
-                                    categoriesExpanded = !categoriesExpanded
-                                },
-                            )
-                        }
-                        items(visibleCategories) { item ->
-                            CategoryRow(
-                                item = item,
-                                categoryLabel = viewModel.categoryLabel(item.categoryId),
-                                viewModel = viewModel,
-                                onClick = {
-                                    haptics(HapticFeedbackType.GestureThresholdActivate)
-                                    selectedCategoryId = item.categoryId
-                                },
-                            )
-                        }
+                                        null
+                                    },
+                                    onActionClick = {
+                                        haptics(HapticFeedbackType.GestureThresholdActivate)
+                                        categoriesExpanded = !categoriesExpanded
+                                    },
+                                )
+                            }
+                            items(visibleCategories) { item ->
+                                CategoryRow(
+                                    item = item,
+                                    categoryLabel = viewModel.categoryLabel(item.categoryId),
+                                    viewModel = viewModel,
+                                    onClick = {
+                                        haptics(HapticFeedbackType.GestureThresholdActivate)
+                                        selectedCategoryId = item.categoryId
+                                    },
+                                )
+                            }
 
-                        item {
-                            SectionTitle(
-                                icon = Icons.Outlined.Payments,
-                                title = stringResource(R.string.analytics_payments),
-                            )
-                        }
-                        items(summary.paymentTotals) { item ->
-                            PaymentRow(item, viewModel)
-                        }
+                            item {
+                                SectionTitle(
+                                    icon = Icons.Outlined.Payments,
+                                    title = stringResource(R.string.analytics_payments),
+                                )
+                            }
+                            items(summary.paymentTotals) { item ->
+                                PaymentRow(item, viewModel)
+                            }
 
-                        item {
-                            SectionTitle(
-                                icon = Icons.Outlined.Insights,
-                                title = stringResource(R.string.analytics_merchants),
-                            )
-                        }
-                        items(summary.topMerchants) { item ->
-                            MerchantRow(item, viewModel)
+                            item {
+                                SectionTitle(
+                                    icon = Icons.Outlined.Insights,
+                                    title = stringResource(R.string.analytics_merchants),
+                                )
+                            }
+                            items(summary.topMerchants) { item ->
+                                MerchantRow(item, viewModel)
+                            }
                         }
                     }
                 }
@@ -323,7 +407,7 @@ fun AnalyticsScreen(viewModel: AnalyticsViewModel = hiltViewModel()) {
             viewModel = viewModel,
             onItemClick = {
                 selectedCategoryId = null
-                viewModel.requestCategoryChange(it.itemName)
+                viewModel.requestCategoryChange(it.sourceItemName, it.displayItemName)
             },
             onDismiss = { selectedCategoryId = null },
         )
@@ -336,10 +420,10 @@ fun AnalyticsScreen(viewModel: AnalyticsViewModel = hiltViewModel()) {
             pickerGroupIds = state.pickerDisplayGroupIds,
             labelProvider = viewModel::categoryLabel,
             onSelect = { id ->
-                viewModel.confirmCategoryChange(changeItem.itemName, id)
+                viewModel.confirmCategoryChange(changeItem.sourceItemName, id)
             },
             onDismiss = viewModel::dismissCategoryChange,
-            isResolving = state.resolvingItemName == changeItem.itemName,
+            isResolving = state.resolvingItemName == changeItem.sourceItemName,
         )
     }
 }

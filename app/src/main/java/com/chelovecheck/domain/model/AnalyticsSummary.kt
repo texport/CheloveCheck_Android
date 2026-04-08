@@ -20,7 +20,8 @@ data class CategoryTotal(
 )
 
 data class CategoryItemTotal(
-    val itemName: String,
+    val sourceItemName: String,
+    val displayItemName: String,
     val amount: Double,
     val count: Int,
 )
@@ -37,8 +38,9 @@ data class PaymentTotal(
 )
 
 data class PendingCategoryItem(
-    val itemName: String,
+    val sourceItemName: String,
+    val displayItemName: String,
     val candidates: List<CategoryCandidate>,
-    /** Retail network name from BIN when distinct from [itemName] bucket; null if unknown. */
+    /** Retail network name from BIN when distinct from source-item bucket; null if unknown. */
     val networkKey: String? = null,
 )

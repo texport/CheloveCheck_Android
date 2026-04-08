@@ -170,6 +170,8 @@
     <string name="receipt_payment_taken">Cash received</string>
     <string name="receipt_payment_change">Change</string>
     <string name="receipt_not_found">Receipt not found</string>
+    <string name="receipt_loading_receipt">Loading receipt...</string>
+    <string name="receipt_loading_translating_items">Translating item names...</string>
     <string name="selected_count">%1$d selected</string>
     <string name="receipt_edit_address_title">Edit address</string>
     <string name="receipt_edit_address_label">Address</string>
@@ -198,6 +200,18 @@
     <string name="action_reorder">Reorder</string>
     <string name="error_no_address">Address not found</string>
     <string name="settings_language">Language</string>
+    <string name="settings_item_language">Receipt item language</string>
+    <string name="settings_translation_provider">Translation provider</string>
+    <string name="settings_translation_provider_config">Provider config</string>
+    <string name="settings_translation_provider_no_setup">No additional setup required</string>
+    <string name="settings_translation_provider_openai_hint">Set OpenAI API key</string>
+    <string name="settings_translation_provider_gemini_hint">Set Gemini API key</string>
+    <string name="settings_translation_provider_web_warning">Experimental web mode: unstable, no guarantees</string>
+    <string name="settings_translation_libre_endpoint">LibreTranslate endpoint</string>
+    <string name="settings_translation_openai_key">OpenAI API key</string>
+    <string name="settings_translation_gemini_key">Gemini API key</string>
+    <string name="settings_translation_openai_model">OpenAI model</string>
+    <string name="settings_translation_gemini_model">Gemini model</string>
     <string name="settings_receipts">Receipts</string>
     <string name="settings_links">Links</string>
     <string name="settings_diagnostics">Diagnostics</string>
@@ -252,6 +266,14 @@
     <string name="language_en">English</string>
     <string name="language_ru">Русский</string>
     <string name="language_kk">Қазақша</string>
+    <string name="language_ofd_source">As in OFD (no translation)</string>
+
+    <string name="translation_provider_libre">LibreTranslate</string>
+    <string name="translation_provider_openai">OpenAI</string>
+    <string name="translation_provider_gemini">Gemini</string>
+    <string name="translation_provider_web_experimental">Web experimental (free, unstable)</string>
+    <string name="translation_provider_google">Google Translate</string>
+    <string name="translation_provider_yandex">Yandex Translate</string>
 
     <string name="log_level_off">Off</string>
     <string name="log_level_error">Errors</string>

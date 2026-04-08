@@ -33,6 +33,7 @@ import com.chelovecheck.domain.model.AccentColor
 import com.chelovecheck.domain.model.AppLanguage
 import com.chelovecheck.domain.model.ColorSource
 import com.chelovecheck.domain.model.DisplayCurrency
+import com.chelovecheck.domain.model.ItemTranslationLanguage
 import com.chelovecheck.domain.model.LogLevel
 import com.chelovecheck.domain.model.MapProvider
 import com.chelovecheck.domain.model.ThemeMode
@@ -48,6 +49,7 @@ import com.chelovecheck.presentation.strings.accentColorLabel
 import com.chelovecheck.presentation.strings.colorSourceLabel
 import com.chelovecheck.presentation.strings.displayCurrencyLabel
 import com.chelovecheck.presentation.strings.languageLabel
+import com.chelovecheck.presentation.strings.itemTranslationLanguageLabel
 import com.chelovecheck.presentation.strings.logLevelLabel
 import com.chelovecheck.presentation.strings.mapProviderLabel
 import com.chelovecheck.presentation.strings.themeLabel
@@ -71,6 +73,7 @@ fun SettingsScreen(
     val hapticsEnabled by viewModel.hapticsEnabled.collectAsStateWithLifecycle()
     val analyticsPendingPromptEnabled by viewModel.analyticsPendingPromptEnabled.collectAsStateWithLifecycle()
     val displayCurrency by viewModel.displayCurrency.collectAsStateWithLifecycle()
+    val itemTranslationLanguage by viewModel.itemTranslationLanguage.collectAsStateWithLifecycle()
 
     var showThemeDialog by remember { mutableStateOf(false) }
     var showLanguageDialog by remember { mutableStateOf(false) }
@@ -79,6 +82,7 @@ fun SettingsScreen(
     var showAccentDialog by remember { mutableStateOf(false) }
     var showMapProviderDialog by remember { mutableStateOf(false) }
     var showCurrencyDialog by remember { mutableStateOf(false) }
+    var showItemLanguageDialog by remember { mutableStateOf(false) }
     Scaffold(
         contentWindowInsets = WindowInsets(0),
         containerColor = MaterialTheme.colorScheme.surfaceContainerLowest,
@@ -107,6 +111,7 @@ fun SettingsScreen(
                 colorSourceLabel = colorSourceLabel(colorSource),
                 accentColorLabel = accentColorLabel(accentColor),
                 languageLabel = languageLabel(language),
+                itemLanguageLabel = itemTranslationLanguageLabel(itemTranslationLanguage),
                 mapProviderLabel = mapProviderLabel(mapProvider),
                 displayCurrencyLabel = displayCurrencyLabel(displayCurrency),
                 diagnosticsLabel = logLevelLabel(logLevel),
@@ -130,6 +135,10 @@ fun SettingsScreen(
                 onMapProviderClick = {
                     haptics(HapticFeedbackType.GestureThresholdActivate)
                     showMapProviderDialog = true
+                },
+                onItemLanguageClick = {
+                    haptics(HapticFeedbackType.GestureThresholdActivate)
+                    showItemLanguageDialog = true
                 },
                 onDisplayCurrencyClick = {
                     haptics(HapticFeedbackType.GestureThresholdActivate)
@@ -173,6 +182,24 @@ fun SettingsScreen(
             Spacer(modifier = Modifier.height(4.dp))
             }
         }
+    }
+
+    if (showItemLanguageDialog) {
+        val languages = ItemTranslationLanguage.entries
+        ChoiceDialog(
+            title = stringResource(R.string.settings_item_language),
+            options = languages,
+            selected = itemTranslationLanguage,
+            label = { itemTranslationLanguageLabel(it) },
+            onSelected = {
+                haptics(HapticFeedbackType.GestureThresholdActivate)
+                viewModel.setItemTranslationLanguage(it)
+            },
+            onDismiss = {
+                haptics(HapticFeedbackType.GestureThresholdActivate)
+                showItemLanguageDialog = false
+            },
+        )
     }
 
     if (showThemeDialog) {

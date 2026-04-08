@@ -1,5 +1,6 @@
 package com.chelovecheck.presentation.screens
 
+import android.util.Log
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -63,6 +64,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.chelovecheck.R
 import com.chelovecheck.domain.model.ReceiptFilter
 import com.chelovecheck.domain.model.ReceiptListItem
+import com.chelovecheck.presentation.adaptive.AdaptiveLayoutPolicy
 import com.chelovecheck.presentation.screens.checks.ChecksGroupBottomSheet
 import com.chelovecheck.presentation.screens.checks.ChecksListEntry
 import com.chelovecheck.presentation.screens.checks.ChecksSortBottomSheet
@@ -88,10 +90,12 @@ import java.time.format.DateTimeFormatter
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChecksScreen(
+    adaptivePolicy: AdaptiveLayoutPolicy? = null,
     onOpenReceipt: (fiscalSign: String, searchQuery: String) -> Unit,
     scrollToTopSignal: Int = 0,
     viewModel: ChecksViewModel = hiltViewModel(),
 ) {
+    val isTwoPaneLayout = adaptivePolicy?.preferTwoPane == true
     val state by viewModel.state.collectAsStateWithLifecycle()
     val mapProvider by viewModel.mapProvider.collectAsStateWithLifecycle()
     val sortOrder by viewModel.sortOrder.collectAsStateWithLifecycle()
@@ -135,6 +139,7 @@ fun ChecksScreen(
         }
     }
     val pullRefreshState = rememberPullToRefreshState()
+    val horizontalPadding = if (isTwoPaneLayout) 24.dp else 16.dp
 
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
@@ -272,7 +277,7 @@ fun ChecksScreen(
                 },
             verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
-            Box(modifier = Modifier.padding(horizontal = 16.dp)) {
+            Box(modifier = Modifier.padding(horizontal = horizontalPadding)) {
                 SearchField(
                     value = state.searchQuery,
                     onValueChange = viewModel::onSearchQueryChange,
@@ -287,7 +292,7 @@ fun ChecksScreen(
             }
 
             Column(
-                modifier = Modifier.padding(horizontal = 16.dp),
+                modifier = Modifier.padding(horizontal = horizontalPadding),
                 verticalArrangement = Arrangement.spacedBy(6.dp),
             ) {
                 FiltersRow(
@@ -369,7 +374,7 @@ fun ChecksScreen(
                     Box(modifier = listPaneModifier) {
                         LazyColumn(
                             state = listState,
-                            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+                            contentPadding = PaddingValues(horizontal = horizontalPadding, vertical = 8.dp),
                             verticalArrangement = Arrangement.spacedBy(12.dp),
                             modifier = Modifier.fillMaxSize(),
                         ) {
@@ -404,8 +409,13 @@ fun ChecksScreen(
                                         SwipeableReceiptCard(
                                             item = item,
                                             totalFormatted = totalFormatted,
+                                            searchHighlight = state.searchQuery,
                                             onOpenReceipt = { fs ->
                                                 haptics(HapticFeedbackType.GestureThresholdActivate)
+                                                Log.d(
+                                                    "ReceiptNav",
+                                                    "open receipt click: fiscalSign=$fs searchQuery='${state.searchQuery.take(80)}'",
+                                                )
                                                 onOpenReceipt(fs, state.searchQuery)
                                             },
                                             onToggleFavorite = {
@@ -498,6 +508,7 @@ fun ChecksScreen(
         visible = sortSheetOpen,
         current = sortOrder,
         onDismiss = { sortSheetOpen = false },
+        onHaptic = { haptics(HapticFeedbackType.GestureThresholdActivate) },
         onSelect = { order ->
             sortSheetOpen = false
             viewModel.setSortOrder(order)
@@ -507,6 +518,7 @@ fun ChecksScreen(
         visible = groupSheetOpen,
         current = groupMode,
         onDismiss = { groupSheetOpen = false },
+        onHaptic = { haptics(HapticFeedbackType.GestureThresholdActivate) },
         onSelect = { mode ->
             groupSheetOpen = false
             viewModel.setGroupMode(mode)

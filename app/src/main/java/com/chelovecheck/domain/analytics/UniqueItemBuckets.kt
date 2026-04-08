@@ -2,6 +2,7 @@ package com.chelovecheck.domain.analytics
 
 import com.chelovecheck.domain.model.Item
 import com.chelovecheck.domain.model.Receipt
+import com.chelovecheck.domain.model.analyticsSourceName
 import com.chelovecheck.domain.utils.ItemNameNormalizer
 import kotlin.math.max
 import kotlin.math.roundToInt
@@ -12,6 +13,7 @@ import kotlin.math.roundToInt
 data class UniqueItemBucket(
     val normalizedKey: String,
     val networkKey: String,
+    var sampleSourceName: String,
     var sampleDisplayName: String,
     var totalAmount: Double,
     var totalCount: Int,
@@ -36,8 +38,10 @@ private fun accumulateItem(
     item: Item,
     networkKey: String,
 ) {
-    val nameKey = ItemNameNormalizer.normalizeForMatch(item.name).ifBlank { item.name.trim() }
+    val sourceName = item.analyticsSourceName()
+    val nameKey = ItemNameNormalizer.normalizeForMatch(sourceName).ifBlank { sourceName.trim() }
     val compositeKey = "$nameKey|$networkKey"
+    val sourceDisplay = sourceName.trim()
     val display = item.name.trim()
     val amount = if (item.sum > 0.0) item.sum else item.price * max(item.count, 1.0)
     val count = max(item.count, 1.0).roundToInt()
@@ -46,6 +50,7 @@ private fun accumulateItem(
         map[compositeKey] = UniqueItemBucket(
             normalizedKey = compositeKey,
             networkKey = networkKey,
+            sampleSourceName = sourceDisplay,
             sampleDisplayName = display,
             totalAmount = amount,
             totalCount = count,
@@ -53,6 +58,9 @@ private fun accumulateItem(
     } else {
         existing.totalAmount += amount
         existing.totalCount += count
+        if (sourceDisplay.length > existing.sampleSourceName.length) {
+            existing.sampleSourceName = sourceDisplay
+        }
         if (display.length > existing.sampleDisplayName.length) {
             existing.sampleDisplayName = display
         }

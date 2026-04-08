@@ -8,6 +8,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Typeface
 import android.graphics.pdf.PdfDocument
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -50,8 +51,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.WindowInsets
@@ -60,6 +63,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.chelovecheck.R
 import com.chelovecheck.domain.model.Receipt
+import com.chelovecheck.presentation.adaptive.AdaptiveLayoutPolicy
 import com.chelovecheck.presentation.money.rememberReceiptDisplayMoney
 import com.chelovecheck.presentation.strings.formatMoney
 import com.chelovecheck.presentation.strings.formatDecimal
@@ -68,6 +72,7 @@ import com.chelovecheck.presentation.strings.operationLabel
 import com.chelovecheck.presentation.strings.paymentLabel
 import com.chelovecheck.presentation.strings.unitShortLabel
 import com.chelovecheck.presentation.viewmodel.ReceiptViewModel
+import com.chelovecheck.presentation.viewmodel.ReceiptLoadingStage
 import com.chelovecheck.presentation.utils.rememberHapticPerformer
 import com.chelovecheck.presentation.utils.buildSearchHighlightedText
 import com.chelovecheck.presentation.screens.receiptItemsSection
@@ -84,12 +89,14 @@ import java.nio.charset.StandardCharsets
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReceiptScreen(
+    adaptivePolicy: AdaptiveLayoutPolicy? = null,
     fiscalSign: String,
     highlightKey: String = "-",
     onClose: () -> Unit,
     onOpenProduct: (String) -> Unit = {},
     viewModel: ReceiptViewModel = hiltViewModel(),
 ) {
+    val isTwoPaneLayout = adaptivePolicy?.preferTwoPane == true
     val searchHighlight = remember(highlightKey) { decodeReceiptHighlightKey(highlightKey) }
     val state by viewModel.state.collectAsStateWithLifecycle()
     var infoDialogMessage by remember { mutableStateOf<String?>(null) }
@@ -99,6 +106,13 @@ fun ReceiptScreen(
     val context = androidx.compose.ui.platform.LocalContext.current
     val scope = rememberCoroutineScope()
     val haptics = rememberHapticPerformer()
+
+    LaunchedEffect(highlightKey, searchHighlight) {
+        Log.d(
+            "ReceiptSearch",
+            "screen init: fiscalSign=$fiscalSign highlightKey='$highlightKey' decodedQuery='${searchHighlight?.take(80)}'",
+        )
+    }
 
     LaunchedEffect(fiscalSign) {
         viewModel.loadReceipt(fiscalSign)
@@ -201,12 +215,23 @@ fun ReceiptScreen(
                     verticalArrangement = Arrangement.Center,
                 ) {
                     CircularProgressIndicator()
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = when (state.loadingStage) {
+                            ReceiptLoadingStage.LOADING_RECEIPT -> stringResource(R.string.receipt_loading_receipt)
+                            ReceiptLoadingStage.TRANSLATING_ITEMS -> stringResource(R.string.receipt_loading_translating_items)
+                            null -> stringResource(R.string.receipt_loading_receipt)
+                        },
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
                 }
             }
             state.receipt != null -> {
                 val receipt = state.receipt
                 if (receipt != null) {
                     ReceiptContent(
+                        isTwoPaneLayout = isTwoPaneLayout,
                         receipt = receipt,
                         items = state.items,
                         selectedIds = state.selectedIds,
@@ -327,6 +352,7 @@ private fun decodeReceiptHighlightKey(key: String): String? {
 
 @Composable
 private fun ReceiptContent(
+    isTwoPaneLayout: Boolean,
     receipt: Receipt,
     items: List<com.chelovecheck.presentation.viewmodel.ReceiptItemUi>,
     selectedIds: Set<Long>,
@@ -338,6 +364,7 @@ private fun ReceiptContent(
     onEditAddress: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val isNarrowWidth = LocalConfiguration.current.screenWidthDp <= 380
     val datePattern = stringResource(R.string.date_time_format)
     val date = remember(receipt.dateTime, datePattern) {
         val formatter = DateTimeFormatter.ofPattern(datePattern)
@@ -346,49 +373,139 @@ private fun ReceiptContent(
     val totalSummaryText = rememberReceiptDisplayMoney(receipt.totalSum, receiptViewModel)
 
     Box(modifier = modifier.fillMaxSize()) {
-        LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-        ) {
-            item {
-                SummaryCard(
-                    receipt = receipt,
-                    date = date,
-                    totalFormatted = totalSummaryText,
-                    searchHighlight = searchHighlight,
-                    onEditAddress = onEditAddress,
-                )
-            }
-
-            item {
-                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                    SectionTitle(stringResource(R.string.receipt_section_items))
-                    Text(
-                        text = stringResource(R.string.receipt_items_tap_hint),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        if (isTwoPaneLayout) {
+            Row(
+                modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 12.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp),
+            ) {
+                LazyColumn(
+                    modifier = Modifier.weight(1f),
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
+                    item {
+                        SectionTitle(
+                            title = stringResource(R.string.receipt_section_items),
+                            searchHighlight = searchHighlight,
+                        )
+                        Text(
+                            text = buildSearchHighlightedText(
+                                stringResource(R.string.receipt_items_tap_hint),
+                                searchHighlight,
+                                MaterialTheme.colorScheme.secondaryContainer,
+                                MaterialTheme.colorScheme.onSecondaryContainer,
+                            ),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    receiptItemsSection(
+                        items = items,
+                        selectedIds = selectedIds,
+                        isSelectionMode = isSelectionMode,
+                        onToggleSelect = onToggleSelect,
+                        viewModel = receiptViewModel,
+                        onOpenProduct = onOpenProduct,
+                        searchHighlight = searchHighlight,
                     )
                 }
+                LazyColumn(
+                    modifier = Modifier.weight(1f),
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                ) {
+                    item {
+                        SummaryCard(
+                            receipt = receipt,
+                            date = date,
+                            totalFormatted = totalSummaryText,
+                            isNarrowWidth = isNarrowWidth,
+                            searchHighlight = searchHighlight,
+                            onEditAddress = onEditAddress,
+                        )
+                    }
+                    item {
+                        SectionTitle(
+                            title = stringResource(R.string.receipt_section_payments),
+                            searchHighlight = searchHighlight,
+                        )
+                        PaymentsCard(
+                            receipt = receipt,
+                            viewModel = receiptViewModel,
+                            searchHighlight = searchHighlight,
+                        )
+                    }
+                    item {
+                        SectionTitle(
+                            title = stringResource(R.string.receipt_section_details),
+                            searchHighlight = searchHighlight,
+                        )
+                        DetailsCard(receipt = receipt, searchHighlight = searchHighlight)
+                    }
+                }
             }
-            receiptItemsSection(
-                items = items,
-                selectedIds = selectedIds,
-                isSelectionMode = isSelectionMode,
-                onToggleSelect = onToggleSelect,
-                viewModel = receiptViewModel,
-                onOpenProduct = onOpenProduct,
-                searchHighlight = searchHighlight,
-            )
+        } else {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+            ) {
+                item {
+                    SummaryCard(
+                        receipt = receipt,
+                        date = date,
+                        totalFormatted = totalSummaryText,
+                        isNarrowWidth = isNarrowWidth,
+                        searchHighlight = searchHighlight,
+                        onEditAddress = onEditAddress,
+                    )
+                }
 
-            item {
-                SectionTitle(stringResource(R.string.receipt_section_payments))
-                PaymentsCard(receipt = receipt, viewModel = receiptViewModel)
-            }
+                item {
+                    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        SectionTitle(
+                            title = stringResource(R.string.receipt_section_items),
+                            searchHighlight = searchHighlight,
+                        )
+                        Text(
+                            text = buildSearchHighlightedText(
+                                stringResource(R.string.receipt_items_tap_hint),
+                                searchHighlight,
+                                MaterialTheme.colorScheme.secondaryContainer,
+                                MaterialTheme.colorScheme.onSecondaryContainer,
+                            ),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                }
+                receiptItemsSection(
+                    items = items,
+                    selectedIds = selectedIds,
+                    isSelectionMode = isSelectionMode,
+                    onToggleSelect = onToggleSelect,
+                    viewModel = receiptViewModel,
+                    onOpenProduct = onOpenProduct,
+                    searchHighlight = searchHighlight,
+                )
 
-            item {
-                SectionTitle(stringResource(R.string.receipt_section_details))
-                DetailsCard(receipt)
+                item {
+                    SectionTitle(
+                        title = stringResource(R.string.receipt_section_payments),
+                        searchHighlight = searchHighlight,
+                    )
+                    PaymentsCard(
+                        receipt = receipt,
+                        viewModel = receiptViewModel,
+                        searchHighlight = searchHighlight,
+                    )
+                }
+
+                item {
+                    SectionTitle(
+                        title = stringResource(R.string.receipt_section_details),
+                        searchHighlight = searchHighlight,
+                    )
+                    DetailsCard(receipt = receipt, searchHighlight = searchHighlight)
+                }
             }
         }
     }
@@ -399,6 +516,7 @@ private fun SummaryCard(
     receipt: Receipt,
     date: String,
     totalFormatted: String,
+    isNarrowWidth: Boolean,
     searchHighlight: String?,
     onEditAddress: () -> Unit,
 ) {
@@ -437,27 +555,77 @@ private fun SummaryCard(
                 }
             }
             Spacer(modifier = Modifier.height(12.dp))
-
-            Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
-                Column {
-                    Text(
-                        stringResource(R.string.receipt_summary_date),
-                        style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                    Text(date, style = MaterialTheme.typography.bodyLarge)
+            if (isNarrowWidth) {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Column {
+                        Text(
+                            text = buildSearchHighlightedText(
+                                stringResource(R.string.receipt_summary_date),
+                                searchHighlight,
+                                hlBg,
+                                hlFg,
+                            ),
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                        Text(
+                            text = buildSearchHighlightedText(date, searchHighlight, hlBg, hlFg),
+                            style = MaterialTheme.typography.bodyLarge,
+                        )
+                    }
+                    Column {
+                        Text(
+                            text = buildSearchHighlightedText(
+                                stringResource(R.string.receipt_summary_total),
+                                searchHighlight,
+                                hlBg,
+                                hlFg,
+                            ),
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                        Text(
+                            text = buildSearchHighlightedText(totalFormatted, searchHighlight, hlBg, hlFg),
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
                 }
-                Column(horizontalAlignment = Alignment.End) {
-                    Text(
-                        stringResource(R.string.receipt_summary_total),
-                        style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                    Text(
-                        text = totalFormatted,
-                        style = MaterialTheme.typography.headlineMedium,
-                        fontWeight = FontWeight.Bold,
-                    )
+            } else {
+                Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
+                    Column {
+                        Text(
+                            buildSearchHighlightedText(
+                                stringResource(R.string.receipt_summary_date),
+                                searchHighlight,
+                                hlBg,
+                                hlFg,
+                            ),
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                        Text(
+                            text = buildSearchHighlightedText(date, searchHighlight, hlBg, hlFg),
+                            style = MaterialTheme.typography.bodyLarge,
+                        )
+                    }
+                    Column(horizontalAlignment = Alignment.End) {
+                        Text(
+                            buildSearchHighlightedText(
+                                stringResource(R.string.receipt_summary_total),
+                                searchHighlight,
+                                hlBg,
+                                hlFg,
+                            ),
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                        Text(
+                            text = buildSearchHighlightedText(totalFormatted, searchHighlight, hlBg, hlFg),
+                            style = MaterialTheme.typography.headlineMedium,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
                 }
             }
 
@@ -467,7 +635,12 @@ private fun SummaryCard(
                 color = MaterialTheme.colorScheme.surfaceVariant,
             ) {
                 Text(
-                    text = operationLabel(receipt.typeOperation),
+                    text = buildSearchHighlightedText(
+                        operationLabel(receipt.typeOperation),
+                        searchHighlight,
+                        hlBg,
+                        hlFg,
+                    ),
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
                     style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -478,16 +651,23 @@ private fun SummaryCard(
 }
 
 @Composable
-private fun SectionTitle(title: String) {
+private fun SectionTitle(title: String, searchHighlight: String?) {
     Text(
-        text = title,
+        text = buildSearchHighlightedText(
+            title,
+            searchHighlight,
+            MaterialTheme.colorScheme.secondaryContainer,
+            MaterialTheme.colorScheme.onSecondaryContainer,
+        ),
         style = MaterialTheme.typography.titleMedium,
         fontWeight = FontWeight.SemiBold,
     )
 }
 
 @Composable
-private fun PaymentsCard(receipt: Receipt, viewModel: ReceiptViewModel) {
+private fun PaymentsCard(receipt: Receipt, viewModel: ReceiptViewModel, searchHighlight: String?) {
+    val hlBg = MaterialTheme.colorScheme.secondaryContainer
+    val hlFg = MaterialTheme.colorScheme.onSecondaryContainer
     Card(
         shape = RoundedCornerShape(18.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -495,29 +675,65 @@ private fun PaymentsCard(receipt: Receipt, viewModel: ReceiptViewModel) {
         Column(modifier = Modifier.fillMaxWidth().padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             receipt.totalType.forEach { payment ->
                 PaymentAmountRow(
-                    label = { Text(paymentLabel(payment.type)) },
+                    label = {
+                        Text(
+                            buildSearchHighlightedText(
+                                paymentLabel(payment.type),
+                                searchHighlight,
+                                hlBg,
+                                hlFg,
+                            ),
+                        )
+                    },
                     amountKzt = payment.sum,
                     viewModel = viewModel,
+                    searchHighlight = searchHighlight,
                 )
             }
             receipt.taken?.takeIf { it > 0 }?.let { taken ->
                 PaymentAmountRow(
-                    label = { Text(stringResource(R.string.receipt_payment_taken)) },
+                    label = {
+                        Text(
+                            buildSearchHighlightedText(
+                                stringResource(R.string.receipt_payment_taken),
+                                searchHighlight,
+                                hlBg,
+                                hlFg,
+                            ),
+                        )
+                    },
                     amountKzt = taken,
                     viewModel = viewModel,
+                    searchHighlight = searchHighlight,
                 )
             }
             receipt.change?.takeIf { it > 0 }?.let { change ->
                 PaymentAmountRow(
-                    label = { Text(stringResource(R.string.receipt_payment_change)) },
+                    label = {
+                        Text(
+                            buildSearchHighlightedText(
+                                stringResource(R.string.receipt_payment_change),
+                                searchHighlight,
+                                hlBg,
+                                hlFg,
+                            ),
+                        )
+                    },
                     amountKzt = change,
                     viewModel = viewModel,
+                    searchHighlight = searchHighlight,
                 )
             }
             val totalText = rememberReceiptDisplayMoney(receipt.totalSum, viewModel)
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                Text(stringResource(R.string.receipt_total), fontWeight = FontWeight.SemiBold)
-                Text(totalText, fontWeight = FontWeight.Bold)
+                Text(
+                    buildSearchHighlightedText(stringResource(R.string.receipt_total), searchHighlight, hlBg, hlFg),
+                    fontWeight = FontWeight.SemiBold,
+                )
+                Text(
+                    buildSearchHighlightedText(totalText, searchHighlight, hlBg, hlFg),
+                    fontWeight = FontWeight.Bold,
+                )
             }
         }
     }
@@ -528,35 +744,67 @@ private fun PaymentAmountRow(
     label: @Composable () -> Unit,
     amountKzt: Double,
     viewModel: ReceiptViewModel,
+    searchHighlight: String?,
 ) {
     val text = rememberReceiptDisplayMoney(amountKzt, viewModel)
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        label()
-        Text(text)
+        Box(modifier = Modifier.weight(1f)) {
+            label()
+        }
+        Text(
+            text = buildSearchHighlightedText(
+                text,
+                searchHighlight,
+                MaterialTheme.colorScheme.secondaryContainer,
+                MaterialTheme.colorScheme.onSecondaryContainer,
+            ),
+            maxLines = 1,
+            softWrap = false,
+            overflow = TextOverflow.Ellipsis,
+            textAlign = TextAlign.End,
+            modifier = Modifier.padding(start = 12.dp),
+        )
     }
 }
 
 @Composable
-private fun DetailsCard(receipt: Receipt) {
+private fun DetailsCard(receipt: Receipt, searchHighlight: String?) {
     Card(
         shape = RoundedCornerShape(18.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
     ) {
         Column(modifier = Modifier.fillMaxWidth().padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            DetailRow(stringResource(R.string.receipt_details_ofd), ofdLabel(receipt.ofd))
-            DetailRow(stringResource(R.string.receipt_details_iin), receipt.iinBin)
-            DetailRow(stringResource(R.string.receipt_details_fp), receipt.fiscalSign)
-            DetailRow(stringResource(R.string.receipt_details_kkm), receipt.serialNumber)
-            DetailRow(stringResource(R.string.receipt_details_kgd), receipt.kgdId)
+            DetailRow(stringResource(R.string.receipt_details_ofd), ofdLabel(receipt.ofd), searchHighlight)
+            DetailRow(stringResource(R.string.receipt_details_iin), receipt.iinBin, searchHighlight)
+            DetailRow(stringResource(R.string.receipt_details_fp), receipt.fiscalSign, searchHighlight)
+            DetailRow(stringResource(R.string.receipt_details_kkm), receipt.serialNumber, searchHighlight)
+            DetailRow(stringResource(R.string.receipt_details_kgd), receipt.kgdId, searchHighlight)
         }
     }
 }
 
 @Composable
-private fun DetailRow(label: String, value: String) {
+private fun DetailRow(label: String, value: String, searchHighlight: String?) {
+    val hlBg = MaterialTheme.colorScheme.secondaryContainer
+    val hlFg = MaterialTheme.colorScheme.onSecondaryContainer
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        Text(label, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Text(value, fontWeight = FontWeight.Medium)
+        Text(
+            text = buildSearchHighlightedText(label, searchHighlight, hlBg, hlFg),
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.weight(1f),
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+        )
+        Text(
+            text = buildSearchHighlightedText(value, searchHighlight, hlBg, hlFg),
+            fontWeight = FontWeight.Medium,
+            textAlign = TextAlign.End,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier
+                .weight(1f)
+                .padding(start = 12.dp),
+        )
     }
 }
 

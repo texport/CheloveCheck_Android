@@ -50,7 +50,7 @@ internal fun CategoryResolveDialog(
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text(
-                    text = ItemNameNormalizer.cleanDisplayName(item.itemName),
+                    text = ItemNameNormalizer.cleanDisplayName(item.displayItemName),
                     style = MaterialTheme.typography.bodyMedium,
                 )
                 if (isResolving) {
@@ -73,6 +73,9 @@ internal fun CategoryResolveDialog(
                         .verticalScroll(rememberScrollState()),
                     verticalArrangement = Arrangement.spacedBy(0.dp),
                 ) {
+                    val hasUncategorized = pickerGroupIds.any {
+                        it == CategoryIds.UNCATEGORIZED || it == "retail_uncategorized"
+                    }
                     pickerGroupIds.forEach { groupId ->
                         TextButton(
                             onClick = { onSelect(groupId) },
@@ -86,16 +89,18 @@ internal fun CategoryResolveDialog(
                             )
                         }
                     }
-                    TextButton(
-                        onClick = { onSelect(CategoryIds.UNCATEGORIZED) },
-                        enabled = !isResolving,
-                        modifier = Modifier.fillMaxWidth(),
-                    ) {
-                        Text(
-                            text = labelProvider(CategoryIds.UNCATEGORIZED).trim(),
-                            maxLines = 2,
-                            overflow = TextOverflow.Ellipsis,
-                        )
+                    if (!hasUncategorized) {
+                        TextButton(
+                            onClick = { onSelect(CategoryIds.UNCATEGORIZED) },
+                            enabled = !isResolving,
+                            modifier = Modifier.fillMaxWidth(),
+                        ) {
+                            Text(
+                                text = labelProvider(CategoryIds.UNCATEGORIZED).trim(),
+                                maxLines = 2,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                        }
                     }
                 }
             }
@@ -143,7 +148,7 @@ internal fun PendingCategoriesDialog(
                                 verticalArrangement = Arrangement.spacedBy(4.dp),
                             ) {
                                 Text(
-                                    text = ItemNameNormalizer.cleanDisplayName(item.itemName),
+                                    text = ItemNameNormalizer.cleanDisplayName(item.displayItemName),
                                     style = MaterialTheme.typography.bodyMedium,
                                     maxLines = 2,
                                     overflow = TextOverflow.Ellipsis,
@@ -228,7 +233,7 @@ internal fun CategoryItemsDialog(
                                     verticalAlignment = Alignment.CenterVertically,
                                 ) {
                                     Text(
-                                        text = ItemNameNormalizer.cleanDisplayName(item.itemName),
+                                        text = ItemNameNormalizer.cleanDisplayName(item.displayItemName),
                                         maxLines = 2,
                                         overflow = TextOverflow.Ellipsis,
                                         style = MaterialTheme.typography.bodyMedium,

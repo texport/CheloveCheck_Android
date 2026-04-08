@@ -12,7 +12,7 @@ import androidx.room.TypeConverters
         CategoryOverrideEntity::class,
         ItemCategoryCacheEntity::class,
     ],
-    version = 7,
+    version = 8,
     exportSchema = false,
 )
 @TypeConverters(FloatArrayConverter::class)

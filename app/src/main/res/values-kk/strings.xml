@@ -161,6 +161,8 @@
     <string name="receipt_payment_taken">Қабылданды</string>
     <string name="receipt_payment_change">Қайтарым</string>
     <string name="receipt_not_found">Чек табылмады</string>
+    <string name="receipt_loading_receipt">Чек жүктелуде...</string>
+    <string name="receipt_loading_translating_items">Позиция атаулары аударылуда...</string>
     <string name="selected_count">Таңдалды: %1$d</string>
     <string name="receipt_edit_address_title">Мекенжайды өңдеу</string>
     <string name="receipt_edit_address_label">Мекенжай</string>
@@ -193,6 +195,18 @@
     <string name="action_reorder">Орнын ауыстыру</string>
     <string name="error_no_address">Мекенжай табылмады</string>
     <string name="settings_language">Тіл</string>
+    <string name="settings_item_language">Чек позицияларының тілі</string>
+    <string name="settings_translation_provider">Аударма провайдері</string>
+    <string name="settings_translation_provider_config">Провайдер баптауы</string>
+    <string name="settings_translation_provider_no_setup">Қосымша баптау қажет емес</string>
+    <string name="settings_translation_provider_openai_hint">OpenAI API key енгізу</string>
+    <string name="settings_translation_provider_gemini_hint">Gemini API key енгізу</string>
+    <string name="settings_translation_provider_web_warning">Эксперименттік web-режим: тұрақсыз, кепілдік жоқ</string>
+    <string name="settings_translation_libre_endpoint">LibreTranslate endpoint</string>
+    <string name="settings_translation_openai_key">OpenAI API key</string>
+    <string name="settings_translation_gemini_key">Gemini API key</string>
+    <string name="settings_translation_openai_model">OpenAI моделі</string>
+    <string name="settings_translation_gemini_model">Gemini моделі</string>
     <string name="settings_receipts">Чектер</string>
     <string name="settings_links">Сілтемелер</string>
     <string name="settings_diagnostics">Диагностика</string>
@@ -249,6 +263,13 @@
     <string name="language_en">English</string>
     <string name="language_ru">Русский</string>
     <string name="language_kk">Қазақша</string>
+    <string name="language_ofd_source">ОФД-дегідей (аудармасыз)</string>
+    <string name="translation_provider_libre">LibreTranslate</string>
+    <string name="translation_provider_openai">OpenAI</string>
+    <string name="translation_provider_gemini">Gemini</string>
+    <string name="translation_provider_web_experimental">Web experimental (тегін, тұрақсыз)</string>
+    <string name="translation_provider_google">Google Translate</string>
+    <string name="translation_provider_yandex">Yandex Translate</string>
 
     <string name="log_level_off">Өшіру</string>
     <string name="log_level_error">Қателер</string>

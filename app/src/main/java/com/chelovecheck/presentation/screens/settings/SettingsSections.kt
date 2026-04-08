@@ -34,6 +34,7 @@ internal fun SettingsGeneralSection(
     colorSourceLabel: String,
     accentColorLabel: String,
     languageLabel: String,
+    itemLanguageLabel: String,
     mapProviderLabel: String,
     displayCurrencyLabel: String,
     diagnosticsLabel: String,
@@ -42,6 +43,7 @@ internal fun SettingsGeneralSection(
     onColorSourceClick: () -> Unit,
     onAccentClick: () -> Unit,
     onLanguageClick: () -> Unit,
+    onItemLanguageClick: () -> Unit,
     onMapProviderClick: () -> Unit,
     onDisplayCurrencyClick: () -> Unit,
     onDiagnosticsClick: () -> Unit,
@@ -70,6 +72,12 @@ internal fun SettingsGeneralSection(
         value = languageLabel,
         icon = Icons.Outlined.Translate,
         onClick = onLanguageClick,
+    )
+    SettingsChoiceCard(
+        title = stringResource(R.string.settings_item_language),
+        value = itemLanguageLabel,
+        icon = Icons.Outlined.Translate,
+        onClick = onItemLanguageClick,
     )
     SettingsChoiceCard(
         title = stringResource(R.string.settings_map_provider),

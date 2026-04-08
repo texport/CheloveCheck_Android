@@ -28,6 +28,7 @@ internal fun ChecksSortBottomSheet(
     visible: Boolean,
     current: ReceiptListSortOrder,
     onDismiss: () -> Unit,
+    onHaptic: () -> Unit,
     onSelect: (ReceiptListSortOrder) -> Unit,
 ) {
     if (!visible) return
@@ -54,7 +55,10 @@ internal fun ChecksSortBottomSheet(
                         .fillMaxWidth()
                         .selectable(
                             selected = order == current,
-                            onClick = { onSelect(order) },
+                            onClick = {
+                                onHaptic()
+                                onSelect(order)
+                            },
                             role = Role.RadioButton,
                         )
                         .padding(vertical = 8.dp),
@@ -91,6 +95,7 @@ internal fun ChecksGroupBottomSheet(
     visible: Boolean,
     current: ReceiptGroupMode,
     onDismiss: () -> Unit,
+    onHaptic: () -> Unit,
     onSelect: (ReceiptGroupMode) -> Unit,
 ) {
     if (!visible) return
@@ -117,7 +122,10 @@ internal fun ChecksGroupBottomSheet(
                         .fillMaxWidth()
                         .selectable(
                             selected = mode == current,
-                            onClick = { onSelect(mode) },
+                            onClick = {
+                                onHaptic()
+                                onSelect(mode)
+                            },
                             role = Role.RadioButton,
                         )
                         .padding(vertical = 8.dp),

@@ -161,6 +161,8 @@
     <string name="receipt_payment_taken">Принято</string>
     <string name="receipt_payment_change">Сдача</string>
     <string name="receipt_not_found">Чек не найден</string>
+    <string name="receipt_loading_receipt">Загружаем чек...</string>
+    <string name="receipt_loading_translating_items">Переводим названия позиций...</string>
     <string name="selected_count">Выбрано: %1$d</string>
     <string name="receipt_edit_address_title">Редактировать адрес</string>
     <string name="receipt_edit_address_label">Адрес</string>
@@ -193,6 +195,18 @@
     <string name="action_reorder">Переместить</string>
     <string name="error_no_address">Адрес не найден</string>
     <string name="settings_language">Язык</string>
+    <string name="settings_item_language">Язык позиций чека</string>
+    <string name="settings_translation_provider">Провайдер перевода</string>
+    <string name="settings_translation_provider_config">Настройка провайдера</string>
+    <string name="settings_translation_provider_no_setup">Дополнительная настройка не требуется</string>
+    <string name="settings_translation_provider_openai_hint">Указать OpenAI API key</string>
+    <string name="settings_translation_provider_gemini_hint">Указать Gemini API key</string>
+    <string name="settings_translation_provider_web_warning">Экспериментальный web-режим: нестабильно, без гарантий</string>
+    <string name="settings_translation_libre_endpoint">Endpoint LibreTranslate</string>
+    <string name="settings_translation_openai_key">OpenAI API key</string>
+    <string name="settings_translation_gemini_key">Gemini API key</string>
+    <string name="settings_translation_openai_model">Модель OpenAI</string>
+    <string name="settings_translation_gemini_model">Модель Gemini</string>
     <string name="settings_receipts">Чеки</string>
     <string name="settings_links">Ссылки</string>
     <string name="settings_diagnostics">Диагностика</string>
@@ -249,6 +263,13 @@
     <string name="language_en">English</string>
     <string name="language_ru">Русский</string>
     <string name="language_kk">Қазақша</string>
+    <string name="language_ofd_source">Как в ОФД (без перевода)</string>
+    <string name="translation_provider_libre">LibreTranslate</string>
+    <string name="translation_provider_openai">OpenAI</string>
+    <string name="translation_provider_gemini">Gemini</string>
+    <string name="translation_provider_web_experimental">Web experimental (бесплатно, нестабильно)</string>
+    <string name="translation_provider_google">Google Translate</string>
+    <string name="translation_provider_yandex">Yandex Translate</string>
 
     <string name="log_level_off">Выкл</string>
     <string name="log_level_error">Ошибки</string>

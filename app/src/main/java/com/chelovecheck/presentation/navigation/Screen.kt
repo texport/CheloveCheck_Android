@@ -1,6 +1,7 @@
 package com.chelovecheck.presentation.navigation
 
 import android.util.Base64
+import android.util.Log
 import java.nio.charset.StandardCharsets
 
 sealed class Screen(val route: String) {
@@ -17,6 +18,10 @@ sealed class Screen(val route: String) {
                     Base64.URL_SAFE or Base64.NO_WRAP or Base64.NO_PADDING,
                 )
             }
+            Log.d(
+                "ReceiptNav",
+                "create route: fiscalSign=$fiscalSign query='${searchHighlight.take(80)}' encodedKey='$key'",
+            )
             return "receipt/$fiscalSign/$key"
         }
     }

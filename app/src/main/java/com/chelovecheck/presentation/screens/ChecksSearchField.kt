@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import com.chelovecheck.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -46,7 +47,14 @@ fun SearchField(
             },
             expanded = false,
             onExpandedChange = { },
-            placeholder = { Text(stringResource(R.string.search_hint)) },
+            placeholder = {
+                Text(
+                    text = stringResource(R.string.search_hint),
+                    maxLines = 1,
+                    softWrap = false,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            },
             leadingIcon = {
                 Icon(
                     Icons.Outlined.Search,

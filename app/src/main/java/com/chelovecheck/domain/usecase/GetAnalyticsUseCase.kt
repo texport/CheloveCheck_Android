@@ -16,6 +16,7 @@ import com.chelovecheck.domain.model.PaymentType
 import com.chelovecheck.domain.model.CategoryPrediction
 import com.chelovecheck.domain.model.OperationType
 import com.chelovecheck.domain.model.AnalyticsLoadStage
+import com.chelovecheck.domain.model.analyticsSourceName
 import com.chelovecheck.domain.model.RetailClassificationContext
 import com.chelovecheck.domain.logging.AppLogger
 import com.chelovecheck.domain.repository.AnalyticsProgressReporter
@@ -94,7 +95,7 @@ class GetAnalyticsUseCase @Inject constructor(
                         networkName = bucket.networkKey.takeUnless { it == "__unknown__" },
                         bin = null,
                     )
-                    val prediction = classifier.classify(bucket.sampleDisplayName, retailContext)
+                    val prediction = classifier.classify(bucket.sampleSourceName, retailContext)
                     predictionsByKey[bucket.normalizedKey] = prediction
                     processedUnique++
                     val now = System.currentTimeMillis()
@@ -106,7 +107,8 @@ class GetAnalyticsUseCase @Inject constructor(
                         pendingItems.putIfAbsent(
                             bucket.normalizedKey,
                             PendingCategoryItem(
-                                itemName = bucket.sampleDisplayName,
+                                sourceItemName = bucket.sampleSourceName,
+                                displayItemName = bucket.sampleDisplayName,
                                 candidates = prediction.candidates,
                                 networkKey = bucket.networkKey.takeUnless { it == "__unknown__" },
                             ),
@@ -128,7 +130,10 @@ class GetAnalyticsUseCase @Inject constructor(
                     } else {
                         for (item in receipt.items) {
                             lineItemCount++
-                            val key = ItemNameNormalizer.normalizeForMatch(item.name).ifBlank { item.name.trim() }
+                            val sourceName = item.analyticsSourceName()
+                            val key = ItemNameNormalizer.normalizeForMatch(sourceName).ifBlank {
+                                sourceName.trim()
+                            }
                             val networkKey = networkByReceipt.getValue(receipt)
                             val compositeKey = "$key|$networkKey"
                             val prediction = predictionsByKey.getValue(compositeKey)
@@ -155,11 +160,19 @@ class GetAnalyticsUseCase @Inject constructor(
                             val leafMap = leafAccumulator.getOrPut(displayId) { LinkedHashMap() }
                             leafMap[leafRollup] = (leafMap[leafRollup] ?: 0.0) + amount
 
-                            val itemKey = key.ifBlank { item.name.trim() }
+                            val itemKey = key.ifBlank { sourceName.trim() }
                             val categoryBucket = categoryItems.getOrPut(displayId) { LinkedHashMap() }
-                            val aggregate = categoryBucket.getOrPut(itemKey) { ItemAggregate(item.name) }
+                            val aggregate = categoryBucket.getOrPut(itemKey) {
+                                ItemAggregate(
+                                    sourceName = sourceName,
+                                    displayName = item.name,
+                                )
+                            }
                             aggregate.amount += amount
                             aggregate.count += max(item.count, 1.0).roundToInt()
+                            if (item.name.length > aggregate.displayName.length) {
+                                aggregate.displayName = item.name
+                            }
                         }
                     }
                     receipt.totalType.forEach { payment ->
@@ -182,7 +195,8 @@ class GetAnalyticsUseCase @Inject constructor(
                         .sortedByDescending { it.amount }
                         .map { aggregate ->
                             CategoryItemTotal(
-                                itemName = aggregate.name,
+                                sourceItemName = aggregate.sourceName,
+                                displayItemName = aggregate.displayName,
                                 amount = aggregate.amount,
                                 count = aggregate.count,
                             )
@@ -240,7 +254,8 @@ class GetAnalyticsUseCase @Inject constructor(
     }
 
     private data class ItemAggregate(
-        val name: String,
+        val sourceName: String,
+        var displayName: String,
         var amount: Double = 0.0,
         var count: Int = 0,
     )

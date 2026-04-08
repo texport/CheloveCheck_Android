@@ -55,6 +55,7 @@ data class ItemEntity(
     val barcode: String?,
     val codeMark: String?,
     val name: String,
+    val originalName: String?,
     val count: Double,
     val price: Double,
     val unitCode: String,

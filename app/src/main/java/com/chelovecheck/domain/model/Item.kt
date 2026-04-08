@@ -5,6 +5,7 @@ data class Item(
     val barcode: String?,
     val codeMark: String?,
     val name: String,
+    val originalName: String? = null,
     val count: Double,
     val price: Double,
     val unit: UnitOfMeasurement,
@@ -12,3 +13,7 @@ data class Item(
     val taxType: String?,
     val taxSum: Double?,
 )
+
+fun Item.analyticsSourceName(): String {
+    return originalName?.takeIf { it.isNotBlank() } ?: name
+}

@@ -13,6 +13,7 @@ import com.chelovecheck.domain.model.AppError
 import com.chelovecheck.domain.model.ColorSource
 import com.chelovecheck.domain.model.LogLevel
 import com.chelovecheck.domain.model.MapProvider
+import com.chelovecheck.domain.model.ItemTranslationLanguage
 import com.chelovecheck.domain.model.Ofd
 import com.chelovecheck.domain.model.OperationType
 import com.chelovecheck.domain.model.PaymentType
@@ -107,6 +108,17 @@ fun languageLabel(language: AppLanguage): String {
         AppLanguage.ENGLISH -> stringResource(R.string.language_en)
         AppLanguage.RUSSIAN -> stringResource(R.string.language_ru)
         AppLanguage.KAZAKH -> stringResource(R.string.language_kk)
+    }
+}
+
+@Composable
+fun itemTranslationLanguageLabel(language: ItemTranslationLanguage): String {
+    return when (language) {
+        ItemTranslationLanguage.OFD_SOURCE -> stringResource(R.string.language_ofd_source)
+        ItemTranslationLanguage.SYSTEM -> stringResource(R.string.language_system)
+        ItemTranslationLanguage.ENGLISH -> stringResource(R.string.language_en)
+        ItemTranslationLanguage.RUSSIAN -> stringResource(R.string.language_ru)
+        ItemTranslationLanguage.KAZAKH -> stringResource(R.string.language_kk)
     }
 }
 

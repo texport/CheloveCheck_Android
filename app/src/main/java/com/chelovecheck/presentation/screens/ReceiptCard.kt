@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -23,11 +24,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
 import com.chelovecheck.R
 import com.chelovecheck.domain.model.ReceiptListItem
+import com.chelovecheck.presentation.utils.buildSearchHighlightedText
 import com.chelovecheck.presentation.strings.ofdLabel
 import com.chelovecheck.presentation.strings.operationLabel
 import java.time.ZoneId
@@ -37,10 +40,13 @@ import java.time.format.DateTimeFormatter
 fun ReceiptCard(
     item: ReceiptListItem,
     totalFormatted: String,
+    searchHighlight: String? = null,
     onOpenReceipt: (String) -> Unit,
     onLongPress: () -> Unit,
 ) {
     val summary = item.summary
+    val hlBg = MaterialTheme.colorScheme.secondaryContainer
+    val hlFg = MaterialTheme.colorScheme.onSecondaryContainer
     val datePattern = stringResource(R.string.date_time_format)
     val date = remember(summary.dateTime, datePattern) { formatDate(summary.dateTime, datePattern) }
     val pinnedShape = RoundedCornerShape(20.dp)
@@ -86,32 +92,48 @@ fun ReceiptCard(
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        text = item.displayName.ifBlank { summary.companyName },
+                        text = buildSearchHighlightedText(
+                            item.displayName.ifBlank { summary.companyName },
+                            searchHighlight,
+                            hlBg,
+                            hlFg,
+                        ),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis,
                     )
                     Spacer(modifier = Modifier.height(6.dp))
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(
-                            text = date,
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                        Spacer(modifier = Modifier.width(10.dp))
-                        Text(
-                            text = ofdLabel(summary.ofd),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
+                    Text(
+                        text = date,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                    Text(
+                        text = buildSearchHighlightedText(
+                            ofdLabel(summary.ofd),
+                            searchHighlight,
+                            hlBg,
+                            hlFg,
+                        ),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
                 }
                 Text(
                     text = totalFormatted,
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
-                    maxLines = 2,
+                    maxLines = 1,
+                    textAlign = TextAlign.End,
+                    overflow = TextOverflow.Ellipsis,
+                    modifier = Modifier
+                        .padding(start = 8.dp)
+                        .widthIn(max = 140.dp),
                 )
             }
 
@@ -121,11 +143,17 @@ fun ReceiptCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Surface(
+                    modifier = Modifier.weight(1f, fill = false),
                     shape = RoundedCornerShape(999.dp),
                     color = MaterialTheme.colorScheme.surfaceVariant,
                 ) {
                     Text(
-                        text = operationLabel(summary.typeOperation),
+                        text = buildSearchHighlightedText(
+                            operationLabel(summary.typeOperation),
+                            searchHighlight,
+                            hlBg,
+                            hlFg,
+                        ),
                         modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -137,6 +165,9 @@ fun ReceiptCard(
                         text = stringResource(R.string.positions_short, summary.itemsCount),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                        modifier = Modifier.weight(1f),
                     )
                 }
             }

@@ -20,6 +20,7 @@ import com.chelovecheck.data.remote.ofd.KaspiOFDHandler
 import com.chelovecheck.data.repository.ReceiptFetcherImpl
 import com.chelovecheck.data.repository.ReceiptJsonCodecImpl
 import com.chelovecheck.data.repository.ReceiptRepositoryImpl
+import com.chelovecheck.data.repository.ItemTranslationRepositoryImpl
 import com.chelovecheck.data.repository.CategoryRepositoryImpl
 import com.chelovecheck.data.repository.CategoryOverrideRepositoryImpl
 import com.chelovecheck.data.repository.RetailRepositoryImpl
@@ -49,6 +50,7 @@ import com.chelovecheck.domain.repository.ReceiptImageScanner
 import com.chelovecheck.domain.repository.ReceiptJsonCodec
 import com.chelovecheck.domain.repository.ReceiptItemClassifier
 import com.chelovecheck.domain.repository.ReceiptRepository
+import com.chelovecheck.domain.repository.ItemTranslationRepository
 import com.chelovecheck.domain.repository.ReceiptUrlBuilder
 import com.chelovecheck.domain.repository.ReceiptsChangeTracker
 import com.chelovecheck.domain.repository.ExchangeRateRepository
@@ -102,6 +104,7 @@ object AppModule {
                 MIGRATION_4_5,
                 MIGRATION_5_6,
                 MIGRATION_6_7,
+                MIGRATION_7_8,
             )
             .addCallback(
                 object : androidx.room.RoomDatabase.Callback() {
@@ -168,6 +171,10 @@ object AppModule {
     @Provides
     @Singleton
     fun provideExchangeRateRepository(impl: ExchangeRateRepositoryImpl): ExchangeRateRepository = impl
+
+    @Provides
+    @Singleton
+    fun provideItemTranslationRepository(impl: ItemTranslationRepositoryImpl): ItemTranslationRepository = impl
 
     @Provides
     @Singleton
@@ -242,6 +249,13 @@ object AppModule {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL("ALTER TABLE receipts ADD COLUMN isFavorite INTEGER NOT NULL DEFAULT 0")
             db.execSQL("ALTER TABLE receipts ADD COLUMN isPinned INTEGER NOT NULL DEFAULT 0")
+        }
+    }
+
+    private val MIGRATION_7_8 = object : Migration(7, 8) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE items ADD COLUMN originalName TEXT")
+            db.execSQL("UPDATE items SET originalName = name WHERE originalName IS NULL")
         }
     }
 

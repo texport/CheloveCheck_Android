@@ -1,5 +1,6 @@
 package com.chelovecheck.data.repository
 
+import android.util.Log
 import androidx.sqlite.db.SimpleSQLiteQuery
 import com.chelovecheck.data.local.ReceiptDao
 import com.chelovecheck.data.mapper.toDomain
@@ -81,8 +82,13 @@ class ReceiptRepositoryImpl @Inject constructor(
         ownership: ReceiptOwnershipFilter,
         sortOrder: ReceiptListSortOrder,
     ): List<ReceiptListSummary> {
+        Log.d(
+            "ChecksSearch",
+            "list page request: filter=$filter query='${searchQuery?.take(80)}' cursor=${cursor?.fiscalSign ?: "null"} " +
+                "limit=$limit ownership=$ownership sort=$sortOrder",
+        )
         return try {
-            getReceiptListPageInternal(
+            val result = getReceiptListPageInternal(
                 filter = filter,
                 searchQuery = searchQuery,
                 cursor = cursor,
@@ -91,8 +97,11 @@ class ReceiptRepositoryImpl @Inject constructor(
                 useFtsForItemNames = true,
                 sortOrder = sortOrder,
             )
+            Log.d("ChecksSearch", "list page result (fts=true): count=${result.size}")
+            result
         } catch (_: Exception) {
-            getReceiptListPageInternal(
+            Log.d("ChecksSearch", "list page fallback: fts failed, retry with LIKE")
+            val result = getReceiptListPageInternal(
                 filter = filter,
                 searchQuery = searchQuery,
                 cursor = cursor,
@@ -101,6 +110,8 @@ class ReceiptRepositoryImpl @Inject constructor(
                 useFtsForItemNames = false,
                 sortOrder = sortOrder,
             )
+            Log.d("ChecksSearch", "list page result (fts=false): count=${result.size}")
+            result
         }
     }
 
@@ -353,23 +364,33 @@ class ReceiptRepositoryImpl @Inject constructor(
             if (useFtsForItemNames) {
                 clauses.add(
                     "((${a}companyName LIKE ? OR ${a}fiscalSign LIKE ?) OR ${a}fiscalSign IN (" +
-                        "SELECT receiptFiscalSign FROM items_fts WHERE items_fts MATCH ?))",
+                        "SELECT receiptFiscalSign FROM items_fts WHERE items_fts MATCH ?) OR EXISTS (" +
+                        "SELECT 1 FROM items WHERE items.receiptFiscalSign = ${a}fiscalSign " +
+                        "AND items.originalName LIKE ?))",
                 )
                 args.add(likeQuery)
                 args.add(likeQuery)
                 args.add(ftsMatchQuery(trimmed))
+                args.add(likeQuery)
             } else {
                 val receiptTable = if (receiptsAlias.isEmpty()) "receipts" else receiptsAlias
                 clauses.add(
                     "(${a}companyName LIKE ? OR ${a}fiscalSign LIKE ? OR EXISTS (" +
                         "SELECT 1 FROM items WHERE items.receiptFiscalSign = $receiptTable.fiscalSign " +
-                        "AND items.name LIKE ?))",
+                        "AND (items.name LIKE ? OR items.originalName LIKE ?)))",
                 )
+                args.add(likeQuery)
                 args.add(likeQuery)
                 args.add(likeQuery)
                 args.add(likeQuery)
             }
         }
+
+        Log.d(
+            "ChecksSearch",
+            "where built: filter=$filter ownership=$ownership fts=$useFtsForItemNames " +
+                "query='${searchQuery?.trim()?.take(80)}' clause='${clauses.joinToString(" AND ")}' args=${args.size}",
+        )
 
         return clauses.joinToString(" AND ") to args
     }

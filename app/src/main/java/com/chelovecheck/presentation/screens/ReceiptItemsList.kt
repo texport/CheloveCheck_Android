@@ -21,6 +21,7 @@ import com.chelovecheck.presentation.strings.formatDecimal
 import com.chelovecheck.presentation.strings.unitShortLabel
 import com.chelovecheck.presentation.money.rememberReceiptDisplayMoney
 import com.chelovecheck.domain.utils.ItemNameNormalizer
+import com.chelovecheck.domain.model.analyticsSourceName
 import com.chelovecheck.presentation.viewmodel.ReceiptItemUi
 import com.chelovecheck.presentation.viewmodel.ReceiptViewModel
 import com.chelovecheck.presentation.utils.buildSearchHighlightedText
@@ -97,7 +98,7 @@ fun ReceiptItemCard(
                 when {
                     isSelectionMode -> onToggleSelect()
                     onOpenProduct != null -> {
-                        val key = ItemNameNormalizer.normalizeForMatch(item.item.name)
+                        val key = ItemNameNormalizer.normalizeForMatch(item.item.analyticsSourceName())
                         if (key.isNotBlank()) onOpenProduct.invoke(key)
                     }
                 }
@@ -139,16 +140,20 @@ fun ReceiptItemCard(
                 }
             },
             supportingContent = {
+                val hlBg = MaterialTheme.colorScheme.secondaryContainer
+                val hlFg = MaterialTheme.colorScheme.onSecondaryContainer
                 Text(
-                    text = countText,
+                    text = buildSearchHighlightedText(countText, searchHighlight, hlBg, hlFg),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             },
             trailingContent = {
+                val hlBg = MaterialTheme.colorScheme.secondaryContainer
+                val hlFg = MaterialTheme.colorScheme.onSecondaryContainer
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
-                        text = sumDisplayText,
+                        text = buildSearchHighlightedText(sumDisplayText, searchHighlight, hlBg, hlFg),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         maxLines = 1,
