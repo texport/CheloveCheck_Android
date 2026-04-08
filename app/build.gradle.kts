@@ -44,9 +44,15 @@ android {
         // TODO: tighten after baseline; many pre-existing issues across modules
         abortOnError = false
     }
+
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+    }
 }
 
 dependencies {
+    implementation(project(":shared:data-core"))
+
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
@@ -85,6 +91,7 @@ dependencies {
     implementation(libs.exifinterface)
 
     implementation(libs.datastore.preferences)
+    implementation(libs.security.crypto)
 
     implementation(libs.zxing.core)
     implementation(libs.material)
@@ -94,6 +101,9 @@ dependencies {
     implementation(libs.androidx.window)
 
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.test.core)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.coroutines.test)
 
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.compose.ui.test.junit4)

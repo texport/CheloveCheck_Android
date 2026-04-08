@@ -17,7 +17,7 @@ jobs:
       - name: Assemble
         run: ./gradlew :app:assembleDebug --no-daemon
       - name: Unit tests
-        run: ./gradlew :app:testDebugUnitTest --no-daemon
+        run: ./gradlew :app:testDebugUnitTest :shared:data-core:allTests --no-daemon
       - name: Lint
         run: ./gradlew :app:lintDebug --no-daemon
 

@@ -1,18 +1,19 @@
 package com.chelovecheck.data.analytics
 
 import com.chelovecheck.domain.model.AnalyticsLoadStage
-import com.chelovecheck.domain.repository.AnalyticsProgressReporter
+import com.chelovecheck.domain.model.AnalyticsProgress
+import com.chelovecheck.domain.repository.AnalyticsForegroundProgress
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 @Singleton
-class AnalyticsProgressStore @Inject constructor() : AnalyticsProgressReporter {
+class AnalyticsProgressStore @Inject constructor() : AnalyticsForegroundProgress {
     private val _stage = MutableStateFlow<AnalyticsLoadStage?>(null)
-    val stage: StateFlow<AnalyticsLoadStage?> = _stage
+    override val stage: StateFlow<AnalyticsLoadStage?> = _stage
     private val _progress = MutableStateFlow(AnalyticsProgress())
-    val progress: StateFlow<AnalyticsProgress> = _progress
+    override val progress: StateFlow<AnalyticsProgress> = _progress
 
     override fun report(stage: AnalyticsLoadStage) {
         val current = _stage.value
@@ -42,9 +43,3 @@ class AnalyticsProgressStore @Inject constructor() : AnalyticsProgressReporter {
         }
     }
 }
-
-data class AnalyticsProgress(
-    val processedItems: Int = 0,
-    val totalItems: Int = 0,
-    val updatedAtMillis: Long = 0L,
-)

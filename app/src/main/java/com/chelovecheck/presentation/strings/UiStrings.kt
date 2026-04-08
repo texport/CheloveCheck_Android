@@ -14,12 +14,12 @@ import com.chelovecheck.domain.model.ColorSource
 import com.chelovecheck.domain.model.LogLevel
 import com.chelovecheck.domain.model.MapProvider
 import com.chelovecheck.domain.model.ItemTranslationLanguage
+import com.chelovecheck.domain.model.AnalyticsPeriod
 import com.chelovecheck.domain.model.Ofd
 import com.chelovecheck.domain.model.OperationType
 import com.chelovecheck.domain.model.PaymentType
 import com.chelovecheck.domain.model.ThemeMode
 import com.chelovecheck.domain.model.UnitOfMeasurement
-import com.chelovecheck.presentation.model.AnalyticsPeriod
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.util.Locale

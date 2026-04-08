@@ -1,7 +1,7 @@
 package com.chelovecheck.data.repository
 
-import com.chelovecheck.data.remote.ofd.OFDHandler
-import com.chelovecheck.data.remote.ofd.OFDHandlerManager
+import com.chelovecheck.data.remote.ofd.handlers.OFDHandler
+import com.chelovecheck.data.remote.ofd.handlers.OFDHandlerManager
 import com.chelovecheck.domain.model.AppError
 import com.chelovecheck.domain.model.Ofd
 import com.chelovecheck.domain.model.OperationType

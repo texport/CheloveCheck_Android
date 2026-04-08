@@ -1,6 +1,7 @@
 package com.chelovecheck.data.repository
 
 import android.content.Context
+import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -29,6 +30,7 @@ private val Context.dataStore by preferencesDataStore(name = "settings")
 @Singleton
 class SettingsRepositoryImpl @Inject constructor(
     private val context: Context,
+    private val secureSecretsStore: SecureSecretsStore,
 ) : SettingsRepository {
     private val themeKey = stringPreferencesKey("theme_mode")
     private val languageKey = stringPreferencesKey("language")
@@ -40,6 +42,7 @@ class SettingsRepositoryImpl @Inject constructor(
     private val geminiApiKeyKey = stringPreferencesKey("translation_gemini_api_key")
     private val openAiModelKey = stringPreferencesKey("translation_openai_model")
     private val geminiModelKey = stringPreferencesKey("translation_gemini_model")
+    private val secretsVersionKey = stringPreferencesKey("translation_secrets_version")
     private val afterScanKey = stringPreferencesKey("after_scan_action")
     private val colorSourceKey = stringPreferencesKey("color_source")
     private val accentColorKey = stringPreferencesKey("accent_color")
@@ -50,12 +53,20 @@ class SettingsRepositoryImpl @Inject constructor(
     private val receiptListSortOrderKey = stringPreferencesKey("receipt_list_sort_order")
     private val receiptGroupModeKey = stringPreferencesKey("receipt_group_mode")
 
-    override val themeMode: Flow<ThemeMode> = context.dataStore.data
-        .map { prefs ->
-            prefs[themeKey]?.let { raw ->
-                runCatching { ThemeMode.valueOf(raw) }.getOrNull()
-            } ?: ThemeMode.SYSTEM
-        }
+    private inline fun <reified T : Enum<T>> enumPreferenceFlow(
+        key: Preferences.Key<String>,
+        default: T,
+    ): Flow<T> = context.dataStore.data.map { prefs ->
+        val raw = prefs[key] ?: return@map default
+        enumValues<T>().firstOrNull { it.name == raw } ?: default
+    }
+
+    private fun booleanPreferenceFlow(
+        key: Preferences.Key<Boolean>,
+        default: Boolean,
+    ): Flow<Boolean> = context.dataStore.data.map { prefs -> prefs[key] ?: default }
+
+    override val themeMode: Flow<ThemeMode> = enumPreferenceFlow(themeKey, ThemeMode.SYSTEM)
 
     override val language: Flow<AppLanguage> = context.dataStore.data
         .map { prefs ->
@@ -69,12 +80,7 @@ class SettingsRepositoryImpl @Inject constructor(
             } ?: AppLanguage.SYSTEM
         }
 
-    override val logLevel: Flow<LogLevel> = context.dataStore.data
-        .map { prefs ->
-            prefs[logLevelKey]?.let { raw ->
-                runCatching { LogLevel.valueOf(raw) }.getOrNull()
-            } ?: LogLevel.ERROR
-        }
+    override val logLevel: Flow<LogLevel> = enumPreferenceFlow(logLevelKey, LogLevel.ERROR)
 
     override val itemTranslationLanguage: Flow<ItemTranslationLanguage> = context.dataStore.data
         .map { prefs ->
@@ -85,70 +91,41 @@ class SettingsRepositoryImpl @Inject constructor(
 
     override val translationProviderConfig: Flow<TranslationProviderConfig> = context.dataStore.data
         .map { prefs ->
+            val provider = prefs[translationProviderKey]?.let { raw ->
+                enumValues<TranslationProvider>().firstOrNull { it.name == raw }
+            } ?: TranslationProvider.GOOGLE_TRANSLATE
             TranslationProviderConfig(
-                provider = TranslationProvider.GOOGLE_TRANSLATE,
+                provider = provider,
                 libreTranslateEndpoint = prefs[libreTranslateEndpointKey] ?: "https://libretranslate.com/translate",
-                openAiApiKey = prefs[openAiApiKeyKey] ?: "",
-                geminiApiKey = prefs[geminiApiKeyKey] ?: "",
+                openAiApiKey = secureSecretsStore.getOpenAiApiKey(),
+                geminiApiKey = secureSecretsStore.getGeminiApiKey(),
                 openAiModel = prefs[openAiModelKey] ?: "gpt-4o-mini",
                 geminiModel = prefs[geminiModelKey] ?: "gemini-2.0-flash",
             )
         }
 
-    override val afterScanAction: Flow<AfterScanAction> = context.dataStore.data
-        .map { prefs ->
-            prefs[afterScanKey]?.let { raw ->
-                runCatching { AfterScanAction.valueOf(raw) }.getOrNull()
-            } ?: AfterScanAction.OPEN_RECEIPT
-        }
+    override val afterScanAction: Flow<AfterScanAction> =
+        enumPreferenceFlow(afterScanKey, AfterScanAction.OPEN_RECEIPT)
 
-    override val colorSource: Flow<ColorSource> = context.dataStore.data
-        .map { prefs ->
-            prefs[colorSourceKey]?.let { raw ->
-                runCatching { ColorSource.valueOf(raw) }.getOrNull()
-            } ?: ColorSource.DYNAMIC
-        }
+    override val colorSource: Flow<ColorSource> = enumPreferenceFlow(colorSourceKey, ColorSource.DYNAMIC)
 
-    override val accentColor: Flow<AccentColor> = context.dataStore.data
-        .map { prefs ->
-            prefs[accentColorKey]?.let { raw ->
-                runCatching { AccentColor.valueOf(raw) }.getOrNull()
-            } ?: AccentColor.PURPLE
-        }
+    override val accentColor: Flow<AccentColor> = enumPreferenceFlow(accentColorKey, AccentColor.PURPLE)
 
-    override val mapProvider: Flow<MapProvider> = context.dataStore.data
-        .map { prefs ->
-            prefs[mapProviderKey]?.let { raw ->
-                runCatching { MapProvider.valueOf(raw) }.getOrNull()
-            } ?: MapProvider.GOOGLE
-        }
+    override val mapProvider: Flow<MapProvider> = enumPreferenceFlow(mapProviderKey, MapProvider.GOOGLE)
 
-    override val hapticsEnabled: Flow<Boolean> = context.dataStore.data
-        .map { prefs -> prefs[hapticsEnabledKey] ?: true }
+    override val hapticsEnabled: Flow<Boolean> = booleanPreferenceFlow(hapticsEnabledKey, default = true)
 
-    override val analyticsPendingPromptEnabled: Flow<Boolean> = context.dataStore.data
-        .map { prefs -> prefs[analyticsPendingPromptKey] ?: true }
+    override val analyticsPendingPromptEnabled: Flow<Boolean> =
+        booleanPreferenceFlow(analyticsPendingPromptKey, default = true)
 
-    override val displayCurrency: Flow<DisplayCurrency> = context.dataStore.data
-        .map { prefs ->
-            prefs[displayCurrencyKey]?.let { raw ->
-                runCatching { DisplayCurrency.valueOf(raw) }.getOrNull()
-            } ?: DisplayCurrency.KZT
-        }
+    override val displayCurrency: Flow<DisplayCurrency> =
+        enumPreferenceFlow(displayCurrencyKey, DisplayCurrency.KZT)
 
-    override val receiptListSortOrder: Flow<ReceiptListSortOrder> = context.dataStore.data
-        .map { prefs ->
-            prefs[receiptListSortOrderKey]?.let { raw ->
-                runCatching { ReceiptListSortOrder.valueOf(raw) }.getOrNull()
-            } ?: ReceiptListSortOrder.DEFAULT
-        }
+    override val receiptListSortOrder: Flow<ReceiptListSortOrder> =
+        enumPreferenceFlow(receiptListSortOrderKey, ReceiptListSortOrder.DEFAULT)
 
-    override val receiptGroupMode: Flow<ReceiptGroupMode> = context.dataStore.data
-        .map { prefs ->
-            prefs[receiptGroupModeKey]?.let { raw ->
-                runCatching { ReceiptGroupMode.valueOf(raw) }.getOrNull()
-            } ?: ReceiptGroupMode.NONE
-        }
+    override val receiptGroupMode: Flow<ReceiptGroupMode> =
+        enumPreferenceFlow(receiptGroupModeKey, ReceiptGroupMode.NONE)
 
     override suspend fun setThemeMode(mode: ThemeMode) {
         context.dataStore.edit { prefs ->
@@ -170,7 +147,7 @@ class SettingsRepositoryImpl @Inject constructor(
 
     override suspend fun setTranslationProvider(provider: TranslationProvider) {
         context.dataStore.edit { prefs ->
-            prefs[translationProviderKey] = TranslationProvider.GOOGLE_TRANSLATE.name
+            prefs[translationProviderKey] = provider.name
         }
     }
 
@@ -181,14 +158,18 @@ class SettingsRepositoryImpl @Inject constructor(
     }
 
     override suspend fun setOpenAiApiKey(apiKey: String) {
+        secureSecretsStore.setOpenAiApiKey(apiKey.trim())
         context.dataStore.edit { prefs ->
-            prefs[openAiApiKeyKey] = apiKey.trim()
+            prefs[openAiApiKeyKey] = ""
+            prefs[secretsVersionKey] = System.currentTimeMillis().toString()
         }
     }
 
     override suspend fun setGeminiApiKey(apiKey: String) {
+        secureSecretsStore.setGeminiApiKey(apiKey.trim())
         context.dataStore.edit { prefs ->
-            prefs[geminiApiKeyKey] = apiKey.trim()
+            prefs[geminiApiKeyKey] = ""
+            prefs[secretsVersionKey] = System.currentTimeMillis().toString()
         }
     }
 

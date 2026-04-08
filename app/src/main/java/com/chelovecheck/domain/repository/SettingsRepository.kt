@@ -15,6 +15,17 @@ import com.chelovecheck.domain.model.TranslationProvider
 import com.chelovecheck.domain.model.TranslationProviderConfig
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * Пользовательские настройки: в реализации `data` — DataStore и (для API-ключей) защищённое хранилище платформы.
+ *
+ * **Инварианты**
+ * - Каждый `Flow` отражает актуальные настройки; все подписчики получают одинаковые обновления.
+ * - В [translationProviderConfig] должен попадать провайдер, выбранный через [setTranslationProvider] (в хранилище — имя enum).
+ * - Ключи API перевода не отдаются через обычные строковые преференсы; используется защищённое хранилище.
+ *
+ * **Ошибки** — [com.chelovecheck.domain.model.AppError] только там, где suspend-вызов может явно завершиться сбоем;
+ * большинство чтений идут через Flow с откатом к значениям по умолчанию при битых данных.
+ */
 interface SettingsRepository {
     val themeMode: Flow<ThemeMode>
     val language: Flow<AppLanguage>

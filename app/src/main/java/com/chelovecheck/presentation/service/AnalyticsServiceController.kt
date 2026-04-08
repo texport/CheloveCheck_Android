@@ -2,7 +2,7 @@ package com.chelovecheck.presentation.service
 
 import android.content.Context
 import androidx.core.content.ContextCompat
-import com.chelovecheck.presentation.model.AnalyticsPeriod
+import com.chelovecheck.domain.model.AnalyticsPeriod
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.time.Instant
 import javax.inject.Inject

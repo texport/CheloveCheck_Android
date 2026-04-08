@@ -4,14 +4,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chelovecheck.domain.model.AnalyticsLoadStage
 import com.chelovecheck.domain.model.AnalyticsSummary
+import com.chelovecheck.domain.model.AnalyticsPeriod
 import com.chelovecheck.domain.model.AppLanguage
 import com.chelovecheck.domain.model.CoicopCategory
 import com.chelovecheck.domain.model.DisplayCurrency
 import com.chelovecheck.domain.model.ItemTranslationLanguage
 import com.chelovecheck.domain.model.PendingCategoryItem
+import com.chelovecheck.domain.repository.AnalyticsForegroundProgress
+import com.chelovecheck.domain.repository.AnalyticsForegroundRunCoordinator
+import com.chelovecheck.domain.repository.AnalyticsPeriodSummaryCache
 import com.chelovecheck.domain.repository.ReceiptsChangeTracker
-import com.chelovecheck.data.analytics.AnalyticsProgressStore
-import com.chelovecheck.data.analytics.AnalyticsCacheStore
 import com.chelovecheck.domain.analytics.RetailDisplayGroupResolver
 import com.chelovecheck.domain.repository.CategoryRepository
 import com.chelovecheck.domain.repository.RetailDisplayGroupsRepository
@@ -22,8 +24,6 @@ import com.chelovecheck.domain.usecase.ObserveDisplayCurrencyUseCase
 import com.chelovecheck.domain.usecase.ConvertAmountUseCase
 import com.chelovecheck.domain.usecase.SaveCategoryOverrideUseCase
 import com.chelovecheck.domain.utils.ItemNameNormalizer
-import com.chelovecheck.data.analytics.AnalyticsRunStore
-import com.chelovecheck.presentation.model.AnalyticsPeriod
 import com.chelovecheck.presentation.money.DisplayMoneyFormatter
 import com.chelovecheck.presentation.service.AnalyticsServiceController
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -51,13 +51,13 @@ class AnalyticsViewModel @Inject constructor(
     private val retailDisplayGroupsRepository: RetailDisplayGroupsRepository,
     private val saveCategoryOverrideUseCase: SaveCategoryOverrideUseCase,
     private val receiptsChangeTracker: ReceiptsChangeTracker,
-    private val progressStore: AnalyticsProgressStore,
-    private val cacheStore: AnalyticsCacheStore,
+    private val analyticsForegroundProgress: AnalyticsForegroundProgress,
+    private val analyticsPeriodSummaryCache: AnalyticsPeriodSummaryCache,
     private val observeAnalyticsPendingPromptUseCase: ObserveAnalyticsPendingPromptUseCase,
     observeItemTranslationLanguageUseCase: ObserveItemTranslationLanguageUseCase,
     observeDisplayCurrencyUseCase: ObserveDisplayCurrencyUseCase,
     private val convertAmountUseCase: ConvertAmountUseCase,
-    private val analyticsRunStore: AnalyticsRunStore,
+    private val analyticsForegroundRunCoordinator: AnalyticsForegroundRunCoordinator,
     private val analyticsServiceController: AnalyticsServiceController,
 ) : ViewModel() {
     private val _state = MutableStateFlow(AnalyticsUiState())
@@ -94,23 +94,23 @@ class AnalyticsViewModel @Inject constructor(
             }
         }
         viewModelScope.launch {
-            progressStore.stage.collectLatest { stage ->
+            analyticsForegroundProgress.stage.collectLatest { stage ->
                 _state.update { it.copy(loadingStage = stage) }
             }
         }
         viewModelScope.launch {
-            analyticsRunStore.state.collectLatest { runState ->
+            analyticsForegroundRunCoordinator.state.collectLatest { runState ->
                 val request = activeRequest
                 val periodMatches = request != null && runState.period == request.period && runState.token == request.token
                 if (runState.summary != null && periodMatches) {
                     suppressLoadingOverlay = false
-                    cacheStore.put(request.period, request.token, runState.summary)
+                    analyticsPeriodSummaryCache.put(request.period, request.token, runState.summary)
                     applySummary(runState.summary, showPrompt = true)
                     activeRequest = null
                 } else if (!runState.isRunning && periodMatches) {
                     suppressLoadingOverlay = false
                     if (_state.value.isLoading) {
-                        progressStore.clear()
+                        analyticsForegroundProgress.clear()
                         _state.update { it.copy(isLoading = false) }
                     }
                     activeRequest = null
@@ -150,8 +150,8 @@ class AnalyticsViewModel @Inject constructor(
         val period = _state.value.period
         val currentToken = receiptsChangeTracker.changes.value
         if (!force) {
-            cacheStore.get(period, currentToken)?.let { cached ->
-                progressStore.clear()
+            analyticsPeriodSummaryCache.get(period, currentToken)?.let { cached ->
+                analyticsForegroundProgress.clear()
                 applySummary(cached, showPrompt = false)
                 return
             }
@@ -159,7 +159,7 @@ class AnalyticsViewModel @Inject constructor(
                 _state.value.summary != null &&
                 lastLoadedPeriod == period
             ) {
-                progressStore.clear()
+                analyticsForegroundProgress.clear()
                 return
             }
         }

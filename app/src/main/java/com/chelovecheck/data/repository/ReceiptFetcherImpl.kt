@@ -1,6 +1,6 @@
 package com.chelovecheck.data.repository
 
-import com.chelovecheck.data.remote.ofd.OFDHandlerManager
+import com.chelovecheck.data.remote.ofd.handlers.OFDHandlerManager
 import com.chelovecheck.domain.model.AppError
 import com.chelovecheck.domain.model.Receipt
 import com.chelovecheck.domain.repository.ReceiptFetcher

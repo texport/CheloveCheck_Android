@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CheloveCheck"
 include(":app")
+include(":shared:data-core")

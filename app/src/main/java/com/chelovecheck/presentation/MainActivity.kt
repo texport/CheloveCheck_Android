@@ -9,7 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.appcompat.app.AppCompatActivity
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.chelovecheck.data.locale.LocaleManager
+import com.chelovecheck.domain.repository.AppLocaleApplicator
 import com.chelovecheck.domain.model.ThemeMode
 import com.chelovecheck.presentation.navigation.AppRoot
 import com.chelovecheck.presentation.theme.CheloveCheckTheme
@@ -20,7 +20,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    @Inject lateinit var localeManager: LocaleManager
+    @Inject lateinit var appLocaleApplicator: AppLocaleApplicator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 accentColor = accentColor,
             ) {
                 androidx.compose.runtime.LaunchedEffect(language) {
-                    localeManager.apply(language)
+                    appLocaleApplicator.apply(language)
                 }
                 HapticsProvider(enabled = hapticsEnabled) {
                     AppRoot()

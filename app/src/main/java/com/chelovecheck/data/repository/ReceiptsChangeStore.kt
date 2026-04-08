@@ -5,6 +5,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 
 @Singleton
 class ReceiptsChangeStore @Inject constructor() : ReceiptsChangeTracker {
@@ -12,6 +13,6 @@ class ReceiptsChangeStore @Inject constructor() : ReceiptsChangeTracker {
     override val changes: StateFlow<Long> = _changes
 
     override fun notifyChanged() {
-        _changes.value = _changes.value + 1L
+        _changes.update { it + 1L }
     }
 }

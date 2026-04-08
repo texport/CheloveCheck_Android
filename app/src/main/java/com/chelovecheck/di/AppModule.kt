@@ -10,13 +10,13 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.chelovecheck.data.remote.HttpClient
 import com.chelovecheck.data.remote.ReceiptUrlBuilderImpl
-import com.chelovecheck.data.remote.ofd.JusanOFDHandler
-import com.chelovecheck.data.remote.ofd.KazakhtelecomOFDHandler
-import com.chelovecheck.data.remote.ofd.OFDHandlerManager
-import com.chelovecheck.data.remote.ofd.TranstelecomOFDHandler
-import com.chelovecheck.data.remote.ofd.FourEkRedirectOFDHandler
-import com.chelovecheck.data.remote.ofd.WofdOFDHandler
-import com.chelovecheck.data.remote.ofd.KaspiOFDHandler
+import com.chelovecheck.data.remote.ofd.handlers.JusanOFDHandler
+import com.chelovecheck.data.remote.ofd.handlers.KazakhtelecomOFDHandler
+import com.chelovecheck.data.remote.ofd.handlers.OFDHandlerManager
+import com.chelovecheck.data.remote.ofd.handlers.TranstelecomOFDHandler
+import com.chelovecheck.data.remote.ofd.handlers.FourEkRedirectOFDHandler
+import com.chelovecheck.data.remote.ofd.handlers.WofdOFDHandler
+import com.chelovecheck.data.remote.ofd.handlers.KaspiOFDHandler
 import com.chelovecheck.data.repository.ReceiptFetcherImpl
 import com.chelovecheck.data.repository.ReceiptJsonCodecImpl
 import com.chelovecheck.data.repository.ReceiptRepositoryImpl
@@ -31,12 +31,16 @@ import com.chelovecheck.data.analytics.CategoryPredictionCacheInvalidatorImpl
 import com.chelovecheck.domain.repository.CategoryPredictionCacheInvalidator
 import com.chelovecheck.domain.repository.RetailCategoryHintRepository
 import com.chelovecheck.data.repository.SettingsRepositoryImpl
+import com.chelovecheck.data.repository.SecureSecretsStore
 import com.chelovecheck.data.analytics.OnnxEmbeddingService
 import com.chelovecheck.data.analytics.pipeline.CategoryPredictionPipeline
 import com.chelovecheck.data.analytics.OnnxModelProvider
 import com.chelovecheck.data.analytics.OnnxSentenceEmbedderProvider
 import com.chelovecheck.data.analytics.WordPieceTokenizerFactory
+import com.chelovecheck.data.analytics.AnalyticsCacheStore
 import com.chelovecheck.data.analytics.AnalyticsProgressStore
+import com.chelovecheck.data.analytics.AnalyticsRunStore
+import com.chelovecheck.data.locale.LocaleManager
 import com.chelovecheck.data.vision.ReceiptImageScannerImpl
 import com.chelovecheck.data.logging.LogcatLogger
 import com.chelovecheck.data.repository.ReceiptsChangeStore
@@ -44,7 +48,11 @@ import com.chelovecheck.domain.logging.AppLogger
 import com.chelovecheck.domain.repository.CategoryRepository
 import com.chelovecheck.domain.repository.CategoryOverrideRepository
 import com.chelovecheck.domain.repository.CategoryEmbeddingService
+import com.chelovecheck.domain.repository.AnalyticsForegroundProgress
+import com.chelovecheck.domain.repository.AnalyticsForegroundRunCoordinator
+import com.chelovecheck.domain.repository.AnalyticsPeriodSummaryCache
 import com.chelovecheck.domain.repository.AnalyticsProgressReporter
+import com.chelovecheck.domain.repository.AppLocaleApplicator
 import com.chelovecheck.domain.repository.ReceiptFetcher
 import com.chelovecheck.domain.repository.ReceiptImageScanner
 import com.chelovecheck.domain.repository.ReceiptJsonCodec
@@ -164,8 +172,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideSettingsRepository(@ApplicationContext context: Context): SettingsRepository {
-        return SettingsRepositoryImpl(context)
+    fun provideSettingsRepository(
+        @ApplicationContext context: Context,
+        secureSecretsStore: SecureSecretsStore,
+    ): SettingsRepository {
+        return SettingsRepositoryImpl(context, secureSecretsStore)
     }
 
     @Provides
@@ -179,6 +190,22 @@ object AppModule {
     @Provides
     @Singleton
     fun provideReceiptsChangeTracker(store: ReceiptsChangeStore): ReceiptsChangeTracker = store
+
+    @Provides
+    @Singleton
+    fun provideAppLocaleApplicator(localeManager: LocaleManager): AppLocaleApplicator = localeManager
+
+    @Provides
+    @Singleton
+    fun provideAnalyticsPeriodSummaryCache(store: AnalyticsCacheStore): AnalyticsPeriodSummaryCache = store
+
+    @Provides
+    @Singleton
+    fun provideAnalyticsForegroundRunCoordinator(store: AnalyticsRunStore): AnalyticsForegroundRunCoordinator = store
+
+    @Provides
+    @Singleton
+    fun provideAnalyticsForegroundProgress(store: AnalyticsProgressStore): AnalyticsForegroundProgress = store
 
     @Provides
     @Singleton

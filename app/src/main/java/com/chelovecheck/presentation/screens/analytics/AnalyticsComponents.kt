@@ -28,7 +28,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.chelovecheck.R
-import com.chelovecheck.presentation.model.AnalyticsPeriod
+import com.chelovecheck.domain.model.AnalyticsPeriod
 import com.chelovecheck.presentation.strings.analyticsPeriodLabel
 import com.chelovecheck.presentation.viewmodel.AnalyticsViewModel
 

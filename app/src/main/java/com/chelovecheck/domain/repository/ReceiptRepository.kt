@@ -8,6 +8,15 @@ import com.chelovecheck.domain.model.ReceiptListSortOrder
 import com.chelovecheck.domain.model.ReceiptListSummary
 import com.chelovecheck.domain.model.ReceiptOwnershipFilter
 
+/**
+ * Persistence boundary for receipts. Implementations in `data` must:
+ *
+ * - Keep [Receipt.fiscalSign] unique (inserts skip or replace per product rules).
+ * - Emit [ReceiptsChangeTracker] updates after any write affecting list/detail.
+ * - Use keyset pagination for [getReceiptListPage] (stable ordering per [ReceiptListSortOrder]).
+ *
+ * Errors are surfaced as [com.chelovecheck.domain.model.AppError] (e.g. [com.chelovecheck.domain.model.AppError.DatabaseError]) where applicable.
+ */
 interface ReceiptRepository {
     suspend fun saveReceipt(receipt: Receipt)
     suspend fun saveReceipts(receipts: List<Receipt>): SaveManyResult

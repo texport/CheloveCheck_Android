@@ -45,7 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.chelovecheck.R
-import com.chelovecheck.presentation.model.AnalyticsPeriod
+import com.chelovecheck.domain.model.AnalyticsPeriod
 import com.chelovecheck.presentation.permissions.PermissionManager
 import com.chelovecheck.presentation.screens.analytics.CategoryItemsDialog
 import com.chelovecheck.presentation.screens.analytics.CategoryResolveDialog

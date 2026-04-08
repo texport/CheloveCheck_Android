@@ -1,22 +1,24 @@
 package com.chelovecheck.data.analytics
 
+import com.chelovecheck.domain.model.AnalyticsPeriod
+import com.chelovecheck.domain.model.AnalyticsRunState
 import com.chelovecheck.domain.model.AnalyticsSummary
-import com.chelovecheck.presentation.model.AnalyticsPeriod
+import com.chelovecheck.domain.repository.AnalyticsForegroundRunCoordinator
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 @Singleton
-class AnalyticsRunStore @Inject constructor() {
+class AnalyticsRunStore @Inject constructor() : AnalyticsForegroundRunCoordinator {
     private val _state = MutableStateFlow(AnalyticsRunState())
-    val state: StateFlow<AnalyticsRunState> = _state
+    override val state: StateFlow<AnalyticsRunState> = _state
 
-    fun markRunning(period: AnalyticsPeriod, token: Long) {
+    override fun markRunning(period: AnalyticsPeriod, token: Long) {
         _state.value = AnalyticsRunState(isRunning = true, period = period, token = token)
     }
 
-    fun complete(period: AnalyticsPeriod, token: Long, summary: AnalyticsSummary) {
+    override fun complete(period: AnalyticsPeriod, token: Long, summary: AnalyticsSummary) {
         _state.value = AnalyticsRunState(
             isRunning = false,
             period = period,
@@ -25,7 +27,7 @@ class AnalyticsRunStore @Inject constructor() {
         )
     }
 
-    fun fail(period: AnalyticsPeriod, token: Long, errorMessage: String?) {
+    override fun fail(period: AnalyticsPeriod, token: Long, errorMessage: String?) {
         _state.value = AnalyticsRunState(
             isRunning = false,
             period = period,
@@ -34,11 +36,3 @@ class AnalyticsRunStore @Inject constructor() {
         )
     }
 }
-
-data class AnalyticsRunState(
-    val isRunning: Boolean = false,
-    val period: AnalyticsPeriod? = null,
-    val token: Long? = null,
-    val summary: AnalyticsSummary? = null,
-    val errorMessage: String? = null,
-)

@@ -10,13 +10,14 @@ import android.os.IBinder
 import android.os.PowerManager
 import androidx.core.app.NotificationCompat
 import com.chelovecheck.R
-import com.chelovecheck.data.analytics.AnalyticsCacheStore
-import com.chelovecheck.data.analytics.AnalyticsProgressStore
-import com.chelovecheck.data.analytics.AnalyticsRunStore
+import com.chelovecheck.domain.model.AnalyticsProgress
+import com.chelovecheck.domain.repository.AnalyticsForegroundProgress
+import com.chelovecheck.domain.repository.AnalyticsForegroundRunCoordinator
+import com.chelovecheck.domain.repository.AnalyticsPeriodSummaryCache
 import com.chelovecheck.domain.logging.AppLogger
 import com.chelovecheck.domain.model.AnalyticsLoadStage
+import com.chelovecheck.domain.model.AnalyticsPeriod
 import com.chelovecheck.domain.usecase.GetAnalyticsUseCase
-import com.chelovecheck.presentation.model.AnalyticsPeriod
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.Instant
 import javax.inject.Inject
@@ -32,9 +33,9 @@ import kotlinx.coroutines.flow.combine
 @AndroidEntryPoint
 class AnalyticsForegroundService : Service() {
     @Inject lateinit var getAnalyticsUseCase: GetAnalyticsUseCase
-    @Inject lateinit var runStore: AnalyticsRunStore
-    @Inject lateinit var cacheStore: AnalyticsCacheStore
-    @Inject lateinit var progressStore: AnalyticsProgressStore
+    @Inject lateinit var analyticsForegroundRunCoordinator: AnalyticsForegroundRunCoordinator
+    @Inject lateinit var analyticsPeriodSummaryCache: AnalyticsPeriodSummaryCache
+    @Inject lateinit var analyticsForegroundProgress: AnalyticsForegroundProgress
     @Inject lateinit var logger: AppLogger
 
     private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
@@ -65,13 +66,16 @@ class AnalyticsForegroundService : Service() {
         val from = parseInstant(intent?.getLongExtra(EXTRA_FROM, -1L) ?: -1L)
         val to = parseInstant(intent?.getLongExtra(EXTRA_TO, -1L) ?: -1L)
 
-        runStore.markRunning(period, token)
+        analyticsForegroundRunCoordinator.markRunning(period, token)
         progressStartMillis = null
-        startForeground(NOTIFICATION_ID, buildNotification(progressStore.stage.value, progressStore.progress.value))
+        startForeground(
+            NOTIFICATION_ID,
+            buildNotification(analyticsForegroundProgress.stage.value, analyticsForegroundProgress.progress.value),
+        )
         acquireWakeLock()
 
         notificationJob = serviceScope.launch {
-            combine(progressStore.stage, progressStore.progress) { stage, progress ->
+            combine(analyticsForegroundProgress.stage, analyticsForegroundProgress.progress) { stage, progress ->
                 stage to progress
             }.collect { (stage, progress) ->
                 updateNotification(stage, progress)
@@ -81,12 +85,12 @@ class AnalyticsForegroundService : Service() {
         job = serviceScope.launch {
             val result = runCatching { getAnalyticsUseCase(from = from, to = to) }
             result.onSuccess { summary ->
-                cacheStore.put(period, token, summary)
-                runStore.complete(period, token, summary)
+                analyticsPeriodSummaryCache.put(period, token, summary)
+                analyticsForegroundRunCoordinator.complete(period, token, summary)
             }.onFailure { error ->
                 if (error is CancellationException) return@onFailure
                 logger.error(TAG, "analytics failed: ${error.message}", error)
-                runStore.fail(period, token, error.message)
+                analyticsForegroundRunCoordinator.fail(period, token, error.message)
             }
             stopSelf()
         }
@@ -96,7 +100,7 @@ class AnalyticsForegroundService : Service() {
     override fun onDestroy() {
         job?.cancel()
         notificationJob?.cancel()
-        progressStore.clear()
+        analyticsForegroundProgress.clear()
         releaseWakeLock()
         stopForeground(STOP_FOREGROUND_REMOVE)
         super.onDestroy()
@@ -123,7 +127,7 @@ class AnalyticsForegroundService : Service() {
         wakeLock = null
     }
 
-    private fun buildNotification(stage: AnalyticsLoadStage?, progress: com.chelovecheck.data.analytics.AnalyticsProgress): android.app.Notification {
+    private fun buildNotification(stage: AnalyticsLoadStage?, progress: AnalyticsProgress): android.app.Notification {
         val stageText = when (stage) {
             AnalyticsLoadStage.LOADING_MODEL -> getString(R.string.analytics_loading_model)
             AnalyticsLoadStage.BUILDING_INDEX -> getString(R.string.analytics_loading_index)
@@ -152,12 +156,12 @@ class AnalyticsForegroundService : Service() {
         return builder.build()
     }
 
-    private fun updateNotification(stage: AnalyticsLoadStage?, progress: com.chelovecheck.data.analytics.AnalyticsProgress) {
+    private fun updateNotification(stage: AnalyticsLoadStage?, progress: AnalyticsProgress) {
         val manager = getSystemService(NotificationManager::class.java)
         manager.notify(NOTIFICATION_ID, buildNotification(stage, progress))
     }
 
-    private fun progressText(progress: com.chelovecheck.data.analytics.AnalyticsProgress): String {
+    private fun progressText(progress: AnalyticsProgress): String {
         val total = progress.totalItems
         val processed = progress.processedItems
         if (total <= 0) return ""
